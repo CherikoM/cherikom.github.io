@@ -1,0 +1,842 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="1t_udMygpn_u_Ykuqyp-NsdEibEtikS7hpWfddBF3ao"><meta name="msvalidate.01" content="E140022059D9AD5124B0A64BF51BF030"><meta name="baidu-site-verification" content="code-qo8UKs4MrZ"><meta name="360-site-verification" content="055476a64ed98cc0d0c9eea5b04922e0"><meta name="sogou_site_verification" content="qQwiFLOWUL"><meta name="description" content="很长一段时间对css选择符云里雾里的，只是看到网上的大佬们怎么用，自己也就这么用。 倒也不影响我码，就是搞不清个具体。 一直以来去mdn、w3c查资料不太会闲得无聊专门查选择符，但是趁这次啃书可以恶补一番了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菜鸡恶补css 第二章 选择符(1)">
+<meta property="og:url" content="https://cheriko.fun/2022/10/25/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(1)/index.html">
+<meta property="og:site_name" content="Cherry🍒Garden">
+<meta property="og:description" content="很长一段时间对css选择符云里雾里的，只是看到网上的大佬们怎么用，自己也就这么用。 倒也不影响我码，就是搞不清个具体。 一直以来去mdn、w3c查资料不太会闲得无聊专门查选择符，但是趁这次啃书可以恶补一番了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-25T01:24:29.999Z">
+<meta property="article:modified_time" content="2022-10-28T09:55:37.018Z">
+<meta property="article:author" content="CherikoM">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="css权威指南">
+<meta name="twitter:card" content="summary"><title>菜鸡恶补css 第二章 选择符(1) | Cherry🍒Garden</title><link ref="canonical" href="https://cheriko.fun/2022/10/25/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(1)/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":3},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"light","highlight":"light","wordWrap":false},
+  reward: true,
+  fancybox: true,
+  zoomImage: {"gapAside":"100px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-inbox"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="far fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">菜鸡恶补css 第二章 选择符(1)</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2022-10-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-10-28</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon" data-popover="字数统计" data-popover-pos="up"><i class="far fa-file-word"></i></span><span class="post-meta-item__value">3.7k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon" data-popover="阅读时间" data-popover-pos="up"><i class="far fa-clock"></i></span><span class="post-meta-item__value">29分</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2022/10/25/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(1)/" data-flag-title="菜鸡恶补css 第二章 选择符(1)"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body"><p>很长一段时间对css选择符云里雾里的，只是看到网上的大佬们怎么用，自己也就这么用。</p>
+<p>倒也不影响我码，就是搞不清个具体。</p>
+<p>一直以来去mdn、w3c查资料不太会闲得无聊专门查选择符，但是趁这次啃书可以恶补一番了。</p>
+<span id="more"></span>
+
+        <h1 id="样式的基本规则"   >
+          <a href="#样式的基本规则" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样式的基本规则"></a> 样式的基本规则</h1>
+      
+
+        <h2 id="元素选择符"   >
+          <a href="#元素选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#元素选择符"></a> 元素选择符</h2>
+      
+<p><strong>元素选择符</strong>通常是HTML元素，在XML文档中也可能是任意字符串，即，文档中的元素是最基本的选择符。</p>
+<p>元素选择符可以将声明块里的样式应用到所有对应的元素上。</p>
+
+        <h2 id="声明和关键字"   >
+          <a href="#声明和关键字" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#声明和关键字"></a> 声明和关键字</h2>
+      
+<p>声明的格式是固定的，属性: 值;。</p>
+<p>如果声明中的属性或值有误，这条声明就会被忽略，例如：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brain-size: <span class="number">2cm</span>;		<span class="comment">/* 没有brain-size属性 */</span></span><br><span class="line"><span class="attribute">color</span>: ultraviolet;		<span class="comment">/* 没有ultraviolet值 */</span></span><br></pre></td></tr></table></div></figure>
+<p>属性值几乎都是一或多个关键字。多个关键字之间通常用空格分隔，有时也可能需要使用斜线/（如font属性）或逗号,（如一些函数属性）。</p>
+<p>不是每一个属性都能接受多个关键字。</p>
+
+        <h1 id="群组"   >
+          <a href="#群组" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#群组"></a> 群组</h1>
+      
+
+        <h2 id="群组选择符"   >
+          <a href="#群组选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#群组选择符"></a> 群组选择符</h2>
+      
+<p>假如想让h2元素和p元素都显示为灰色，最简单的方法是：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span>, <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: gray; &#125; </span><br></pre></td></tr></table></div></figure>
+<p>群组可以在很大程度上压缩同类样式。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br><span class="line"><span class="selector-tag">h3</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br><span class="line"><span class="selector-tag">h4</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br><span class="line"><span class="selector-tag">h5</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br><span class="line"><span class="selector-tag">h6</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: purple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>群组可以对样式进行分发。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: silver; <span class="attribute">background</span>: white; &#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123; <span class="attribute">color</span>: silver; <span class="attribute">background</span>: gray; &#125;</span><br><span class="line"><span class="selector-tag">h3</span> &#123; <span class="attribute">color</span>: white; <span class="attribute">background</span>: gray; &#125;</span><br><span class="line"><span class="selector-tag">h4</span> &#123; <span class="attribute">color</span>: silver; <span class="attribute">background</span>: white; &#125;</span><br><span class="line"><span class="selector-tag">b</span> &#123; <span class="attribute">color</span>: gray; <span class="attribute">background</span>: white; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h4</span> &#123; <span class="attribute">color</span>: silver; <span class="attribute">background</span>: white; &#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123; <span class="attribute">color</span>: silver &#125;</span><br><span class="line"><span class="selector-tag">h3</span> &#123; <span class="attribute">color</span>: white &#125;</span><br><span class="line"><span class="selector-tag">h2</span>, <span class="selector-tag">h3</span> &#123; <span class="attribute">background</span>: gray; &#125;</span><br><span class="line"><span class="selector-tag">b</span> &#123; <span class="attribute">color</span>: gray; <span class="attribute">background</span>: white; &#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="通用选择符"   >
+          <a href="#通用选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#通用选择符"></a> 通用选择符</h3>
+      
+<p>css2引入<strong>通用选择符*</strong>，可以匹配所有元素，相当于列出文档所有元素的群组选择符。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* &#123; <span class="attribute">color</span>: red; &#125;	<span class="comment">/* 让所有元素都显示为红色字 */</span></span><br></pre></td></tr></table></div></figure>
+<p>通用选择符没有特指度，而且由于目标是一切元素，使用它可能会出现意想不到的后果。</p>
+
+        <h2 id="群组声明"   >
+          <a href="#群组声明" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#群组声明"></a> 群组声明</h2>
+      
+<p>一个规则可以有多个选择符，同理，也可以有多个声明：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">	<span class="attribute">font</span>: <span class="number">18px</span> Helvetica;</span><br><span class="line">    <span class="attribute">color</span>: purple;</span><br><span class="line">    <span class="attribute">background</span>: aqua;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>声明块内含多个声明时，不要忘了每条声明结尾的分号。如果第二条声明结尾没有分号，用户代理会把它解释成：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">	<span class="attribute">font</span>: <span class="number">18px</span> Helvetica;</span><br><span class="line">    <span class="attribute">color</span>: purple background: aqua;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>background不是color的有效值，而且color的值只能是一个关键字，所以用户代理将忽略color和background声明，而font声明能被应用。</p>
+
+    <div class="note-plugin default">
+      <span class="note-plugin__icon note-plugin__icon--default">
+              <i class="fas fa-arrow-circle-right"></i>
+            </span>
+      <p>一个规则中最后一个声明的结尾可以不带分号，但一般建议带上。如果使用类如Scss这样的预处理器，语法可能会强制要求结尾加上分号。</p>
+    </div>
+  
+
+        <h2 id="在旧浏览器中使用新元素"   >
+          <a href="#在旧浏览器中使用新元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#在旧浏览器中使用新元素"></a> 在旧浏览器中使用新元素</h2>
+      
+<p>HTML会在更新的过程中添加新的元素，而有些浏览器因为太旧，可能无法识别新元素。</p>
+<p>例如IE9以下版本中无法选择不支持的元素，解决方法是创建新元素，让浏览器知道元素的存在。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;main&#x27;</span>)</span><br></pre></td></tr></table></div></figure>
+
+        <h1 id="类选择符和id选择符"   >
+          <a href="#类选择符和id选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#类选择符和id选择符"></a> 类选择符和ID选择符</h1>
+      
+<p>除了直接使用文档中的元素外，还可以使用<strong>类选择符</strong>和<strong>ID选择符</strong>，以一种独立于元素的方式赋予样式。</p>
+<p>这两种选择符可以独立使用，也可以结合元素选择符使用。</p>
+<p>但它们要求文档的标记有一定的结构，因此要提前构思，做好规划。</p>
+
+        <h2 id="类选择符"   >
+          <a href="#类选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#类选择符"></a> 类选择符</h2>
+      
+<p>应用样式而不关心所涉及的元素，最常使用类选择符。</p>
+<p>使用之前，要在文档中特定标签内设定class属性。</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;warning&#x27;</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a placerat nunc. Phasellus porttitor accumsan odio ornare malesuada.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">     Proin ac mauris eget elit auctor porta. Aenean diam neque, tempus egestas iaculis ut, suscipit sed purus. <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&#x27;warning&#x27;</span>&gt;</span>Donec tempus accumsan lectus<span class="tag">&lt;/<span class="name">span</span>&gt;</span>, vel dapibus velit vehicula a. Sed molestie nulla eu ipsum faucibus eleifend.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>在class属性值前加上点号.，即为一个类选择器。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.warning</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>样式将运用到所有包含warning类的元素（因为这里蕴含着通用选择符）。</p>
+<hr />
+<p class='warning1'>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a placerat nunc. Phasellus porttitor accumsan odio ornare malesuada.
+</p>
+<p>
+     Proin ac mauris eget elit auctor porta. Aenean diam neque, tempus egestas iaculis ut, suscipit sed purus. <span class='warning1'>Donec tempus accumsan lectus</span>, vel dapibus velit vehicula a. Sed molestie nulla eu ipsum faucibus eleifend.
+</p>
+<style>
+    .warning1 { font-weight: bold; }
+</style>
+<hr />
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>使用ID选择符、类选择符、属性选择符、伪类选择符和伪元素选择符时，如果没有依附一个元素选择符，会隐式蕴含通用选择符*</p>
+    </div>
+  
+<p>类选择符的点号.可以将其与可能一起使用的其他选择符分开，从而达到结合使用的效果。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.warning</span> &#123; <span class="attribute">background</span>: silver; &#125;		<span class="comment">/* 所有含warning类的元素都应用的样式 */</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.warning</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;		<span class="comment">/* 只有含warning类的p元素应用样式 */</span></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.warning</span> &#123; <span class="attribute">font-style</span>: italic; &#125;	<span class="comment">/* 只有含warning类的span元素应用样式 */</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='warning2'>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a placerat nunc. Phasellus porttitor accumsan odio ornare malesuada.
+</p>
+<p>
+     Proin ac mauris eget elit auctor porta. Aenean diam neque, tempus egestas iaculis ut, suscipit sed purus. <span class='warning2'>Donec tempus accumsan lectus</span>, vel dapibus velit vehicula a. Sed molestie nulla eu ipsum faucibus eleifend.
+</p>
+<style>
+    .warning2 { background: silver; }
+    p.warning2 { font-weight: bold; }
+    span.warning2 { font-style: italic; }
+</style>
+
+        <h2 id="多个类"   >
+          <a href="#多个类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#多个类"></a> 多个类</h2>
+      
+<p>class属性的值可以是多个词，词之间使用空格分隔，词的顺序不影响效果。</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;urgent warning&#x27;</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a placerat nunc. Phasellus porttitor accumsan odio ornare malesuada.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">     Proin ac mauris eget elit auctor porta. Aenean diam neque, tempus egestas iaculis ut, suscipit sed purus. <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&#x27;warning&#x27;</span>&gt;</span>Donec tempus accumsan lectus<span class="tag">&lt;/<span class="name">span</span>&gt;</span>, vel dapibus velit vehicula a. Sed molestie nulla eu ipsum faucibus eleifend.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>把两个类选择符串在一起，选择的是同时具有两个类（缺一不可）的元素，而且类选择符的顺序不影响效果。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.warning</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</span><br><span class="line"><span class="selector-class">.urgent</span> &#123; <span class="attribute">font-style</span>: italic; &#125;</span><br><span class="line"><span class="selector-class">.warning</span><span class="selector-class">.urgent</span> &#123; <span class="attribute">background</span>: silver; &#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="id选择符"   >
+          <a href="#id选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#id选择符"></a> ID选择符</h2>
+      
+<p>ID选择符以井号#开头。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#first-para</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>ID选择符引用的是id属性的值。</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&#x27;first-para&#x27;</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a placerat nunc. Phasellus porttitor accumsan odio ornare malesuada.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">     Proin ac mauris eget elit auctor porta. Aenean diam neque, tempus egestas iaculis ut, suscipit sed purus. <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&#x27;warning&#x27;</span>&gt;</span>Donec tempus accumsan lectus<span class="tag">&lt;/<span class="name">span</span>&gt;</span>, vel dapibus velit vehicula a. Sed molestie nulla eu ipsum faucibus eleifend.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p id='first-para'>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a placerat nunc. Phasellus porttitor accumsan odio ornare malesuada.
+</p>
+<p>
+     Proin ac mauris eget elit auctor porta. Aenean diam neque, tempus egestas iaculis ut, suscipit sed purus. Donec tempus accumsan lectus</span>, vel dapibus velit vehicula a. Sed molestie nulla eu ipsum faucibus eleifend.
+</p>
+<style>#first-para { font-weight: bold; }</style>
+<hr />
+<p>与类选择符一样，ID选择符隐式蕴含通用选择符*，且不关心涉及的元素。</p>
+<p>与类选择符不同，ID选择符不能串在一起使用，因为ID属性的值不能是以空格分隔的列表。</p>
+
+        <h2 id="在类选择符和id选择符之间选择"   >
+          <a href="#在类选择符和id选择符之间选择" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#在类选择符和id选择符之间选择"></a> 在类选择符和ID选择符之间选择</h2>
+      
+<p>在同一HTML文档中，类可以赋予人任意个元素，而ID是唯一的，一个ID只能出现一次。</p>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>浏览器不一定总会检查HTML中的ID是否唯一，但不唯一的ID对JavaScript编程不利。</p>
+    </div>
+  
+<p>ID选择符的权重比类选择符更高。</p>
+<p>在HTML规范中，类选择符和ID选择符区分大小写。</p>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>HTML、SVG和MathML支持点号+类名的写法，但其无法保证一定能用于XML文档。</p>
+    </div>
+  
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>井号+ID的写法支持任何能确保文档内元素唯一性的文档语言，唯一性可以通过id属性确保，也可能通过其他任何方式。</p>
+    </div>
+  
+
+        <h1 id="属性选择符"   >
+          <a href="#属性选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#属性选择符"></a> 属性选择符</h1>
+      
+<p>无论是类选择符还是ID选择符，选择的其实都是属性的值。</p>
+<p>在一些标记语言中可能不存在class和id属性，所以css2引入了<strong>属性选择符</strong>。</p>
+<p>属性选择符根据属性及其值选择元素。</p>
+<p>属性选择符分为四类：简单属性选择符、精准属性值选择符、部分匹配属性值选择符、起始属性选择符。</p>
+<p>这种选择符在XML文档中特别有用，因为XML语言中的元素和属性都是根据目的而选用的。</p>
+
+        <h2 id="简单属性选择符"   >
+          <a href="#简单属性选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#简单属性选择符"></a> 简单属性选择符</h2>
+      
+<p><strong>简单属性选择符</strong>可以选择具有某个属性的元素，不关心属性的值是什么。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class]</span> &#123; <span class="attribute">color</span>: silver; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;114514&#x27;</span>&gt;</span>我是大哥<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我是二哥<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;1919810&#x27;</span>&gt;</span>我是小弟<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p classa='aaa'>我是大哥</p>
+<p>我是二哥</p>
+<p classa='bbb'>我是小弟</p>
+<style>
+    p[classa] { color: silver; }
+</style>
+<hr />
+<p>可以基于多个属性选择。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href]</span><span class="selector-attr">[title]</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;#&#x27;</span> <span class="attr">title</span>=<span class="string">&#x27;foo&#x27;</span>&gt;</span>我有href和title<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;#&#x27;</span>&gt;</span>我有href<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">title</span>=<span class="string">&#x27;bar&#x27;</span>&gt;</span>我有title<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p><a href='#' title='foo'>我有href和title</a><br />
+<a href='#'>我有href</a><br />
+<a title='bar'>我有title</a></p>
+<style>
+	a[href][title] { font-weight: bold; }
+</style>
+
+        <h2 id="根据精准的属性值选择"   >
+          <a href="#根据精准的属性值选择" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#根据精准的属性值选择"></a> 根据精准的属性值选择</h2>
+      
+<p><strong>精准属性值选择符</strong>缩小了简单属性选择符的范围，只选择属性为特定值的元素。</p>
+<p>选择器内的属性值必须和元素内的属性值完全一致，即精确匹配字符串。</p>
+<p>所以精准属性值选择符不能像类选择符那样使用，选择id属性时也和ID选择符有微妙的区别。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[foo=<span class="string">&#x27;qux&#x27;</span>]</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#bfc</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[foo=<span class="string">&#x27;bar qur&#x27;</span>]</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#bfc</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">foo</span>=<span class="string">&#x27;bar qur&#x27;</span>&gt;</span>我会被选中<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">foo</span>=<span class="string">&#x27;baz qux&#x27;</span>&gt;</span>我不会被选中<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p foo='bar qur'>我会被选中</p>
+<p foo='baz qux'>我不会被选中</p>
+<style>
+    p[foo='qux'] {
+        color: #bfc;
+    }
+    p[foo='bar qur'] {
+        color: #bfc;
+    }
+</style>
+<hr />
+<p>与简单属性选择符相同，可以将多个属性和值选择符串在一起。</p>
+
+        <h2 id="根据部分属性值选择"   >
+          <a href="#根据部分属性值选择" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#根据部分属性值选择"></a> 根据部分属性值选择</h2>
+      
+<p><strong>部分匹配属性值选择符</strong>会需要根据属性值的一部分选择元素，而不是完整的值。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>形式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[foo|=“bar”]</td>
+<td>选择的元素有foo属性且属性值以bar-开头或就是bar</td>
+</tr>
+<tr>
+<td>[foo~=“bar”]</td>
+<td>选择的元素有foo属性且属性值为包含词语bar的一组词语</td>
+</tr>
+<tr>
+<td>[foo*=“bar”]</td>
+<td>选择的元素有foo属性且属性值包含子串bar</td>
+</tr>
+<tr>
+<td>[foo^=“bar”]</td>
+<td>选择的元素有foo属性且属性值以bar开头</td>
+</tr>
+<tr>
+<td>[foo$=“bar”]</td>
+<td>选择的元素有foo属性且属性值以bar结尾</td>
+</tr>
+</tbody>
+</table></div>
+
+        <h3 id="匹配破折号字符串"   >
+          <a href="#匹配破折号字符串" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#匹配破折号字符串"></a> 匹配破折号字符串</h3>
+      
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-attr">[lang|=<span class="string">&#x27;en&#x27;</span>]</span> &#123; <span class="attribute">color</span>: silver; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">lang</span>=<span class="string">&#x27;en&#x27;</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">lang</span>=<span class="string">&#x27;en-us&#x27;</span>&gt;</span>Greetings!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">lang</span>=<span class="string">&#x27;en-au&#x27;</span>&gt;</span>G&#x27; day!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">lang</span>=<span class="string">&#x27;fr&#x27;</span>&gt;</span>Bonjour!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">lang</span>=<span class="string">&#x27;cy-en&#x27;</span>&gt;</span>Jrooana!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<div lang='en'>Hello!</div>
+<p lang='en-us'>Greetings!</p>
+<div lang='en-au'>G' day!</div>
+<p lang='fr'>Bonjour!</p>
+<div lang='cy-en'>Jrooana!</div>
+<style>
+    *[lang|='en'] { color: silver; }
+</style>
+<hr />
+<p>这种匹配最常用于匹配语言名。</p>
+
+        <h3 id="匹配词语"   >
+          <a href="#匹配词语" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#匹配词语"></a> 匹配词语</h3>
+      
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span><span class="selector-attr">[class~=<span class="string">&#x27;yajue&#x27;</span>]</span> &#123; <span class="attribute">color</span>: brown; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&#x27;yajue aniki senpai&#x27;</span>&gt;</span>Yajue<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&#x27;KMR aniki&#x27;</span>&gt;</span>KMR<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&#x27;MUR aniki&#x27;</span>&gt;</span>MUR<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p><span class='yajue aniki senpai'>Yajue</span><br />
+<span class='KMR aniki'>KMR</span><br />
+<span class='MUR aniki'>MUR</span></p>
+<style>
+    span[class~='yajue'] { color: brown; }
+</style>
+<hr />
+<p>这种匹配在匹配class属性时和类选择符等效。</p>
+
+        <h3 id="匹配子串"   >
+          <a href="#匹配子串" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#匹配子串"></a> 匹配子串</h3>
+      
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class*=<span class="string">&#x27;cloud&#x27;</span>]</span> &#123; <span class="attribute">color</span>: pink; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;cloud factory&#x27;</span>&gt;</span>cloud factory<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;cloudy pillow&#x27;</span>&gt;</span>cloudy pillow<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;cotton candy&#x27;</span>&gt;</span>cotton candy<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='cloud1 factory'>cloud factory</p>
+<p class='cloud1y pillow'>cloudy pillow</p>
+<p class='cotton candy'>cotton candy</p>
+<style>p[class*='cloud1'] { color: pink; }</style>
+<hr />
+<p>这种选择符做的是精准匹配，区分大小写和空格，HTML关键字除外。</p>
+
+        <h3 id="匹配属性值开头结尾的子串"   >
+          <a href="#匹配属性值开头结尾的子串" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#匹配属性值开头结尾的子串"></a> 匹配属性值开头/结尾的子串</h3>
+      
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class^=<span class="string">&#x27;cloud&#x27;</span>]</span> &#123; <span class="attribute">color</span>: pink; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class$=<span class="string">&#x27;cloud&#x27;</span>]</span> &#123; <span class="attribute">color</span>: <span class="number">#bfc</span>; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;cloud factory&#x27;</span>&gt;</span>cloud factory<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;soft cloudy pillow&#x27;</span>&gt;</span>cloudy pillow<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;cotton cloud&#x27;</span>&gt;</span>cotton candy<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='cloud2 factory'>cloud factory</p>
+<p class='soft cloud2y pillow'>soft cloudy pillow</p>
+<p class='cotton cloud2'>cotton candy</p>
+<style>
+    p[class^='cloud2'] { color: pink; }
+	p[class$='cloud2'] { color: #bfc; }
+</style>
+<hr />
+<p>匹配结尾子串的选择符常用于进行连接扩展名的匹配。</p>
+
+        <h2 id="不区分大小写的标识符"   >
+          <a href="#不区分大小写的标识符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#不区分大小写的标识符"></a> 不区分大小写的标识符</h2>
+      
+<p>css selectors level4为属性选择符引入了不区分大小写的选项，即在右方括号前加i。</p>
+<p>所有属性选择符都可以加上该选项，但它只针对属性选择符中的值，不涉及属性的名称（仅针对句法区分大小写的语言）。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class*=<span class="string">&#x27;cloud&#x27;</span> i]</span> &#123; <span class="attribute">color</span>: pink; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;cloud factory&#x27;</span>&gt;</span>cloud factory<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;cloudy pillow&#x27;</span>&gt;</span>cloudy pillow<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;cotton CLOUD&#x27;</span>&gt;</span>cotton candy<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='cloud3 factory'>cloud factory</p>
+<p class='cloud3y pillow'>cloudy pillow</p>
+<p class='cotton CLOUD3'>cotton CLOUD</p>
+<style>
+    p[class*='cloud3' i] { color: pink; }
+</style>
+<hr />
+
+        <h1 id="根据文档结构选择"   >
+          <a href="#根据文档结构选择" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#根据文档结构选择"></a> 根据文档结构选择</h1>
+      
+
+        <h2 id="后代选择符"   >
+          <a href="#后代选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#后代选择符"></a> 后代选择符</h2>
+      
+<p><strong>后代选择符</strong>，也称上下文选择符，它针对特定的文档结构。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 选择h1的所有em后代 */</span></span><br><span class="line"><span class="selector-tag">h1</span> <span class="selector-tag">em</span> &#123; <span class="attribute">color</span>: gray; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 可以连续使用 */</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">ol</span> <span class="selector-tag">ul</span> <span class="selector-tag">em</span> &#123; <span class="attribute">color</span>: gray; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>不管嵌套的层级有多深，只要选择符内的元素能达成祖辈和后代的关系，就能选中。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 而且这俩规则的权重相等 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:not</span>(<span class="selector-class">.help</span>) <span class="selector-tag">span</span> &#123; <span class="attribute">font-style</span>: italic; &#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.help</span> <span class="selector-tag">span</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;help&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;aside&#x27;</span>&gt;</span></span><br><span class="line">        114514<span class="tag">&lt;<span class="name">span</span>&gt;</span>1919810<span class="tag">&lt;/<span class="name">span</span>&gt;</span>364364</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="selector-tag">div</span><span class="selector-pseudo">:not</span>(<span class="selector-class">.help</span>) <span class="selector-tag">span</span> &#123; <span class="attribute">font-style</span>: italic; &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span><span class="selector-class">.help</span> <span class="selector-tag">span</span> &#123; <span class="attribute">color</span>: red; &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<div class='help div1'>
+    <div class='aside'>
+        114514<span class='aaaaaaaa'>1919810</span>364364
+    </div>
+</div>
+<style>
+	.div1:not(.help) .aaaaaaaa { font-style: italic; }
+    .div1.help .aaaaaaaa { color: red; }
+</style>
+
+        <h2 id="选择子元素"   >
+          <a href="#选择子元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择子元素"></a> 选择子元素</h2>
+      
+<p><strong>子代选择符</strong>&gt;，选中元素的直接子元素（二者为严格的父子关系）。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* h1和strong必须为父子 */</span></span><br><span class="line"><span class="selector-tag">p</span>&gt; <span class="selector-tag">strong</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;p1&#x27;</span>&gt;</span>文字文字文字<span class="tag">&lt;<span class="name">strong</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>我会被选中<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">strong</span>&gt;</span>文字文字文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;p1&#x27;</span>&gt;</span>文字文字文字<span class="tag">&lt;<span class="name">em</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>我不被选中<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span>文字文字文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='p1'>文字文字文字<strong class='strongp'><em>我会被选中</em></strong>文字文字文字</p>
+<p class='p1'>文字文字文字<em><strong class='strongp'>我不被选中</strong></em>文字文字文字</p>
+<style>
+	.p1> .strongp { color: red; }
+</style>
+
+        <h2 id="选择紧邻同胞元素"   >
+          <a href="#选择紧邻同胞元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择紧邻同胞元素"></a> 选择紧邻同胞元素</h2>
+      
+<p><strong>紧邻同胞连接符</strong>+，选择元素紧跟其后的一个元素，它们一定是同级的兄弟元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&gt; <span class="selector-tag">ol</span>+ <span class="selector-tag">ul</span>&gt; <span class="selector-tag">li</span>+ <span class="selector-tag">li</span> &#123; <span class="attribute">color</span>: silver &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>ol item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>ol item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>ol item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    texttexttexttexttext</span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>ul item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>ul item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>ul item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<div class='plus'>
+    <ol>
+        <li>ol item 1</li>
+        <li>ol item 2</li>
+        <li>ol item 3</li>
+    </ol>
+    texttexttexttexttext
+    <ul>
+        <li>ul item 1</li>
+        <li>ul item 2</li>
+        <li>ul item 3</li>
+    </ul>
+</div>
+<style>
+    div.plus> ol+ ul> li+ li { color: gray }
+</style>
+
+        <h2 id="选择后续同胞元素"   >
+          <a href="#选择后续同胞元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择后续同胞元素"></a> 选择后续同胞元素</h2>
+      
+<p>Selectors Level3引入的<strong>一般同胞连接符</strong>~，选择该元素其后的所有兄弟元素。</p>
+<p>（未完待续）</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://cheriko.fun">CherikoM</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://cheriko.fun/2022/10/25/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(1)/">https://cheriko.fun/2022/10/25/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(1)/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css/">css</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/">css权威指南</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_alipay.md.png"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_wechat.md.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/25/%E5%89%8D%E7%AB%AF/%E4%BC%98%E8%AF%BE%E8%BE%BE/10%E6%9C%8825%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">10月25日做优课达</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/24/%E5%89%8D%E7%AB%AF/%E4%BC%98%E8%AF%BE%E8%BE%BE/10%E6%9C%8824%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><span class="paginator-prev__text">10月24日做优课达</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99"><span class="toc-number">1.</span> <span class="toc-text">
+           样式的基本规则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">1.1.</span> <span class="toc-text">
+           元素选择符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.2.</span> <span class="toc-text">
+           声明和关键字</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BE%A4%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text">
+           群组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%E7%BB%84%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">2.1.</span> <span class="toc-text">
+           群组选择符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">2.1.1.</span> <span class="toc-text">
+           通用选择符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%E7%BB%84%E5%A3%B0%E6%98%8E"><span class="toc-number">2.2.</span> <span class="toc-text">
+           群组声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%97%A7%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%96%B0%E5%85%83%E7%B4%A0"><span class="toc-number">2.3.</span> <span class="toc-text">
+           在旧浏览器中使用新元素</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E9%80%89%E6%8B%A9%E7%AC%A6%E5%92%8Cid%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">3.</span> <span class="toc-text">
+           类选择符和ID选择符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">3.1.</span> <span class="toc-text">
+           类选择符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E7%B1%BB"><span class="toc-number">3.2.</span> <span class="toc-text">
+           多个类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#id%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">3.3.</span> <span class="toc-text">
+           ID选择符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E7%B1%BB%E9%80%89%E6%8B%A9%E7%AC%A6%E5%92%8Cid%E9%80%89%E6%8B%A9%E7%AC%A6%E4%B9%8B%E9%97%B4%E9%80%89%E6%8B%A9"><span class="toc-number">3.4.</span> <span class="toc-text">
+           在类选择符和ID选择符之间选择</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">4.</span> <span class="toc-text">
+           属性选择符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">4.1.</span> <span class="toc-text">
+           简单属性选择符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E7%B2%BE%E5%87%86%E7%9A%84%E5%B1%9E%E6%80%A7%E5%80%BC%E9%80%89%E6%8B%A9"><span class="toc-number">4.2.</span> <span class="toc-text">
+           根据精准的属性值选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E5%80%BC%E9%80%89%E6%8B%A9"><span class="toc-number">4.3.</span> <span class="toc-text">
+           根据部分属性值选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E7%A0%B4%E6%8A%98%E5%8F%B7%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.3.1.</span> <span class="toc-text">
+           匹配破折号字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E8%AF%8D%E8%AF%AD"><span class="toc-number">4.3.2.</span> <span class="toc-text">
+           匹配词语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E5%AD%90%E4%B8%B2"><span class="toc-number">4.3.3.</span> <span class="toc-text">
+           匹配子串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E5%B1%9E%E6%80%A7%E5%80%BC%E5%BC%80%E5%A4%B4%E7%BB%93%E5%B0%BE%E7%9A%84%E5%AD%90%E4%B8%B2"><span class="toc-number">4.3.4.</span> <span class="toc-text">
+           匹配属性值开头&#x2F;结尾的子串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99%E7%9A%84%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">4.4.</span> <span class="toc-text">
+           不区分大小写的标识符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E9%80%89%E6%8B%A9"><span class="toc-number">5.</span> <span class="toc-text">
+           根据文档结构选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E4%BB%A3%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">5.1.</span> <span class="toc-text">
+           后代选择符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%AD%90%E5%85%83%E7%B4%A0"><span class="toc-number">5.2.</span> <span class="toc-text">
+           选择子元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%B4%A7%E9%82%BB%E5%90%8C%E8%83%9E%E5%85%83%E7%B4%A0"><span class="toc-number">5.3.</span> <span class="toc-text">
+           选择紧邻同胞元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%90%8E%E7%BB%AD%E5%90%8C%E8%83%9E%E5%85%83%E7%B4%A0"><span class="toc-number">5.4.</span> <span class="toc-text">
+           选择后续同胞元素</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/static/Cheriko_pic.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">CherikoM</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/CherikoM/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=1330949085/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://music.163.com/#/user/home?id=319313489" target="_blank" rel="noopener" data-popover="网易云音乐" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-record-vinyl"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/4582324/" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">B</span></a><a class="sidebar-ov-social-item" href="https://xiangyinhexuyuan.lofter.com/" target="_blank" rel="noopener" data-popover="Lofter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">L</span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/ying-mu-guo-8/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-zhihu"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>CherikoM</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,122,120" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":0,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
+    appKey: 'cLSG7K1iInnLJuU15DMJ8EJl',
+    notify: true,
+    verify: true,
+    placeholder: '鳖载着理发店？鸠载着理发店！',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-CN' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/heart.js"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.xml"></script><div class="aplayer" data-id="7701953645" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="true" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script></body></html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="1t_udMygpn_u_Ykuqyp-NsdEibEtikS7hpWfddBF3ao"><meta name="msvalidate.01" content="E140022059D9AD5124B0A64BF51BF030"><meta name="baidu-site-verification" content="code-qo8UKs4MrZ"><meta name="360-site-verification" content="055476a64ed98cc0d0c9eea5b04922e0"><meta name="sogou_site_verification" content="qQwiFLOWUL"><meta name="description" content="课程：Spring Web全栈 包含章节  2.1 Java注解 2.2 Spring Bean（上） 2.3 Spring Bean（上） 2.4 Spring Resource（上） 2.5 Spring Resource（下） 2.6 Spring Bean的生命周期 3.1 Spring Boot介绍 3.2 Spring Controller入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11月2日做优课达">
+<meta property="og:url" content="https://cheriko.fun/2022/11/02/Java/11%E6%9C%882%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/index.html">
+<meta property="og:site_name" content="Cherry🍒Garden">
+<meta property="og:description" content="课程：Spring Web全栈 包含章节  2.1 Java注解 2.2 Spring Bean（上） 2.3 Spring Bean（上） 2.4 Spring Resource（上） 2.5 Spring Resource（下） 2.6 Spring Bean的生命周期 3.1 Spring Boot介绍 3.2 Spring Controller入门">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2022/11/02/QQ20221102140638.jpg">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2022/11/02/ioc.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2022/11/02/beaninstance.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2022/11/02/springmvc1.png">
+<meta property="article:published_time" content="2022-11-02T05:50:04.077Z">
+<meta property="article:modified_time" content="2022-11-02T13:32:44.721Z">
+<meta property="article:author" content="CherikoM">
+<meta property="article:tag" content="优课达">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="全栈">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.imagehub.cc/images/2022/11/02/QQ20221102140638.jpg"><title>11月2日做优课达 | Cherry🍒Garden</title><link ref="canonical" href="https://cheriko.fun/2022/11/02/Java/11%E6%9C%882%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":3},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"light","highlight":"light","wordWrap":false},
+  reward: true,
+  fancybox: true,
+  zoomImage: {"gapAside":"100px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-inbox"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="far fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">11月2日做优课达</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2022-11-02</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-11-02</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon" data-popover="字数统计" data-popover-pos="up"><i class="far fa-file-word"></i></span><span class="post-meta-item__value">3.8k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon" data-popover="阅读时间" data-popover-pos="up"><i class="far fa-clock"></i></span><span class="post-meta-item__value">31分</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2022/11/02/Java/11%E6%9C%882%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/" data-flag-title="11月2日做优课达"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body"><ul>
+<li>课程：Spring Web全栈</li>
+<li>包含章节
+<ul>
+<li>2.1 Java注解</li>
+<li>2.2 Spring Bean（上）</li>
+<li>2.3 Spring Bean（上）</li>
+<li>2.4 Spring Resource（上）</li>
+<li>2.5 Spring Resource（下）</li>
+<li>2.6 Spring Bean的生命周期</li>
+<li>3.1 Spring Boot介绍</li>
+<li>3.2 Spring Controller入门</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+        <h1 id="21-java注解"   >
+          <a href="#21-java注解" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#21-java注解"></a> 2.1 Java注解</h1>
+      
+
+        <h2 id="知识点"   >
+          <a href="#知识点" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点"></a> 知识点</h2>
+      
+<p>注解Annotation是Java推出的一种注释机制，和普通注释的显著区别是：注解可以在编译、运行阶段读取，而注释不可以。</p>
+<p>注解给代码带来了很多的扩展空间，而且不会污染源代码，可以借助它实现一些增强功能。</p>
+<p>Spring中重度使用了注解，通过运行阶段动态的获取注解，从而完成很多自定义的行为。</p>
+<p>注解就是一个特殊的Java类，注解类里可以继续引用其他的注解类。</p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://s1.imagehub.cc/images/2022/11/02/QQ20221102140638.jpg"  alt="Spring Service注解的源代码" />
+      </p>
+
+        <h3 id="注解类的结构"   >
+          <a href="#注解类的结构" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#注解类的结构"></a> 注解类的结构</h3>
+      
+
+        <h4 id="1-target"   >
+          <a href="#1-target" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#1-target"></a> ① Target</h4>
+      
+<p><code>java.lang.annotation.Target</code>只有一个数组属性，用于设定该注解的目标范围，比如可以作用于类或方法等。</p>
+<p>因为是数组，所以可以同时设定多个范围，具体可以作用的类型配置在<code>java.lang.annotation.ElementType</code>枚举类里。</p>
+<p>例：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同时作用于类和方法上</span></span><br><span class="line"><span class="meta">@Target(&#123;ElementType.TYPE,ElementType.METHOD&#125;)</span></span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="elementtypetype"   >
+          <a href="#elementtypetype" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#elementtypetype"></a> ElementType.TYPE</h5>
+      
+<p>可以作用于类、接口类、枚举类上。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MessageServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">MessageService</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">()</span> &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="elementtypefield"   >
+          <a href="#elementtypefield" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#elementtypefield"></a> ElementType.FIELD</h5>
+      
+<p>可以作用于类的属性上。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MessageServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">MessageService</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> WorkspaceService workspaceService;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="elementtypemethod"   >
+          <a href="#elementtypemethod" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#elementtypemethod"></a> ElementType.METHOD</h5>
+      
+<p>可以作用于类的方法上。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MessageServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">MessageService</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">()</span> &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="elementtypeparameter"   >
+          <a href="#elementtypeparameter" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#elementtypeparameter"></a> ElementType.PARAMETER</h5>
+      
+<p>可以作用于类的参数。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MessageServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">MessageService</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">(<span class="meta">@RequestParam(&quot;msg&quot;)</span>String msg)</span> &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="string">&quot;Hello &quot;</span>+msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="2-retention"   >
+          <a href="#2-retention" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#2-retention"></a> ② Retention</h4>
+      
+<p><code>java.lang.annotation.Retention</code>用于声明注解的生命周期，即在Java编译、运行的哪个环节有效。</p>
+<p>它的值定义在<code>java.lang.annotation.RetentionPolicy</code>枚举类里，有三个值可以选择：</p>
+<ul>
+<li><code>RetentionPolicy.SOURCE</code>：纯注释作用。</li>
+<li><code>RetentionPolicy.CLASS</code>：在编译阶段有效。</li>
+<li><code>RetentionPolicy.RUNTIME</code>：在运行时有效。</li>
+</ul>
+<p>如：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在运行期间有效</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br></pre></td></tr></table></div></figure>
+<p>如果是自己定义的注解，一般都会设置成RUNTIME。</p>
+
+        <h4 id="3-documented"   >
+          <a href="#3-documented" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#3-documented"></a> ③ Documented</h4>
+      
+<p><code>java.lang.annotation.Documented</code>用于将注解中的元素包含到JavaDoc文档中，注解类一般都会添加这个注解。</p>
+
+        <h4 id="4-interface"   >
+          <a href="#4-interface" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#4-interface"></a> ④ @interface</h4>
+      
+<p><code>@interface</code>声明当前的类是注解</p>
+
+        <h4 id="5-annotation属性"   >
+          <a href="#5-annotation属性" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#5-annotation属性"></a> ⑤ Annotation属性</h4>
+      
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">value</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;&quot;</span>;</span><br></pre></td></tr></table></div></figure>
+<p>类似普通类的属性，约定了属性的类型（基础类型）和属性名称（默认为value，引用时可省略），default代表默认值。</p>
+
+        <h3 id="注解类的使用"   >
+          <a href="#注解类的使用" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#注解类的使用"></a> 注解类的使用</h3>
+      
+<p>引用Service注解，注解也是Java类，所以一样需要import：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>也可以写成：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service(value=&quot;Demo&quot;)</span></span><br></pre></td></tr></table></div></figure>
+<p>value是默认名称，可以缩写，所以等同于：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service(&quot;Demo&quot;)</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p>注解属性是可以有多个的，例如：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(ElementType.PARAMETER)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> RequestParam &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AliasFor(&quot;name&quot;)</span></span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@AliasFor(&quot;value&quot;)</span></span><br><span class="line">    String <span class="title function_">name</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">required</span><span class="params">()</span> <span class="keyword">default</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    String <span class="title function_">defaultValue</span><span class="params">()</span> <span class="keyword">default</span> ValueConstants.DEFAULT_NONE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><code>@AliasFor(&quot;name&quot;)</code>是别名的意思，就是说这个属性用这个别名也可以访问到，所以下面三行代码是等价的：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestParam(&quot;key&quot;)</span></span><br><span class="line"><span class="meta">@RequestParam(value=&quot;key&quot;)</span></span><br><span class="line"><span class="meta">@RequestParam(name=&quot;key&quot;)</span></span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="练习"   >
+          <a href="#练习" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习"></a> 练习</h2>
+      
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Song.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Song</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String lyrics;</span><br><span class="line">    <span class="keyword">private</span> String subjectId;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(String id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getLyrics</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> lyrics;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setLyrics</span><span class="params">(String lyrics)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.lyrics = lyrics;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getSubjectId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> subjectId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSubjectId</span><span class="params">(String subjectId)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.subjectId = subjectId;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Subject.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Subject</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String cover;</span><br><span class="line">    <span class="keyword">private</span> String musician;</span><br><span class="line">    <span class="keyword">private</span> LocalDate publishedDate;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Song&gt; songs;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(String id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getCover</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cover;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCover</span><span class="params">(String cover)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cover = cover;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMusician</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> musician;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMusician</span><span class="params">(String musician)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.musician = musician;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> LocalDate <span class="title function_">getPublishedDate</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> publishedDate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPublishedDate</span><span class="params">(LocalDate publishedDate)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.publishedDate = publishedDate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> List&lt;Song&gt; <span class="title function_">getSongs</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> songs;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSongs</span><span class="params">(List&lt;Song&gt; songs)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.songs = songs;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SongService.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">SongService</span> &#123;</span><br><span class="line">    Song <span class="title function_">get</span><span class="params">(String songId)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SongServiceImpl.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SongServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">SongService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, Song&gt; songMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="type">Song</span> <span class="variable">song</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Song</span>();</span><br><span class="line">        song.setId(<span class="string">&quot;001&quot;</span>);</span><br><span class="line">        song.setSubjectId(<span class="string">&quot;s001&quot;</span>);</span><br><span class="line">        song.setLyrics(<span class="string">&quot;...&quot;</span>);</span><br><span class="line">        song.setName(<span class="string">&quot;成都&quot;</span>);</span><br><span class="line">        songMap.put(song.getId(), song);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Song <span class="title function_">get</span><span class="params">(String songId)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> songMap.get(songId);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Application.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line"><span class="keyword">import</span> fm.douban.service.SongService;</span><br><span class="line"><span class="keyword">import</span> fm.douban.model.Song;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Application</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Application</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 实例化 IoC 容器</span></span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(<span class="string">&quot;fm.douban&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取 SongService</span></span><br><span class="line">        <span class="type">SongService</span> <span class="variable">songService</span> <span class="operator">=</span> context.getBean(SongService.class);</span><br><span class="line">        <span class="comment">// 调用 songService.get(&quot;001&quot;) 方法，得到 Song</span></span><br><span class="line">        <span class="type">Song</span> <span class="variable">song</span> <span class="operator">=</span> songService.get(<span class="string">&quot;001&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 打印 Song 的id和名称</span></span><br><span class="line">        System.out.println(<span class="string">&quot;得到歌曲：&quot;</span> + song.getId() + <span class="string">&#x27;,&#x27;</span> + song.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+
+        <h1 id="22-spring-bean上"   >
+          <a href="#22-spring-bean上" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#22-spring-bean上"></a> 2.2 Spring Bean（上）</h1>
+      
+
+        <h2 id="知识点-2"   >
+          <a href="#知识点-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-2"></a> 知识点</h2>
+      
+<p>IoC（Inversion of Control，控制反转）是面向对象编程中的一种设计原则，可以减低代码间的耦合度，也是Spring框架最核心的组件，没有IoC容器就没有Spring框架。</p>
+<p>Spring中主要通过依赖注入（DI，Dependency Injection）实现IoC</p>
+<p>所有的Java对象都可以被Spring的IoC容器转变为Bean（Spring对象的一种称呼），构成应用程序主干和由Spring IoC容器管理的对象称为beans。</p>
+<p>beans和它们之间的依赖关系反映在容器使用的配置元数据中，基本所有的Bean都是由接口+实现类完成的，用户若想获取Bean的实例可以直接从IoC容器获取，无需关心实现类。</p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://s1.imagehub.cc/images/2022/11/02/ioc.png"  alt="" />
+      </p>
+<hr />
+<p>Spring主要有两种配置元数据的方式，一种是基于XML，另一种是基于注解。主流方案是基于注解。</p>
+<p><code>org.springframework.context.ApplicationContext</code>接口类定义容器的对外服务，通过这个接口可以轻松从IoC容器中得到Bean对象。启动Java程序时必须先启动IoC容器。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注解类型的IoC容器对应的类</span></span><br><span class="line">org.springframework.context.annotation.AnnotationConfigApplicationContext</span><br></pre></td></tr></table></div></figure>
+<p>运行这行代码启动IoC容器</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//启动IoC容器，并加载该包下的Bean</span></span><br><span class="line"><span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(<span class="string">&quot;xxx（包名）&quot;</span>);</span><br><span class="line"><span class="comment">//只要引用了Spring注解，并位于该包下的Bean，都会被加载</span></span><br></pre></td></tr></table></div></figure>
+<p><code>AnnotationConfigApplicationContext</code>这个类的构造函数有两种：</p>
+<ul>
+<li><code>AnnotationConfigApplicationContext(String basePackages)</code>根据包名实例化。</li>
+<li><code>AnnotationConfigApplicationContext(Class clazz)</code>根据自定义包扫描行为实例化。</li>
+</ul>
+<hr />
+<p>Spring Bean的注解有以下几种：</p>
+<ul>
+<li><code>org.springframework.stereotype.Component</code>：<code>@Component</code>，通用的Bean注解，其他注解都是它的扩展。</li>
+<li><code>org.springframework.stereotype.Service</code>：<code>@Service</code>，代表Service Bean。</li>
+<li><code>org.springframework.stereotype.Controller</code>：<code>@Controller</code>，用于Web Bean</li>
+<li><code>org.springframework.stereotype.Repository</code>：<code>@Repository</code>，用于持久化相关Bean</li>
+</ul>
+<p>这四个注解都可以被IoC容器加载，一般使用<code>@Service</code>，如果是Web服务器就使用<code>@Controller</code>。</p>
+
+        <h2 id="练习-2"   >
+          <a href="#练习-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习-2"></a> 练习</h2>
+      
+<p>（与2.1相同）</p>
+
+        <h1 id="spring-bean下"   >
+          <a href="#spring-bean下" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#spring-bean下"></a> Spring Bean（下）</h1>
+      
+
+        <h2 id="知识点-3"   >
+          <a href="#知识点-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-3"></a> 知识点</h2>
+      
+<p>启动后的第二步就是真正地完成依赖注入。</p>
+<p>依赖注入也是一种编程思想，一种获取其他实例的规范。</p>
+<hr />
+<p>如果某一实现类依赖的接口太多，那么就要大量编码，new很多服务实例，导致项目极易出错，勘误也比较困难。</p>
+<p>Spring可以用<code>@Service</code>把服务实现，都标记成Spring Bean，然后在任何需要使用服务的地方用<code>@Autowired</code>注解标记，告诉Spring这里要注入实现类的实例。</p>
+<p>项目启动过程中，Spring会自动实例化服务实现类，然后自动注入到变量中，不需要开发者再大量的new了。</p>
+<p><code>@Auriwired</code>完整的类路径是<code>org.springframework.beans.factory.annotation.Autowired</code>。</p>
+
+        <h2 id="练习-3"   >
+          <a href="#练习-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习-3"></a> 练习</h2>
+      
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SubjectService.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">SubjectService</span> &#123;</span><br><span class="line"></span><br><span class="line">    Subject <span class="title function_">get</span><span class="params">(String subjectId)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SubjectServiceImpl.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SubjectServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">SubjectService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> SongService songService;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, Subject&gt; subjectMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="type">Subject</span> <span class="variable">subject</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Subject</span>();</span><br><span class="line">        subject.setId(<span class="string">&quot;s001&quot;</span>);</span><br><span class="line">        subject.setName(<span class="string">&quot;成都&quot;</span>);</span><br><span class="line">        subject.setMusician(<span class="string">&quot;赵雷&quot;</span>);</span><br><span class="line">        subjectMap.put(subject.getId(), subject);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Subject <span class="title function_">get</span><span class="params">(String subjectId)</span> &#123;</span><br><span class="line">        <span class="type">Subject</span> <span class="variable">subject</span> <span class="operator">=</span> subjectMap.get(subjectId);</span><br><span class="line">        <span class="comment">//调用 SongService 获取专辑歌曲</span></span><br><span class="line">        List&lt;Song&gt; songs = songService.list(subjectId);</span><br><span class="line">        subject.setSongs(songs);</span><br><span class="line">        <span class="keyword">return</span> subject;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Application.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Application</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Application</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(<span class="string">&quot;fm.douban&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">SubjectService</span> <span class="variable">subjectService</span> <span class="operator">=</span> context.getBean(SubjectService.class);</span><br><span class="line">        <span class="type">Subject</span> <span class="variable">subject</span> <span class="operator">=</span> subjectService.get(<span class="string">&quot;s001&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;专辑：&quot;</span> + subject.getName() + <span class="string">&quot; 音乐家：&quot;</span> + subject.getMusician() + <span class="string">&quot; 包含：&quot;</span> + subject.getSongs().size() + <span class="string">&quot; 首歌&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<p>（其余与2.1相同）</p>
+
+        <h1 id="24-spring-resource上"   >
+          <a href="#24-spring-resource上" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#24-spring-resource上"></a> 2.4 Spring Resource（上）</h1>
+      
+
+        <h2 id="知识点-4"   >
+          <a href="#知识点-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-4"></a> 知识点</h2>
+      
+<p>Spring Framework作为完整的Java企业级解决方案，也拥有自己的文件处理方案：Spring Resource。</p>
+<p>当文件位于<code>src/main/resources</code>目录下时，打包后资源路径可能出问题（Maven工程编译后会去掉<code>src/main/java</code>和<code>src/main/resources</code>目录，jar文件是从包路径开始的）。</p>
+
+        <h3 id="classpath"   >
+          <a href="#classpath" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#classpath"></a> classpath</h3>
+      
+<p>在Java内部，一般把文件路径称为classpath，所以读取内部的文件就是从classpath内读取。</p>
+<p>classpath指定的文件不能解析成File对象，但是可以解析成InputStream，借助Java IO可以读取出来。</p>
+<p>classpath类似虚拟目录，根目录从/开始，代表<code>src/main/java</code>或<code>src/main/resources</code>目录。</p>
+<p>可以使用common-io这个库来读取文件：</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//（假设类名为Test）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//读取 classpath 的内容</span></span><br><span class="line"><span class="comment">//从Java运行的类加载器（ClassLoader）实例中查找文件</span></span><br><span class="line"><span class="comment">//Test.class指当前的Test.java编译后的Java class文件</span></span><br><span class="line"><span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> Test.class.getClassLoader().getResourceAsStream(<span class="string">&quot;data.json&quot;</span>);</span><br><span class="line"><span class="comment">//使用 commons-io 库读取文本</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="type">String</span> <span class="variable">content</span> <span class="operator">=</span> IOUtils.toString(in, <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">  System.out.println(content);</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">  <span class="comment">//IOUtils.toString 有可能会抛出异常，需要我们捕获一下</span></span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h1 id="spring-resource下"   >
+          <a href="#spring-resource下" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#spring-resource下"></a> Spring Resource（下）</h1>
+      
+
+        <h2 id="知识点-5"   >
+          <a href="#知识点-5" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-5"></a> 知识点</h2>
+      
+<p>在Spring中定义了一些与文件相关的类。</p>
+<p><code>org.springframework.core.io.Resource</code>类能封装文件，它既可以支持普通的File，也可以支持classpath文件，并把它们都封装成Resource并统一加载。</p>
+<p><code>org.springframework.core.io.ResourceLoader</code>服务提供任意文件的读写，可以在任意Spring Bean中引入ResourceLoader。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> ResourceLoader loader;</span><br></pre></td></tr></table></div></figure>
+<p>写一个这样的接口，可以对读取文件这一操作进行复用</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">FileService</span> &#123;</span><br><span class="line"></span><br><span class="line">    String <span class="title function_">getContent</span><span class="params">(String name)</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//----------------</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FileServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">FileService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ResourceLoader loader;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getContent</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> loader.getResource(name).getInputStream();</span><br><span class="line">            <span class="keyword">return</span> IOUtils.toString(in,<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>使用：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">FileService</span> <span class="variable">fileService</span> <span class="operator">=</span> context.getBean(FileService.class);</span><br><span class="line"><span class="comment">//classpath文件</span></span><br><span class="line"><span class="type">String</span> <span class="variable">content</span> <span class="operator">=</span> fileService.getContent(<span class="string">&quot;classpath:data/urls.txt&quot;</span>);</span><br><span class="line">System.out.println(content);</span><br><span class="line"><span class="comment">//工程目录下文件mywork/readme.md</span></span><br><span class="line"><span class="type">String</span> <span class="variable">content2</span> <span class="operator">=</span> fileService.getContent(<span class="string">&quot;file:mywork/readme.md&quot;</span>);</span><br><span class="line">System.out.println(content2);</span><br><span class="line"><span class="comment">//远程文件</span></span><br><span class="line"><span class="type">String</span> <span class="variable">content3</span> <span class="operator">=</span> fileService.getContent(<span class="string">&quot;https://www.zhihu.com/question/34786516/answer/822686390&quot;</span>);</span><br><span class="line">System.out.println(content3);</span><br></pre></td></tr></table></div></figure>
+
+        <h1 id="26-spring-bean的生命周期"   >
+          <a href="#26-spring-bean的生命周期" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#26-spring-bean的生命周期"></a> 2.6 Spring Bean的生命周期</h1>
+      
+
+        <h2 id="知识点-6"   >
+          <a href="#知识点-6" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-6"></a> 知识点</h2>
+      
+<p>为了更好地管理Bean，Spring Bean提供了生命周期管理，极大地提高了工程化的能力。</p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://s1.imagehub.cc/images/2022/11/02/beaninstance.png"  alt="" />
+      </p>
+<p>大部分时候都只用到init方法，这个init方法可以是任意名称的，只需要注解<code>@PostConstruct</code>声明它。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostConstruct</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;启动啦&quot;</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></div></figure>
+<p>在Spring Bean启动后，该方法会自动执行，路径为<code>javax.annotation.PostConstruc</code></p>
+
+        <h2 id="练习-4"   >
+          <a href="#练习-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习-4"></a> 练习</h2>
+      
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SongList.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SongList</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String cover;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line">    <span class="keyword">private</span> LocalDate publishedDate;</span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; songIds;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(String id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getCover</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cover;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCover</span><span class="params">(String cover)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cover = cover;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getAuthor</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> author;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAuthor</span><span class="params">(String author)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.author = author;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> LocalDate <span class="title function_">getPublishedDate</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> publishedDate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPublishedDate</span><span class="params">(LocalDate publishedDate)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.publishedDate = publishedDate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> List&lt;String&gt; <span class="title function_">getSongIds</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> songIds;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSongIds</span><span class="params">(List&lt;String&gt; songIds)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.songIds = songIds;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SongListService.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">SongListService</span> &#123;</span><br><span class="line"></span><br><span class="line">    SongList <span class="title function_">get</span><span class="params">(String songListId)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SongListServiceImpl.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SongListServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">SongListService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, SongList&gt; songListMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ResourceLoader loader;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> loader.getResource(<span class="string">&quot;classpath:data/songlists.json&quot;</span>).getInputStream();</span><br><span class="line">            <span class="type">String</span> <span class="variable">json</span> <span class="operator">=</span> IOUtils.toString(in, <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">            SongList[] list = JSON.parseObject(json, SongList[].class);</span><br><span class="line">            <span class="keyword">for</span> (SongList songList: list) &#123;</span><br><span class="line">                songListMap.put(songList.getId(), songList);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.fillInStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> SongList <span class="title function_">get</span><span class="params">(String songId)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> songListMap.get(songId);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Application.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line">    </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Application</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Application</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(<span class="string">&quot;fm.douban&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">SongListService</span> <span class="variable">songListService</span> <span class="operator">=</span> context.getBean(SongListService.class);</span><br><span class="line">        <span class="type">SongList</span> <span class="variable">songList</span> <span class="operator">=</span> songListService.get(<span class="string">&quot;41299401&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;歌单：&quot;</span>+songList.getName());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<p>（其余与2.1相同）</p>
+
+        <h1 id="31-spring-boot介绍"   >
+          <a href="#31-spring-boot介绍" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#31-spring-boot介绍"></a> 3.1 Spring Boot介绍</h1>
+      
+
+        <h2 id="知识点-7"   >
+          <a href="#知识点-7" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-7"></a> 知识点</h2>
+      
+<p>Spring Boot是Spring团队打造的面向微服务的框架（严格来说它不能算一个框架，它更像是一个方案）。</p>
+<p>它极大地降低了Java Web工程的创建、运行和部署的难度。</p>
+<p>Spring Boot的核心还是Spring，只是多了一些工程化的方案，例如：</p>
+<ul>
+<li>Java Web容器的嵌入集成（默认继承了Tomcat，所以就不用再额外部署Tomcat了）。</li>
+<li>自定义工程打包格式，能直接把一个Java Web工程转化为普通的Java工程，启动一个main方法就可以启动Spring工程，极大地降低了开发难度。</li>
+<li>默认集成了大量第三方框架和服务，如数据库连接、NoSQL、安全等，不用担心复杂的Maven依赖，开箱即用。</li>
+<li>提供了标准的属性配置文件，支持应用的参数动态配置，让代码运行更加灵活强大。</li>
+</ul>
+<p>在官网<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://start.spring.io/" >Spring Initializr</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>可以创建一个Spring Boot工程。</p>
+
+        <h1 id="32-spring-controller入门"   >
+          <a href="#32-spring-controller入门" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#32-spring-controller入门"></a> 3.2 Spring Controller入门</h1>
+      
+
+        <h2 id="知识点-8"   >
+          <a href="#知识点-8" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-8"></a> 知识点</h2>
+      
+<p>Java Web的规范是Servlet技术，所以所有的Java Web都实现了Servlet API的定义。</p>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>随着响应式编程技术的普及，Servlet也不再是唯一的标准了。</p>
+    </div>
+  
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://s1.imagehub.cc/images/2022/11/02/springmvc1.png"  alt="" />
+      </p>
+<p>过程：一个网页请求进入到服务器后，首先进入的是Java Web服务器，然后进入到Spring Boot应用，最后匹配到某一个Spring Controller，然后路由到具体某一个Bean的方法，执行完后返回结果，输出到客户端。</p>
+<p>只要掌握Spring Controller就可以自己提供一个Web服务了。</p>
+<p>Spring Controller技术的三个核心点：</p>
+<ul>
+<li>Bean的配置：Controller注解运用</li>
+<li>网络资源的加载：加载网页</li>
+<li>网址路由的配置：RequestMapping注解运用</li>
+</ul>
+<p>一般会把controller放在control子包里。</p>
+
+        <h3 id="controller注解"   >
+          <a href="#controller注解" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#controller注解"></a> Controller注解</h3>
+      
+<p>Spring Controller本身也是一个Spring Bean，只是它多提供了一个Web能力，只需在类上提供一个<code>@Controller</code>注解即可</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloControl</span> &#123;</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="加载网页"   >
+          <a href="#加载网页" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#加载网页"></a> 加载网页</h3>
+      
+<p>在Spring Boot应用中，一般把网页存放在src/main/resources/static目录下。</p>
+<p>controller会自动加载static下的html内容。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloControl</span> &#123;</span><br><span class="line">	<span class="comment">//定义返回类型为String</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">say</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//返回html文件路径</span></span><br><span class="line">        <span class="comment">//这里实际加载的是src/main/resources/static/hello.html文件</span></span><br><span class="line">        <span class="comment">//resources属于classpath类型的文件，Spring Boot能自动加载，所以只需要写hello.html，而且不需要额外添加static</span></span><br><span class="line">        <span class="comment">//如果html文件路径为src/main/resources/static/html/hello.html，则代码应写成return &quot;html/hello.html&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello.html&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="requestmapping注解"   >
+          <a href="#requestmapping注解" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#requestmapping注解"></a> RequestMapping注解</h3>
+      
+<p>只要在提供Web访问的方法上添加<code>@RequestMapping</code>注解就可以完成路由配置。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloControl</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">say</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;html/hello.html&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="练习-5"   >
+          <a href="#练习-5" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习-5"></a> 练习</h2>
+      
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SongListControl.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.control;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SongListControl</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/songlist&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">index</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;html/songList.html&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://cheriko.fun">CherikoM</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://cheriko.fun/2022/11/02/Java/11%E6%9C%882%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/">https://cheriko.fun/2022/11/02/Java/11%E6%9C%882%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E4%BC%98%E8%AF%BE%E8%BE%BE/">优课达</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/Java/">Java</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/Spring/">Spring</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%85%A8%E6%A0%88/">全栈</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_alipay.md.png"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_wechat.md.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/02/%E6%97%A5%E5%B8%B8/%E5%BC%94%E5%9B%BE/%E5%BC%94%E5%9B%BE%E4%B8%80%E5%A0%86%20Vol.3/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">弔图一堆 Vol.3</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/11/01/Java/11%E6%9C%881%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><span class="paginator-prev__text">11月1日做优课达</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#21-java%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">
+           2.1 Java注解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">
+           知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%E7%B1%BB%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+           注解类的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+           注解类的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-spring-bean%E4%B8%8A"><span class="toc-number">2.</span> <span class="toc-text">
+           2.2 Spring Bean（上）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-2"><span class="toc-number">2.1.</span> <span class="toc-text">
+           知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0-2"><span class="toc-number">2.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#spring-bean%E4%B8%8B"><span class="toc-number">3.</span> <span class="toc-text">
+           Spring Bean（下）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-3"><span class="toc-number">3.1.</span> <span class="toc-text">
+           知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0-3"><span class="toc-number">3.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#24-spring-resource%E4%B8%8A"><span class="toc-number">4.</span> <span class="toc-text">
+           2.4 Spring Resource（上）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-4"><span class="toc-number">4.1.</span> <span class="toc-text">
+           知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#classpath"><span class="toc-number">4.1.1.</span> <span class="toc-text">
+           classpath</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#spring-resource%E4%B8%8B"><span class="toc-number">5.</span> <span class="toc-text">
+           Spring Resource（下）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-5"><span class="toc-number">5.1.</span> <span class="toc-text">
+           知识点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#26-spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">6.</span> <span class="toc-text">
+           2.6 Spring Bean的生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-6"><span class="toc-number">6.1.</span> <span class="toc-text">
+           知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0-4"><span class="toc-number">6.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#31-spring-boot%E4%BB%8B%E7%BB%8D"><span class="toc-number">7.</span> <span class="toc-text">
+           3.1 Spring Boot介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-7"><span class="toc-number">7.1.</span> <span class="toc-text">
+           知识点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#32-spring-controller%E5%85%A5%E9%97%A8"><span class="toc-number">8.</span> <span class="toc-text">
+           3.2 Spring Controller入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-8"><span class="toc-number">8.1.</span> <span class="toc-text">
+           知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#controller%E6%B3%A8%E8%A7%A3"><span class="toc-number">8.1.1.</span> <span class="toc-text">
+           Controller注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5"><span class="toc-number">8.1.2.</span> <span class="toc-text">
+           加载网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#requestmapping%E6%B3%A8%E8%A7%A3"><span class="toc-number">8.1.3.</span> <span class="toc-text">
+           RequestMapping注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0-5"><span class="toc-number">8.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/static/Cheriko_pic.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">CherikoM</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/CherikoM/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=1330949085/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://music.163.com/#/user/home?id=319313489" target="_blank" rel="noopener" data-popover="网易云音乐" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-record-vinyl"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/4582324/" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">B</span></a><a class="sidebar-ov-social-item" href="https://xiangyinhexuyuan.lofter.com/" target="_blank" rel="noopener" data-popover="Lofter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">L</span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/ying-mu-guo-8/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-zhihu"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>CherikoM</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,122,120" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":0,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
+    appKey: 'cLSG7K1iInnLJuU15DMJ8EJl',
+    notify: true,
+    verify: true,
+    placeholder: '鳖载着理发店？鸠载着理发店！',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-CN' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/heart.js"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.xml"></script><div class="aplayer" data-id="7701953645" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="true" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script></body></html>

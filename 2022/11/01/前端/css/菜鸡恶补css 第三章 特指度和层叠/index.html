@@ -1,0 +1,584 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="1t_udMygpn_u_Ykuqyp-NsdEibEtikS7hpWfddBF3ao"><meta name="msvalidate.01" content="E140022059D9AD5124B0A64BF51BF030"><meta name="baidu-site-verification" content="code-qo8UKs4MrZ"><meta name="360-site-verification" content="055476a64ed98cc0d0c9eea5b04922e0"><meta name="sogou_site_verification" content="qQwiFLOWUL"><meta name="description" content="接着啃接着啃。 我是鸽子，咕咕咕咕咕咕咕咕。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菜鸡恶补css 第三章 特指度和层叠">
+<meta property="og:url" content="https://cheriko.fun/2022/11/01/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E7%89%B9%E6%8C%87%E5%BA%A6%E5%92%8C%E5%B1%82%E5%8F%A0/index.html">
+<meta property="og:site_name" content="Cherry🍒Garden">
+<meta property="og:description" content="接着啃接着啃。 我是鸽子，咕咕咕咕咕咕咕咕。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-01T06:04:09.513Z">
+<meta property="article:modified_time" content="2022-11-01T06:04:33.987Z">
+<meta property="article:author" content="CherikoM">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="css权威指南">
+<meta name="twitter:card" content="summary"><title>菜鸡恶补css 第三章 特指度和层叠 | Cherry🍒Garden</title><link ref="canonical" href="https://cheriko.fun/2022/11/01/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E7%89%B9%E6%8C%87%E5%BA%A6%E5%92%8C%E5%B1%82%E5%8F%A0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":3},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"light","highlight":"light","wordWrap":false},
+  reward: true,
+  fancybox: true,
+  zoomImage: {"gapAside":"100px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-inbox"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="far fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">菜鸡恶补css 第三章 特指度和层叠</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2022-11-01</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-11-01</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon" data-popover="字数统计" data-popover-pos="up"><i class="far fa-file-word"></i></span><span class="post-meta-item__value">2.4k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon" data-popover="阅读时间" data-popover-pos="up"><i class="far fa-clock"></i></span><span class="post-meta-item__value">14分</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2022/11/01/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E7%89%B9%E6%8C%87%E5%BA%A6%E5%92%8C%E5%B1%82%E5%8F%A0/" data-flag-title="菜鸡恶补css 第三章 特指度和层叠"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body"><p>接着啃接着啃。</p>
+<p>我是鸽子，咕咕咕咕咕咕咕咕。</p>
+<span id="more"></span>
+<p>文档的树状结构不仅使人能根据元素的祖辈、属性、同胞元素等创建选择符选择元素，还是css继承的核心。</p>
+<p><strong>继承</strong>是指把一个元素的某些属性值传给其后代的机制。确定应该把哪些值应用到元素上时，用户代理不仅要考虑继承，还考虑声明的特指度和声明的来源，这个过程即<strong>层叠</strong>。</p>
+
+        <h1 id="特指度"   >
+          <a href="#特指度" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#特指度"></a> 特指度</h1>
+      
+<p>同一个元素可能会被两个或多个规则选择，而且每个规则的选择符不尽相同，如果它们声明的某样式起冲突，用户代理会计算每个规则中选择符的特指度，特指度最高的声明能胜出并将该样式应用在元素上。</p>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>所有样式冲突（包括特指度）都由层叠处理。</p>
+    </div>
+  
+<hr />
+<p>选择符的特指度由选择符本身的组成成分决定，一个特指度值由四部分构成（0,0,0,0）：</p>
+<ul>
+<li>选择符中的每个ID属性值加0,1,0,0。</li>
+<li>选择符中的每个类属性值、属性选择或伪类加0,0,1,0。</li>
+<li>选择符中的每个元素和伪元素加0,0,0,1。</li>
+<li>连接符和通用选择符不增加特指度。</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: red; &#125;							<span class="comment">/* 特指度 = 0,0,0,1 */</span></span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">em</span> &#123; <span class="attribute">color</span>: purple; &#125;						<span class="comment">/* 特指度 = 0,0,0,2 */</span></span><br><span class="line"><span class="selector-class">.grape</span> &#123; <span class="attribute">color</span>: purple; &#125;					<span class="comment">/* 特指度 = 0,0,1,0 */</span></span><br><span class="line">*<span class="selector-class">.bright</span> &#123; <span class="attribute">color</span>: yellow; &#125;					<span class="comment">/* 特指度 = 0,0,1,0 */</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.bright</span> <span class="selector-tag">em</span><span class="selector-class">.dark</span> &#123; <span class="attribute">color</span>: maroon; &#125;			<span class="comment">/* 特指度 = 0,0,2,2 */</span></span><br><span class="line"><span class="selector-id">#id514</span> &#123; <span class="attribute">color</span>: blue; &#125;						<span class="comment">/* 特指度 = 0,1,0,0 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#sidebar</span> *<span class="selector-attr">[href]</span> &#123; <span class="attribute">color</span>: silver; &#125;		<span class="comment">/* 特指度 = 0,1,1,1 */</span></span><br></pre></td></tr></table></div></figure>
+<p>特指度值是从左向右比较的，而且不存在进位。</p>
+
+        <h2 id="声明和特指度"   >
+          <a href="#声明和特指度" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#声明和特指度"></a> 声明和特指度</h2>
+      
+<p>选择符的特指度确定之后，其值将赋予关联的每个声明。</p>
+<p>为了计算特指度，用户代理必须把规则“打散”成单独的规则。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 写的是这样 */</span></span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span><span class="selector-class">.section</span> &#123; <span class="attribute">color</span>: silver; <span class="attribute">background</span>: black; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 被用户代理拆成这样 */</span></span><br><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: silver; &#125;					<span class="comment">/* 特指度 = 0,0,0,1 */</span></span><br><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">background</span>: black; &#125;				<span class="comment">/* 特指度 = 0,0,0,1 */</span></span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-class">.section</span> &#123; <span class="attribute">color</span>: silver; &#125;			<span class="comment">/* 特指度 = 0,0,1,1 */</span></span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-class">.section</span> &#123; <span class="attribute">background</span>: black; &#125;		<span class="comment">/* 特指度 = 0,0,1,1 */</span></span><br></pre></td></tr></table></div></figure>
+<p>在任何情况下，用户代理都会确定哪些规则和元素匹配，然后找出所有相关声明，计算各自的特指度，判断哪些规则胜出，再将胜出的规则应用到元素上，得到装饰后的结果。</p>
+<p>每个元素、选择符都要经历这一系列操作，用户代理能自动处理这一切。这个行为是<strong>层叠</strong>的重要部分。</p>
+
+        <h2 id="通用选择符的特指度"   >
+          <a href="#通用选择符的特指度" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#通用选择符的特指度"></a> 通用选择符的特指度</h2>
+      
+<p>通用选择符不增加特指度，即它的特指度为0,0,0,0，但这与没有特指度是不同的。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 第一个声明胜出 */</span></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: black; &#125;		<span class="comment">/* 特指度 = 0,0,0,2 */</span></span><br><span class="line">* &#123; <span class="attribute">color</span>: gray; &#125;			<span class="comment">/* 特指度 = 0,0,0,0 */</span></span><br></pre></td></tr></table></div></figure>
+<p>包含通用选择符的选择符，它的特指度不因拥有通用选择符而发生改变。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span>					<span class="comment">/* 特指度 = 0,0,0,2 */</span></span><br><span class="line"><span class="selector-tag">body</span> * <span class="selector-tag">strong</span>			<span class="comment">/* 特指度 = 0,0,0,2 */</span></span><br></pre></td></tr></table></div></figure>
+<p>而连结符不同，它根本没有特指度，因此连结符对选择符的总特指度没有影响。</p>
+
+        <h2 id="id和属性选择符的特指度"   >
+          <a href="#id和属性选择符的特指度" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#id和属性选择符的特指度"></a> ID和属性选择符的特指度</h2>
+      
+<p>ID选择符和选择id属性的选择符在特指度上是有区别的。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 第二个声明胜出 */</span></span><br><span class="line"><span class="selector-tag">html</span>&gt; <span class="selector-tag">body</span> <span class="selector-tag">table</span> <span class="selector-tag">tr</span><span class="selector-attr">[id=<span class="string">&#x27;totals&#x27;</span>]</span> <span class="selector-tag">td</span> <span class="selector-tag">ul</span>&gt; <span class="selector-tag">li</span> &#123; <span class="attribute">color</span>: maroon; &#125;	<span class="comment">/* 特指度 = 0,0,1,7 */</span></span><br><span class="line"><span class="selector-tag">li</span><span class="selector-id">#answer</span> &#123; <span class="attribute">color</span>: navy; &#125;										<span class="comment">/* 特指度 = 0,1,0,1 */</span></span><br></pre></td></tr></table></div></figure>
+<p>ID选择符贡献的特指度为0,1,0,0，属性选择符贡献的特指度为0,0,1,0。</p>
+
+        <h2 id="行内样式的特指度"   >
+          <a href="#行内样式的特指度" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#行内样式的特指度"></a> 行内样式的特指度</h2>
+      
+<p>行内样式声明的特指度比其他声明都高，特指度为1,0,0,0。</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">h1</span><span class="selector-id">#yajue</span> &#123; <span class="attribute">color</span>: brown; &#125;									<span class="comment">/* 特指度 = 0,1,0,1 */</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&#x27;yajue&#x27;</span> <span class="attr">style</span>=<span class="string">&#x27;color: green;&#x27;</span>&gt;</span>1145141919810364364<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>	<span class="comment">&lt;!-- 特指度 = 1,0,0,0 --&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="重要性"   >
+          <a href="#重要性" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#重要性"></a> 重要性</h2>
+      
+<p>重要声明非常重要，需要超过其他所有声明，这种声明要在声明末尾的分号前加一个!important。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.dark</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> <span class="meta">!important</span>; <span class="attribute">background</span>: white; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>如果想把两个声明都标记为重要的，每个声明中都要插入!important。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.dark</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> <span class="meta">!important</span>; <span class="attribute">background</span>: white <span class="meta">!important</span>; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>!important的位置必须正确，否则声明将失效。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.light</span> &#123; <span class="attribute">font</span>: smaller Times, serif, <span class="meta">!important</span>;&#125;			<span class="comment">/* 这样可以 */</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.light</span> &#123; <span class="attribute">font</span>: smaller Times, <span class="meta">!important</span>, serif;&#125;			<span class="comment">/* 这样不行 */</span></span><br></pre></td></tr></table></div></figure>
+<p>带有!important的声明对特指度并非没有影响，但是会与不重要的声明分开处理。</p>
+<p>所有带!important的声明会被放在一起，而特指度冲突就在这个范围内解决；同样，非重要的声明作为一个整体，其中的冲突用特指度解决。</p>
+<p>重要声明和非重要声明冲突时，重要声明始终胜出。</p>
+
+        <h1 id="继承"   >
+          <a href="#继承" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#继承"></a> 继承</h1>
+      
+<p>继承指某些样式不仅应用到所指的元素上，还应用到元素的后代上。</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: gray; &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- em中的文字也会变成灰色，因为em继承了color属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>ohhhhh<span class="tag">&lt;<span class="name">em</span>&gt;</span>hhhhhh<span class="tag">&lt;/<span class="name">em</span>&gt;</span>hhhhh<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>继承属性只沿文档树向下传播给后代元素，直至没有后代为止，绝不向上传播。</p>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>有一个例外是应用到body元素的背景样式会传给html元素，这一例外仅发生在为body定义了背景而没有为html定义的情况下。</p>
+    </div>
+  
+<hr />
+<p>为了避免意外的结果，有很多属性不会被继承，例如border属性、盒模型属性等。</p>
+<p>其次继承的值没有特指度，连零也没有，因此通用选择符样式能胜过继承样式。（滥用通用选择符的潜在危险：终结继承）。</p>
+<p>使用inherit关键字能强制元素使用继承样式。</p>
+
+        <h1 id="层叠"   >
+          <a href="#层叠" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#层叠"></a> 层叠</h1>
+      
+<p>css全称“层叠样式表”，它采用层叠机制把样式组合在一起，即结合继承和特指度的一些规则。</p>
+<p>css的层叠规则：</p>
+<ul>
+<li>找到匹配特定元素的所有规则。</li>
+<li>按显示权重排序应用到特定元素上的所有声明，有!important的规则比没有的权重高。</li>
+<li>按来源排序应用到特定元素上的所有声明。
+<ul>
+<li>声明有三个来源：创作人员、读者和用户代理。</li>
+<li>正常情况下：
+<ul>
+<li>创作人员编写的样式击败读者提供的样式。</li>
+<li>读者样式中以!important标记的声明比其他样式权重高，包括创作人员编写的!important声明。</li>
+<li>创作人员和读者样式覆盖用户代理的默认样式。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>按特指度排序应用到特定元素上的所有声明，特指度高的声明具有较高的权重。</li>
+<li>按声明的前后位置排序应用到特定元素上的所有声明，样式表或文档书写靠后的声明权重较高，导入的样式表中的声明放在当前样式表所有声明的前面。</li>
+</ul>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>较新发布的某些css模块为第三条规则添加了更多的，例如动画和过渡，的来源。</p>
+    </div>
+  
+
+        <h2 id="按权重和来源排序"   >
+          <a href="#按权重和来源排序" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#按权重和来源排序"></a> 按权重和来源排序</h2>
+      
+<ol>
+<li>有!important标记的规则胜过没有的规则。</li>
+<li>如果!important在行内样式中，行内样式胜出。</li>
+<li>如果权重相同，一个在创作人员编写的样式表中，另一个在读者提供的样式表中，前者胜出。</li>
+<li>同2的前提，但如果两个规则都用!important标记，后者胜出。</li>
+<li>在所有来源中，用户代理的默认样式声明是影响力最低的。</li>
+</ol>
+<p>综上，下面按权重从高到低列出：</p>
+<ol>
+<li>读者提供的样式中以!important标记的声明</li>
+<li>创作人员编写的样式中以!important标记的声明</li>
+<li>创作人员编写的常规声明</li>
+<li>读者提供的常规声明</li>
+<li>用户代理的默认声明</li>
+</ol>
+<p>创作人员只需考虑前四点，因为创作人员编写的任何样式都会覆盖用户代理样式。</p>
+
+        <h2 id="按特指度排序"   >
+          <a href="#按特指度排序" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#按特指度排序"></a> 按特指度排序</h2>
+      
+<p>如果应用到一个元素上的声明有冲突，而且各声明的显式权重和来源相同，那么应该按特指度排序，特指度最高的声明胜出。</p>
+
+        <h2 id="按前后位置排序"   >
+          <a href="#按前后位置排序" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#按前后位置排序"></a> 按前后位置排序</h2>
+      
+<p>如果两个规则的显式权重、来源和特指度都相同：</p>
+<ul>
+<li>在样式表中的位置靠后的规则胜过靠前的规则。</li>
+<li>当前样式表的样式胜过引用样式。</li>
+</ul>
+<p>就是因为前后位置有影响，所以编写链接样式时适合使用LVFHA顺序。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 它们选择符的特指度相等，但最终实现出来的效果不一样 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123; <span class="attribute">color</span>: green; &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: orange; &#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="css之外的表现提示"   >
+          <a href="#css之外的表现提示" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#css之外的表现提示"></a> css之外的表现提示</h2>
+      
+<p>文档除了css外还可能包含表现提示，例如font元素。</p>
+<p>这种表现提示的特指度为0，而且被认为出现在创作人员编写的样式表的开头。</p>
+<p>表现提示将被创作人员或读者提供的样式覆盖，但不会被用户代理的默认样式覆盖。</p>
+<p>css3把css外部的表现提示视作用户代理默认样式表的一部分，而且假定出现在默认样式表最后。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://cheriko.fun">CherikoM</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://cheriko.fun/2022/11/01/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E7%89%B9%E6%8C%87%E5%BA%A6%E5%92%8C%E5%B1%82%E5%8F%A0/">https://cheriko.fun/2022/11/01/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E7%89%B9%E6%8C%87%E5%BA%A6%E5%92%8C%E5%B1%82%E5%8F%A0/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css/">css</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/">css权威指南</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_alipay.md.png"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_wechat.md.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/01/Java/11%E6%9C%881%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">11月1日做优课达</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/30/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(2)/"><span class="paginator-prev__text">菜鸡恶补css 第二章 选择符(2)</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%B9%E6%8C%87%E5%BA%A6"><span class="toc-number">1.</span> <span class="toc-text">
+           特指度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E7%89%B9%E6%8C%87%E5%BA%A6"><span class="toc-number">1.1.</span> <span class="toc-text">
+           声明和特指度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E9%80%89%E6%8B%A9%E7%AC%A6%E7%9A%84%E7%89%B9%E6%8C%87%E5%BA%A6"><span class="toc-number">1.2.</span> <span class="toc-text">
+           通用选择符的特指度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#id%E5%92%8C%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E7%AC%A6%E7%9A%84%E7%89%B9%E6%8C%87%E5%BA%A6"><span class="toc-number">1.3.</span> <span class="toc-text">
+           ID和属性选择符的特指度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F%E7%9A%84%E7%89%B9%E6%8C%87%E5%BA%A6"><span class="toc-number">1.4.</span> <span class="toc-text">
+           行内样式的特指度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-number">1.5.</span> <span class="toc-text">
+           重要性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">2.</span> <span class="toc-text">
+           继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%82%E5%8F%A0"><span class="toc-number">3.</span> <span class="toc-text">
+           层叠</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E6%9D%83%E9%87%8D%E5%92%8C%E6%9D%A5%E6%BA%90%E6%8E%92%E5%BA%8F"><span class="toc-number">3.1.</span> <span class="toc-text">
+           按权重和来源排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E7%89%B9%E6%8C%87%E5%BA%A6%E6%8E%92%E5%BA%8F"><span class="toc-number">3.2.</span> <span class="toc-text">
+           按特指度排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E5%89%8D%E5%90%8E%E4%BD%8D%E7%BD%AE%E6%8E%92%E5%BA%8F"><span class="toc-number">3.3.</span> <span class="toc-text">
+           按前后位置排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E4%B9%8B%E5%A4%96%E7%9A%84%E8%A1%A8%E7%8E%B0%E6%8F%90%E7%A4%BA"><span class="toc-number">3.4.</span> <span class="toc-text">
+           css之外的表现提示</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/static/Cheriko_pic.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">CherikoM</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/CherikoM/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=1330949085/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://music.163.com/#/user/home?id=319313489" target="_blank" rel="noopener" data-popover="网易云音乐" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-record-vinyl"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/4582324/" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">B</span></a><a class="sidebar-ov-social-item" href="https://xiangyinhexuyuan.lofter.com/" target="_blank" rel="noopener" data-popover="Lofter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">L</span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/ying-mu-guo-8/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-zhihu"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>CherikoM</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,122,120" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":0,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
+    appKey: 'cLSG7K1iInnLJuU15DMJ8EJl',
+    notify: true,
+    verify: true,
+    placeholder: '鳖载着理发店？鸠载着理发店！',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-CN' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/heart.js"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.xml"></script><div class="aplayer" data-id="7701953645" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="true" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script></body></html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="1t_udMygpn_u_Ykuqyp-NsdEibEtikS7hpWfddBF3ao"><meta name="msvalidate.01" content="E140022059D9AD5124B0A64BF51BF030"><meta name="baidu-site-verification" content="code-qo8UKs4MrZ"><meta name="360-site-verification" content="055476a64ed98cc0d0c9eea5b04922e0"><meta name="sogou_site_verification" content="qQwiFLOWUL"><meta name="description" content="课程：Spring Web全栈 包含章节  7.1 Cookie 7.2 Spring Session API 7.3 Spring Session配置 7.4 Spring Request拦截器 7.5 实战-用户登录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11月9日做优课达">
+<meta property="og:url" content="https://cheriko.fun/2022/11/09/Java/11%E6%9C%889%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/index.html">
+<meta property="og:site_name" content="Cherry🍒Garden">
+<meta property="og:description" content="课程：Spring Web全栈 包含章节  7.1 Cookie 7.2 Spring Session API 7.3 Spring Session配置 7.4 Spring Request拦截器 7.5 实战-用户登录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2022/11/08/j4-7-1.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2022/11/08/j4-7-2.png">
+<meta property="article:published_time" content="2022-11-09T13:54:37.594Z">
+<meta property="article:modified_time" content="2022-11-09T13:55:55.634Z">
+<meta property="article:author" content="CherikoM">
+<meta property="article:tag" content="优课达">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="全栈">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.imagehub.cc/images/2022/11/08/j4-7-1.png"><title>11月9日做优课达 | Cherry🍒Garden</title><link ref="canonical" href="https://cheriko.fun/2022/11/09/Java/11%E6%9C%889%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":3},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"light","highlight":"light","wordWrap":false},
+  reward: true,
+  fancybox: true,
+  zoomImage: {"gapAside":"100px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-inbox"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="far fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">11月9日做优课达</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2022-11-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-11-09</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon" data-popover="字数统计" data-popover-pos="up"><i class="far fa-file-word"></i></span><span class="post-meta-item__value">3.5k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon" data-popover="阅读时间" data-popover-pos="up"><i class="far fa-clock"></i></span><span class="post-meta-item__value">31分</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2022/11/09/Java/11%E6%9C%889%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/" data-flag-title="11月9日做优课达"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body"><ul>
+<li>课程：Spring Web全栈</li>
+<li>包含章节
+<ul>
+<li>7.1 Cookie</li>
+<li>7.2 Spring Session API</li>
+<li>7.3 Spring Session配置</li>
+<li>7.4 Spring Request拦截器</li>
+<li>7.5 实战-用户登录</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+        <h1 id="71-cookie"   >
+          <a href="#71-cookie" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#71-cookie"></a> 7.1 Cookie</h1>
+      
+
+        <h2 id="知识点"   >
+          <a href="#知识点" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点"></a> 知识点</h2>
+      
+<p>Cookie是网络编程中使用最广泛的一项技术，主要用于辨识用户身份。</p>
+<p>客户端（浏览器）与网站服务端通讯的过程：</p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://s1.imagehub.cc/images/2022/11/08/j4-7-1.png"  alt="" />
+      </p>
+<p>服务端既要返回Cookie给客户端，也要读取客户端提交的Cookie。</p>
+
+        <h3 id="读cookie"   >
+          <a href="#读cookie" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#读cookie"></a> 读Cookie</h3>
+      
+<p>为Control类的方法加一个<code>HttpServletRequest</code>参数，通过<code>request.getCookies()</code>取得cookie数组，然后再循环遍历即可。</p>
+<p>系统会自动传入方法参数所需要的<code>HttpServletRequest</code>。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//省略了循环代码</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/songlist&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Map <span class="title function_">index</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">  <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">  returnData.put(<span class="string">&quot;result&quot;</span>, <span class="string">&quot;this is song list&quot;</span>);</span><br><span class="line">  returnData.put(<span class="string">&quot;author&quot;</span>, songAuthor);</span><br><span class="line"></span><br><span class="line">  Cookie[] cookies = request.getCookies();</span><br><span class="line">  returnData.put(<span class="string">&quot;cookies&quot;</span>, cookies);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> returnData;</span><br><span class="line">  <span class="comment">//浏览器输出结果为所有cookie数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="使用注解读取cookie"   >
+          <a href="#使用注解读取cookie" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#使用注解读取cookie"></a> 使用注解读取Cookie</h3>
+      
+<p>如果知道Cookie的名字，就可以通过注解的方式读取，不需要再遍历cookie数组了，更加方便。</p>
+<p>为control类的方法添加一个<code>@CookieValue(&quot;xxxx&quot;) String xxxx</code>参数，使用时填入正确的Cookie名。</p>
+<p>系统会自动解析并传入同名的Cookie。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/songlist&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Map <span class="title function_">index</span><span class="params">(<span class="meta">@CookieValue(&quot;JSESSIONID&quot;)</span> String jSessionId)</span> &#123;</span><br><span class="line">  <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">  returnData.put(<span class="string">&quot;result&quot;</span>, <span class="string">&quot;this is song list&quot;</span>);</span><br><span class="line">  returnData.put(<span class="string">&quot;author&quot;</span>, songAuthor);</span><br><span class="line">  returnData.put(<span class="string">&quot;JSESSIONID&quot;</span>, jSessionId);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> returnData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>如果系统解析不到指定名字的Cookie，使用此注解就会报错。</p>
+    </div>
+  
+
+        <h3 id="写cookie"   >
+          <a href="#写cookie" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#写cookie"></a> 写Cookie</h3>
+      
+<p>为control类的方法增加一个<code>HttpServletResponse</code>参数，调用<code>response.addCookie()</code>方法添加Cookie实例对象。</p>
+<p>系统会自动传入方法参数所需要的<code>HttpServletRequest</code>。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/songlist&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Map <span class="title function_">index</span><span class="params">(HttpServletResponse response)</span> &#123;</span><br><span class="line">  <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">  returnData.put(<span class="string">&quot;result&quot;</span>, <span class="string">&quot;this is song list&quot;</span>);</span><br><span class="line">  returnData.put(<span class="string">&quot;name&quot;</span>, songName);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//						  Cookie名称      Cookie值</span></span><br><span class="line">  <span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;sessionId&quot;</span>,<span class="string">&quot;CookieTestInfo&quot;</span>);</span><br><span class="line">  <span class="comment">// 设置的是 cookie 的域名，就是会在哪个域名下生成 cookie 值</span></span><br><span class="line">  cookie.setDomain(<span class="string">&quot;youkeda.com&quot;</span>);</span><br><span class="line">  <span class="comment">// 是 cookie 的路径，一般就是写到 / ，不会写其他路径的</span></span><br><span class="line">  cookie.setPath(<span class="string">&quot;/&quot;</span>);</span><br><span class="line">  <span class="comment">// 设置cookie 的最大存活时间，-1 代表随浏览器的有效期，也就是浏览器关闭掉，这个 cookie 就失效了。</span></span><br><span class="line">  cookie.setMaxAge(-<span class="number">1</span>);</span><br><span class="line">  <span class="comment">// 设置是否只能服务器修改，浏览器端不能修改，安全有保障</span></span><br><span class="line">  cookie.setHttpOnly(<span class="literal">false</span>);</span><br><span class="line">  response.addCookie(cookie);</span><br><span class="line"></span><br><span class="line">  returnData.put(<span class="string">&quot;message&quot;</span>, <span class="string">&quot;add cookie successful&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> returnData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="练习"   >
+          <a href="#练习" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习"></a> 练习</h2>
+      
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SongListControl.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.control;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SongListControl</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOG</span> <span class="operator">=</span> LoggerFactory.getLogger(SongListControl.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;song.author&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String songAuthor;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> SubjectService subjectService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span>&#123;</span><br><span class="line">        LOG.info(<span class="string">&quot;SongListControl 启动啦&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (subjectService != <span class="literal">null</span>) &#123;</span><br><span class="line">            LOG.info(<span class="string">&quot;subjectService 实例注入成功。&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            LOG.info(<span class="string">&quot;subjectService 实例注入失败。&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/songlist&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Map <span class="title function_">index</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> &#123;</span><br><span class="line">        <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">        returnData.put(<span class="string">&quot;result&quot;</span>, <span class="string">&quot;this is song list&quot;</span>);</span><br><span class="line">        returnData.put(<span class="string">&quot;author&quot;</span>, songAuthor);</span><br><span class="line"></span><br><span class="line">        <span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        Cookie[] cookies = request.getCookies();</span><br><span class="line">        <span class="keyword">for</span>(Cookie cookie1: cookies) &#123;</span><br><span class="line">            <span class="keyword">if</span>(cookie1.getName() == <span class="string">&quot;JSESSIONID&quot;</span>) &#123;</span><br><span class="line">                cookie = cookie1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(cookie == <span class="literal">null</span>) &#123;</span><br><span class="line">            cookie = <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;JSESSIONID&quot;</span>, <span class="string">&quot;YzNlNmVmMGQtYmRhOS00OWEyLTlkYmItMTg4MGE2MzUxZjg5&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        cookie.setDomain(<span class="string">&quot;youkeda.com&quot;</span>);</span><br><span class="line">        cookie.setPath(<span class="string">&quot;/course&quot;</span>);</span><br><span class="line">        cookie.setMaxAge(<span class="number">86400</span>);</span><br><span class="line">        cookie.setHttpOnly(<span class="literal">false</span>);</span><br><span class="line">        </span><br><span class="line">        response.addCookie(cookie);</span><br><span class="line">        returnData.put(<span class="string">&quot;message&quot;</span>, <span class="string">&quot;add cookie successful&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> returnData;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+
+        <h1 id="72-spring-session-api"   >
+          <a href="#72-spring-session-api" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#72-spring-session-api"></a> 7.2 Spring Session API</h1>
+      
+
+        <h2 id="知识点-2"   >
+          <a href="#知识点-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-2"></a> 知识点</h2>
+      
+<p>Cookie放在客户端，可以存储用户信息，主要用于辨识用户身份。</p>
+<p>但如果真的把用户ID、登陆状态等重要信息放入Cookie，可能会带来安全隐患，因为网络上很不安全，Cookie可能会被拦截，甚至伪造。</p>
+<p>采用Session会话机制可以解决这个问题，用户ID、登陆状态等重要信息不存放在客户端，而是存放在服务端，从而避免安全隐患：</p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://s1.imagehub.cc/images/2022/11/08/j4-7-2.png"  alt="" />
+      </p>
+<p>使用会话机制时，Cookie作为session id的载体与客户端通信。</p>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>名字为JSESSIONID的Cookie专门用来记录用户Session，JSESSIONID是标准的、通用的名字。</p>
+    </div>
+  
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>Cookie存放在客户端，一般不超过4kb，放太多内容会导致出错。</p>
+    </div>
+  
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>Session存放在服务端，没有大小限制，不过基于服务器的性能考虑，不能放太多内容。</p>
+    </div>
+  
+
+        <h3 id="读操作"   >
+          <a href="#读操作" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#读操作"></a> 读操作</h3>
+      
+<p>与Cookie类似，从<code>HttpServletRequest</code>对象中取得<code>HttpSession</code>对象，使用的语句是<code>request.getSession()</code>。</p>
+<p>但不同的是，返回结果不是数组，而是对象，在attribute属性中用键值对的形式存储多个数据。</p>
+<p>假设存储登录信息的数据key是<code>userLoginInfo</code>，那么语句就是<code>session.getAttribute(&quot;userLoginInfo&quot;)</code></p>
+
+        <h4 id="登陆信息类"   >
+          <a href="#登陆信息类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#登陆信息类"></a> 登陆信息类</h4>
+      
+<p>登录信息实例对象因为要在网络上传输，就必须实现序列化接口<code>Serializable</code>，不实现的话会报错。</p>
+<p>登陆信息类需要根据具体的需要设计属性字段：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserLoginInfo</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String userId;</span><br><span class="line">  <span class="keyword">private</span> String userName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="操作代码"   >
+          <a href="#操作代码" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#操作代码"></a> 操作代码</h4>
+      
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/songlist&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Map <span class="title function_">index</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> &#123;</span><br><span class="line">  <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">  returnData.put(<span class="string">&quot;result&quot;</span>, <span class="string">&quot;this is song list&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 取得 HttpSession 对象</span></span><br><span class="line">  <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">  <span class="comment">// 读取登录信息</span></span><br><span class="line">  <span class="type">UserLoginInfo</span> <span class="variable">userLoginInfo</span> <span class="operator">=</span> (UserLoginInfo)session.getAttribute(<span class="string">&quot;userLoginInfo&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span> (userLoginInfo == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="comment">// 未登录</span></span><br><span class="line">    returnData.put(<span class="string">&quot;loginInfo&quot;</span>, <span class="string">&quot;not login&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 已登录</span></span><br><span class="line">    returnData.put(<span class="string">&quot;loginInfo&quot;</span>, <span class="string">&quot;already login&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> returnData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>这里实际上取不到操作，因为还没有写入。</p>
+
+        <h3 id="写操作"   >
+          <a href="#写操作" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#写操作"></a> 写操作</h3>
+      
+<p>写入登录信息用<code>setAttribute()</code>方法：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/loginmock&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Map <span class="title function_">loginMock</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> &#123;</span><br><span class="line">  <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 假设对比用户名和密码成功</span></span><br><span class="line">  <span class="comment">// 仅演示的登录信息对象</span></span><br><span class="line">  <span class="type">UserLoginInfo</span> <span class="variable">userLoginInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserLoginInfo</span>();</span><br><span class="line">  userLoginInfo.setUserId(<span class="string">&quot;12334445576788&quot;</span>);</span><br><span class="line">  userLoginInfo.setUserName(<span class="string">&quot;ZhangSan&quot;</span>);</span><br><span class="line">  <span class="comment">// 取得 HttpSession 对象</span></span><br><span class="line">  <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">  <span class="comment">// 写入登录信息</span></span><br><span class="line">  session.setAttribute(<span class="string">&quot;userLoginInfo&quot;</span>, userLoginInfo);</span><br><span class="line">  returnData.put(<span class="string">&quot;message&quot;</span>, <span class="string">&quot;login successful&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> returnData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="练习-2"   >
+          <a href="#练习-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习-2"></a> 练习</h2>
+      
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        UserLoginInfo.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 演示用的用户登录信息</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserLoginInfo</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUserId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> userId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUserId</span><span class="params">(String userId)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.userId = userId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUserName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> userName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUserName</span><span class="params">(String userName)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.userName = userName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        UserControl.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.control;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserControl</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOG</span> <span class="operator">=</span> LoggerFactory.getLogger(UserControl.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;loginmock.userName&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String mockedName;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;loginmock.password&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String mockedPassword;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> &#123;</span><br><span class="line">        LOG.info(<span class="string">&quot;UserControl 启动啦&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/loginmock&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Map <span class="title function_">loginMock</span><span class="params">(<span class="meta">@RequestParam(&quot;userName&quot;)</span> String userName, <span class="meta">@RequestParam(&quot;password&quot;)</span> String password,</span></span><br><span class="line"><span class="params">                         HttpServletRequest request, HttpServletResponse response)</span> &#123;</span><br><span class="line">        <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mockedName.equals(userName) &amp;&amp; mockedPassword.equals(password)) &#123;</span><br><span class="line">            <span class="type">UserLoginInfo</span> <span class="variable">userLoginInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserLoginInfo</span>();</span><br><span class="line">            userLoginInfo.setUserId(<span class="string">&quot;123456789abcd&quot;</span>);</span><br><span class="line">            userLoginInfo.setUserName(userName);</span><br><span class="line">            <span class="comment">// 取得 HttpSession 对象</span></span><br><span class="line">            <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">            <span class="comment">// 写入登录信息</span></span><br><span class="line">            session.setAttribute(<span class="string">&quot;userLoginInfo&quot;</span>, userLoginInfo);</span><br><span class="line">            returnData.put(<span class="string">&quot;result&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">            returnData.put(<span class="string">&quot;message&quot;</span>, <span class="string">&quot;login successfule&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            returnData.put(<span class="string">&quot;result&quot;</span>, <span class="literal">false</span>);</span><br><span class="line">            returnData.put(<span class="string">&quot;message&quot;</span>, <span class="string">&quot;userName or password not correct&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> returnData;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/status&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Map <span class="title function_">status</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> &#123;</span><br><span class="line">        <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取得 HttpSession 对象</span></span><br><span class="line">        <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">        <span class="comment">// 读取登录信息</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> <span class="string">&quot;userLoginInfo&quot;</span>;</span><br><span class="line">        <span class="type">UserLoginInfo</span> <span class="variable">userLoginInfo</span> <span class="operator">=</span> (UserLoginInfo) session.getAttribute(key);</span><br><span class="line">        <span class="keyword">if</span> (userLoginInfo == <span class="literal">null</span>) &#123;</span><br><span class="line">            returnData.put(<span class="string">&quot;isLogin&quot;</span>, <span class="literal">false</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            returnData.put(<span class="string">&quot;isLogin&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnData;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        application.properties
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">logging.level.root=info</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">song.author=Barely Alive</span><br><span class="line"></span><br><span class="line">loginmock.userName=ZhangSan</span><br><span class="line">loginmock.password=123456</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+
+        <h1 id="73-spring-session配置"   >
+          <a href="#73-spring-session配置" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#73-spring-session配置"></a> 7.3 Spring Session配置</h1>
+      
+
+        <h2 id="知识点-3"   >
+          <a href="#知识点-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-3"></a> 知识点</h2>
+      
+<p>Cookie作为Session id的载体，也可以修改属性。</p>
+
+        <h3 id="编程式配置"   >
+          <a href="#编程式配置" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#编程式配置"></a> 编程式配置</h3>
+      
+<p>除了配置文件<code>application.properties</code>外，Spring Boot也提供了编程式的配置方式，主要用于配置Bean。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//表示这是一个配置类，系统会自动扫描并处理</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringHttpSessionConfig</span> &#123;</span><br><span class="line">  <span class="comment">//把此方法返回的对象实例注册成Bean</span></span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">  <span class="keyword">public</span> TestBean <span class="title function_">testBean</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">TestBean</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="session配置"   >
+          <a href="#session配置" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#session配置"></a> Session配置</h3>
+      
+
+        <h4 id="依赖库"   >
+          <a href="#依赖库" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#依赖库"></a> 依赖库</h4>
+      
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.session<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-session-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="配置类"   >
+          <a href="#配置类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#配置类"></a> 配置类</h4>
+      
+<p>在类上额外添加一个注解<code>@EnableSpringHttpSession</code>，开启session，然后注册两个bean</p>
+<ul>
+<li><code>CookieSerializer</code>：读取Cookies中的SessionId信息</li>
+<li><code>MapSessionRepository</code>：Session信息在服务器上的存储仓库</li>
+</ul>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSpringHttpSession</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringHttpSessionConfig</span> &#123;</span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">  <span class="keyword">public</span> CookieSerializer <span class="title function_">cookieSerializer</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">DefaultCookieSerializer</span> <span class="variable">serializer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DefaultCookieSerializer</span>();</span><br><span class="line">    serializer.setCookieName(<span class="string">&quot;JSESSIONID&quot;</span>);</span><br><span class="line">    <span class="comment">// 用正则表达式配置匹配的域名，可以兼容 localhost、127.0.0.1 等各种场景</span></span><br><span class="line">    serializer.setDomainNamePattern(<span class="string">&quot;^.+?\\.(\\w+\\.[a-z]+)$&quot;</span>);</span><br><span class="line">    serializer.setCookiePath(<span class="string">&quot;/&quot;</span>);</span><br><span class="line">    serializer.setUseHttpOnlyCookie(<span class="literal">false</span>);</span><br><span class="line">    <span class="comment">// 最大生命周期的单位是秒</span></span><br><span class="line">    serializer.setCookieMaxAge(<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>);</span><br><span class="line">    <span class="keyword">return</span> serializer;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 当前存在内存中</span></span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">  <span class="keyword">public</span> MapSessionRepository <span class="title function_">sessionRepository</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MapSessionRepository</span>(<span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h1 id="74-spring-request拦截器"   >
+          <a href="#74-spring-request拦截器" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#74-spring-request拦截器"></a> 7.4 Spring Request拦截器</h1>
+      
+
+        <h2 id="知识点-4"   >
+          <a href="#知识点-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-4"></a> 知识点</h2>
+      
+<p>再实际的项目中，会有大量的页面功能是需要判断用户是否登录的，让每一个这样的页面都判断是否登录，较为繁琐。</p>
+<p>Spring提供了<code>HandlerInterceptor</code>（拦截器），一种统一处理相同逻辑的机制，满足这类场景的需求。</p>
+
+        <h3 id="创建拦截器"   >
+          <a href="#创建拦截器" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#创建拦截器"></a> 创建拦截器</h3>
+      
+<p>拦截器必须实现<code>HandlerInterceptor</code>接口，可以在三个点进行拦截：</p>
+<ul>
+<li>Controller方法执行之前。这是最常用的拦截点。例如是否登录的验证就要在<code>preHandle()</code>方法中处理。</li>
+<li>Controller方法执行之后，例如记录日志、同级方法执行时间等，就要在<code>postHandle()</code>方法中处理。</li>
+<li>整个请求完成后。不常用的拦截点。例如统计整个请求的执行时间用，在<code>afterCompletion()</code>方法中处理。</li>
+</ul>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.HandlerInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterceptorDemo</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Controller方法执行之前</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 只有返回true才会继续向下执行，返回false取消当前请求</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Controller方法执行之后</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler,</span></span><br><span class="line"><span class="params">      ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 整个请求完成后（包括Thymeleaf渲染完毕）</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="实现webmvcconfigurer"   >
+          <a href="#实现webmvcconfigurer" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#实现webmvcconfigurer"></a> 实现WebMvcConfigurer</h3>
+      
+<p>创建一个类实现<code>WebMvcConfigurer</code>，并实现<code>addInterceptors()</code>方法，这个步骤用于管理拦截器。实现类要加上<code>@Configuration</code>，让框架能自动扫描并处理。</p>
+<p>管理拦截器，比较重要的是为拦截器设置拦截范围。常用<code>addPathPatterns(&quot;/**&quot;)</code>表示拦截所有的URL。</p>
+<p>也可以调用<code>excludePathPatterns()</code>方法排除某些URL。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.InterceptorRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebAppConfigurerDemo</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">    <span class="comment">// 多个拦截器组成一个拦截器链</span></span><br><span class="line">    <span class="comment">// 仅演示，设置所有 url 都拦截</span></span><br><span class="line">    registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">UserInterceptor</span>()).addPathPatterns(<span class="string">&quot;/**&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<hr />
+<p>通常拦截器会放在一个包（例如interceptor）里，而用于管理拦截器的配置类会放在另一个包（例如config）里。</p>
+<p>这种按子功能划分子包的方式，可以让阅读者比较直观、清晰地了解各个类的作用。</p>
+
+        <h2 id="练习-3"   >
+          <a href="#练习-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习-3"></a> 练习</h2>
+      
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        UserInterceptor.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.interceptor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户信息拦截器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOG</span> <span class="operator">=</span> LoggerFactory.getLogger(UserInterceptor.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">        request.setAttribute(<span class="string">&quot;startTime&quot;</span>, startTime);</span><br><span class="line">        <span class="comment">// 只有返回true才会继续向下执行，返回false取消当前请求</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Controller方法执行之后</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler,</span></span><br><span class="line"><span class="params">                           ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">long</span> <span class="variable">endTime</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">        <span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> (Long)request.getAttribute(<span class="string">&quot;startTime&quot;</span>);</span><br><span class="line"></span><br><span class="line">        LOG.info(<span class="string">&quot;CostTime : &quot;</span> + (endTime-startTime) + <span class="string">&quot; ms&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 整个请求完成后（包括Thymeleaf渲染完毕）</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        AppConfigurer.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppConfigurer</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        <span class="comment">// 多个拦截器组成一个拦截器链</span></span><br><span class="line">        <span class="comment">// 仅演示，设置所有 url 都拦截</span></span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">UserInterceptor</span>()).addPathPatterns(<span class="string">&quot;/**&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+
+        <h1 id="75-实战-用户登录"   >
+          <a href="#75-实战-用户登录" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#75-实战-用户登录"></a> 7.5 实战-用户登录</h1>
+      
+
+        <h2 id="知识点-5"   >
+          <a href="#知识点-5" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#知识点-5"></a> 知识点</h2>
+      
+
+        <h3 id="post请求"   >
+          <a href="#post请求" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
+      
+<p>从服务端获取数据，是GET请求；向服务端提交或写入数据，是POST请求。</p>
+<p>在control中使用<code>@PostMapping</code>注解将方法定义为POST请求：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(path = &quot;/authenticate&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">loginAction</span><span class="params">(<span class="meta">@RequestParam</span> String name, <span class="meta">@RequestParam</span> String password)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> user.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="页面跳转"   >
+          <a href="#页面跳转" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#页面跳转"></a> 页面跳转</h3>
+      
+<p>使用<code>response.sendRedirect(url)</code>跳转到指定路由：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">loginPageUrl</span> <span class="operator">=</span> <span class="string">&quot;/login&quot;</span>;</span><br><span class="line">response.sendRedirect(loginPageUrl);</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="练习-4"   >
+          <a href="#练习-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#练习-4"></a> 练习</h2>
+      
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        UserLoginInfo.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 演示用的用户登录信息</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserLoginInfo</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUserId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> userId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUserId</span><span class="params">(String userId)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.userId = userId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUserName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> userName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUserName</span><span class="params">(String userName)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.userName = userName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        UserControl.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.control;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line">    </span><br><span class="line"><span class="meta">@RequestMapping(&quot;app&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserControl</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOG</span> <span class="operator">=</span> LoggerFactory.getLogger(UserControl.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;loginmock.userName&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String mockedName;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;loginmock.password&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String mockedPassword;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> &#123;</span><br><span class="line">        LOG.info(<span class="string">&quot;UserControl 启动啦&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;login&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">loginPage</span><span class="params">(Model model)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;login&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping(&quot;authenticate&quot;)</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> Map <span class="title function_">login</span><span class="params">(<span class="meta">@RequestParam</span> String userName, <span class="meta">@RequestParam</span> String password,</span></span><br><span class="line"><span class="params">                         HttpServletRequest request, HttpServletResponse response)</span> &#123;</span><br><span class="line">        <span class="type">Map</span> <span class="variable">returnData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mockedName.equals(userName) &amp;&amp; mockedPassword.equals(password)) &#123;</span><br><span class="line">            <span class="type">UserLoginInfo</span> <span class="variable">userLoginInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserLoginInfo</span>();</span><br><span class="line">            userLoginInfo.setUserId(<span class="string">&quot;123456789abcd&quot;</span>);</span><br><span class="line">            userLoginInfo.setUserName(userName);</span><br><span class="line">            <span class="comment">// 取得 HttpSession 对象</span></span><br><span class="line">            <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">            <span class="comment">// 写入登录信息</span></span><br><span class="line">            session.setAttribute(<span class="string">&quot;userLoginInfo&quot;</span>, userLoginInfo);</span><br><span class="line">            returnData.put(<span class="string">&quot;result&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">            returnData.put(<span class="string">&quot;message&quot;</span>, <span class="string">&quot;login successfule&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            returnData.put(<span class="string">&quot;result&quot;</span>, <span class="literal">false</span>);</span><br><span class="line">            returnData.put(<span class="string">&quot;message&quot;</span>, <span class="string">&quot;userName or password not correct&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> returnData;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        SpringHttpSessionConfig.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSpringHttpSession</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringHttpSessionConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> CookieSerializer <span class="title function_">cookieSerializer</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">DefaultCookieSerializer</span> <span class="variable">serializer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DefaultCookieSerializer</span>();</span><br><span class="line">        serializer.setCookieName(<span class="string">&quot;JSESSIONID&quot;</span>);</span><br><span class="line">        <span class="comment">// 用正则表达式配置匹配的域名，可以兼容 localhost、127.0.0.1 等各种场景</span></span><br><span class="line">        serializer.setDomainNamePattern(<span class="string">&quot;^.+?\\.(\\w+\\.[a-z]+)$&quot;</span>);</span><br><span class="line">        serializer.setCookiePath(<span class="string">&quot;/&quot;</span>);</span><br><span class="line">        serializer.setUseHttpOnlyCookie(<span class="literal">false</span>);</span><br><span class="line">        <span class="comment">// 最大生命周期的单位是秒</span></span><br><span class="line">        serializer.setCookieMaxAge(<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> serializer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前存在内存中</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MapSessionRepository <span class="title function_">sessionRepository</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MapSessionRepository</span>(<span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        AppConfigurer.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppConfigurer</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        <span class="comment">// 多个拦截器组成一个拦截器链</span></span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">UserInterceptor</span>()).addPathPatterns(<span class="string">&quot;/**&quot;</span>)</span><br><span class="line">                .excludePathPatterns(<span class="string">&quot;/app/login&quot;</span>)</span><br><span class="line">                .excludePathPatterns(<span class="string">&quot;/app/login&quot;</span>)</span><br><span class="line">                .excludePathPatterns(<span class="string">&quot;/css/**&quot;</span>)</span><br><span class="line">                .excludePathPatterns(<span class="string">&quot;/error&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        UserInterceptor.java
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.interceptor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户信息拦截器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LoggerFactory.getLogger(UserInterceptor.class);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Controller方法执行之前</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">        <span class="keyword">if</span>(session.getAttribute(<span class="string">&quot;userLoginInfo&quot;</span>) != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//跳转登录</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;/app/login&quot;</span>;</span><br><span class="line">        response.sendRedirect(url);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Controller方法执行之后</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 整个请求完成后（包括Thymeleaf渲染完毕）</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        login.html
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>豆瓣登录<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/app/login&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;userName&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">密码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+    </div>
+</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://cheriko.fun">CherikoM</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://cheriko.fun/2022/11/09/Java/11%E6%9C%889%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/">https://cheriko.fun/2022/11/09/Java/11%E6%9C%889%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E4%BC%98%E8%AF%BE%E8%BE%BE/">优课达</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/Java/">Java</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/Spring/">Spring</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%85%A8%E6%A0%88/">全栈</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_alipay.md.png"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_wechat.md.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/10/Java/11%E6%9C%8810%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">11月10日做优课达</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/11/07/Java/11%E6%9C%887%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><span class="paginator-prev__text">11月7日做优课达</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#71-cookie"><span class="toc-number">1.</span> <span class="toc-text">
+           7.1 Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">
+           知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BBcookie"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+           读Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E8%AF%BB%E5%8F%96cookie"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+           使用注解读取Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99cookie"><span class="toc-number">1.1.3.</span> <span class="toc-text">
+           写Cookie</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#72-spring-session-api"><span class="toc-number">2.</span> <span class="toc-text">
+           7.2 Spring Session API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-2"><span class="toc-number">2.1.</span> <span class="toc-text">
+           知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E6%93%8D%E4%BD%9C"><span class="toc-number">2.1.1.</span> <span class="toc-text">
+           读操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%93%8D%E4%BD%9C"><span class="toc-number">2.1.2.</span> <span class="toc-text">
+           写操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0-2"><span class="toc-number">2.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#73-spring-session%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">
+           7.3 Spring Session配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-3"><span class="toc-number">3.1.</span> <span class="toc-text">
+           知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%BC%8F%E9%85%8D%E7%BD%AE"><span class="toc-number">3.1.1.</span> <span class="toc-text">
+           编程式配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session%E9%85%8D%E7%BD%AE"><span class="toc-number">3.1.2.</span> <span class="toc-text">
+           Session配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#74-spring-request%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">
+           7.4 Spring Request拦截器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-4"><span class="toc-number">4.1.</span> <span class="toc-text">
+           知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">4.1.1.</span> <span class="toc-text">
+           创建拦截器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0webmvcconfigurer"><span class="toc-number">4.1.2.</span> <span class="toc-text">
+           实现WebMvcConfigurer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0-3"><span class="toc-number">4.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#75-%E5%AE%9E%E6%88%98-%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95"><span class="toc-number">5.</span> <span class="toc-text">
+           7.5 实战-用户登录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-5"><span class="toc-number">5.1.</span> <span class="toc-text">
+           知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#post%E8%AF%B7%E6%B1%82"><span class="toc-number">5.1.1.</span> <span class="toc-text">
+           POST请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC"><span class="toc-number">5.1.2.</span> <span class="toc-text">
+           页面跳转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0-4"><span class="toc-number">5.2.</span> <span class="toc-text">
+           练习</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/static/Cheriko_pic.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">CherikoM</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/CherikoM/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=1330949085/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://music.163.com/#/user/home?id=319313489" target="_blank" rel="noopener" data-popover="网易云音乐" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-record-vinyl"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/4582324/" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">B</span></a><a class="sidebar-ov-social-item" href="https://xiangyinhexuyuan.lofter.com/" target="_blank" rel="noopener" data-popover="Lofter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">L</span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/ying-mu-guo-8/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-zhihu"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>CherikoM</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,122,120" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":0,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
+    appKey: 'cLSG7K1iInnLJuU15DMJ8EJl',
+    notify: true,
+    verify: true,
+    placeholder: '鳖载着理发店？鸠载着理发店！',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-CN' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/heart.js"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.xml"></script><div class="aplayer" data-id="7701953645" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="true" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script></body></html>

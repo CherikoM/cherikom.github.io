@@ -1,0 +1,865 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="1t_udMygpn_u_Ykuqyp-NsdEibEtikS7hpWfddBF3ao"><meta name="msvalidate.01" content="E140022059D9AD5124B0A64BF51BF030"><meta name="baidu-site-verification" content="code-qo8UKs4MrZ"><meta name="360-site-verification" content="055476a64ed98cc0d0c9eea5b04922e0"><meta name="sogou_site_verification" content="qQwiFLOWUL"><meta name="description" content="只要是太长的章节就会分一下p，又臭又长的东西谁都不爱看（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菜鸡恶补css 第二章 选择符(2)">
+<meta property="og:url" content="https://cheriko.fun/2022/10/30/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(2)/index.html">
+<meta property="og:site_name" content="Cherry🍒Garden">
+<meta property="og:description" content="只要是太长的章节就会分一下p，又臭又长的东西谁都不爱看（">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-30T02:33:46.708Z">
+<meta property="article:modified_time" content="2022-10-31T01:51:03.623Z">
+<meta property="article:author" content="CherikoM">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="css权威指南">
+<meta name="twitter:card" content="summary"><title>菜鸡恶补css 第二章 选择符(2) | Cherry🍒Garden</title><link ref="canonical" href="https://cheriko.fun/2022/10/30/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(2)/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":3},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"light","highlight":"light","wordWrap":false},
+  reward: true,
+  fancybox: true,
+  zoomImage: {"gapAside":"100px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-inbox"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="far fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">菜鸡恶补css 第二章 选择符(2)</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2022-10-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-10-31</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon" data-popover="字数统计" data-popover-pos="up"><i class="far fa-file-word"></i></span><span class="post-meta-item__value">4.4k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon" data-popover="阅读时间" data-popover-pos="up"><i class="far fa-clock"></i></span><span class="post-meta-item__value">31分</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2022/10/30/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(2)/" data-flag-title="菜鸡恶补css 第二章 选择符(2)"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body"><p>只要是太长的章节就会分一下p，又臭又长的东西谁都不爱看（</p>
+<span id="more"></span>
+
+        <h1 id="伪类选择符"   >
+          <a href="#伪类选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#伪类选择符"></a> 伪类选择符</h1>
+      
+<p><strong>伪类选择符</strong>可以为文档中不一定真实存在的结构指定样式，或者为某些元素（甚至文档本身）的特定状态赋予“幽灵类”。</p>
+
+        <h2 id="拼接伪类"   >
+          <a href="#拼接伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#拼接伪类"></a> 拼接伪类</h2>
+      
+<ul>
+<li>css允许把伪类拼接（串联）在一起。</li>
+<li>拼接伪类的效果与伪类顺序无关，<code>a:link:hover</code>和<code>a:hover:link</code>效果上没有区别。</li>
+<li>如果拼接互斥的伪类会导致选择符没有意义，匹配不了任何东西。</li>
+</ul>
+
+        <h2 id="结构伪类"   >
+          <a href="#结构伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#结构伪类"></a> 结构伪类</h2>
+      
+<p>伪类多数是结构上的，即指代文档中的标记结构，还有一些则用于选定特定的元素类型。</p>
+<p>所有伪类都以冒号:词语为格式，可以出现在选择符的任意位置。</p>
+<p>伪类始终指代所依附的元素（不要混淆:first-child等伪类的用法）。</p>
+
+        <h3 id="选择根元素"   >
+          <a href="#选择根元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择根元素"></a> 选择根元素</h3>
+      
+<p>:root伪类选择文档的根元素，在HTML中，根元素始终是html。</p>
+<p>这个选择符的真正用途体现在XML中，在不同的XML语言中，根元素有所不同。</p>
+<p>在HTML文档中可以直接选择html元素而不用:root伪类，但这两种选择符的特指度不同。</p>
+
+        <h3 id="选择空元素"   >
+          <a href="#选择空元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择空元素"></a> 选择空元素</h3>
+      
+<p>:empty伪类选择没有任何子代（包括文本节点）的元素。</p>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>标签间的空格和换行符也会被算作文本节点，但注释不算。</p>
+    </div>
+  
+<p>:empty能匹配到img、input和没有输入内容的textarea。</p>
+<p>img和img:empty在选择角度是相等的，但具有不同的特指度。</p>
+
+        <h3 id="选择唯一的子代"   >
+          <a href="#选择唯一的子代" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择唯一的子代"></a> 选择唯一的子代</h3>
+      
+<p>:only-child伪类可以选择某一元素的唯一子元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 将作为某元素的唯一子元素的span变成银色 */</span></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:only-child</span> &#123; <span class="attribute">color</span>: silver; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>text text <span class="tag">&lt;<span class="name">span</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span> text text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text text <span class="tag">&lt;<span class="name">span</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span> text text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span>text<span class="tag">&lt;/<span class="name">i</span>&gt;</span> text text text <span class="tag">&lt;<span class="name">span</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='ponly1'>text text <span>text</span> text text</p>
+<div class='ponly1'>text text <span>text</span> text text</div>
+<p class='ponly1'><i>text</i> text text text <span>text</span></p>
+<style>
+    .ponly1 span:only-child { color: silver; }
+</style>
+<hr />
+<p>如果想特指唯一的某类子元素，可以使用:only-of-type，这里的“某类”一定指的是元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:only-of-type</span> &#123; <span class="attribute">color</span>: silver; &#125;</span><br><span class="line"><span class="comment">/* 第二个div里的span都不会被选中，即使选择符使用的是类选择符 */</span></span><br><span class="line"><span class="selector-class">.test</span><span class="selector-pseudo">:only-of-type</span> &#123; <span class="attribute">color</span>: silver; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>text text <span class="tag">&lt;<span class="name">span</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span> text text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text text <span class="tag">&lt;<span class="name">span</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span> text text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>text<span class="tag">&lt;/<span class="name">em</span>&gt;</span> text text text <span class="tag">&lt;<span class="name">span</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&#x27;test&#x27;</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span> text <span class="tag">&lt;<span class="name">span</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span> text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='ponly2'>text text <span>text</span> text text</p>
+<div class='ponly2'>text text <span>text</span> text text</div>
+<p class='ponly2'><em>text</em> text text text <span>text</span></p>
+<div class='ponly2'>text <span class='test'>text</span> text <span>text</span> text</div>
+<style>
+    .ponly2 span:only-of-type { color: silver; }
+    .ponly2 .test:only-of-type { color: silver; }
+</style>
+---
+
+        <h3 id="选择第一个和最后一个子代"   >
+          <a href="#选择第一个和最后一个子代" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择第一个和最后一个子代"></a> 选择第一个和最后一个子代</h3>
+      
+<p>:first-child和:last-child可以选择某一元素的第一个/最后一个子元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:first</span>-child &#123; <span class="attribute">color</span>: silver; &#125;</span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">font-weight</span>: <span class="number">700</span>; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&#x27;firstul&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>aaa<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>aaa<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>1<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>2<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>3<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>aaa<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>aaa<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<ul class='firstul'>
+    <li>aaa</li>
+    <li>aaa</li>
+    <li><a>1</a><a>2</a><a>3</a></li>
+    <li>aaa</li>
+    <li>aaa</li>
+</ul> 
+<style>
+	.firstul>:first-child { color: silver; }
+    .firstul>li:last-child { font-weight: 700; }
+</style>
+<hr />
+<p>如果结合使用:first-child和:last-child，结果相当于:only-child。</p>
+<p>与:only-of-type类似，也可以使用:first-of-type和:last-of-type限制元素种类。</p>
+
+        <h3 id="选择每第n个子元素"   >
+          <a href="#选择每第n个子元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择每第n个子元素"></a> 选择每第n个子元素</h3>
+      
+<p>:nth-child(n)可以选择某一元素的第n个子元素，这个n可以是数字，也可以是简单表达式（n为所有自然数）。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123; <span class="attribute">color</span>: pink &#125;</span><br><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>n+<span class="number">1</span>) &#123; <span class="attribute">color</span>: <span class="number">#bfc</span> &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<ul class='nchoose'>
+    <li>bbb</li>
+    <li>bbb</li>
+    <li>bbb</li>
+    <li>bbb</li>
+    <li>bbb</li>
+    <li>bbb</li>
+    <li>bbb</li>
+    <li>bbb</li>
+    <li>bbb</li>
+    <li>bbb</li>
+</ul>
+<style>
+	.nchoose>li:nth-child(2) { color: pink }
+	.nchoose>li:nth-child(3n+1) { color: #bfc }
+</style>
+<hr />
+<p>:nth-child(n+9)和:nth(8) ~在选择结果上相同，但后者的特指度更高。</p>
+<p>:nth-child()也有对应的:nth-last-child()，以倒数顺序选择。</p>
+<p>同样，也有对应的:nth-of-type()和:nth-last-of-type()。</p>
+
+        <h2 id="动态伪类"   >
+          <a href="#动态伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#动态伪类"></a> 动态伪类</h2>
+      
+<p>除了结构伪类外，还有一些与结构有关的伪类，但它们在页面渲染后会根据页面的变化而变化。</p>
+<p>为了把这些伪类定义的样式应用到文档中的某处，除了文档的结构，还要考虑其他因素，而且这些样式是在无法提前预知的条件满足时运用的。</p>
+
+        <h3 id="超链接伪类"   >
+          <a href="#超链接伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#超链接伪类"></a> 超链接伪类</h3>
+      
+<p>css2.1定义的两个只能在超链接上使用的伪类。</p>
+<ul>
+<li>:link指代用作超链接的锚记（<strong>且具有href属性</strong>），而且指向未访问的地址。</li>
+<li>:visited指代指向已访问地址的超链接。</li>
+</ul>
+<p>在HTML中，这两个伪类应用在具有href属性的a元素上；在XML中，这两个伪类应用在链接到其他资源的元素上。</p>
+<p>为了提升可用性和可访问性，已访问和未访问链接间要能轻易区分。</p>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>只能把颜色相关的属性应用到已访问链接上，除此之外的属性将会被忽略。</p>
+    </div>
+  
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>:link实际上能装饰所有超链接，不仅是未访问过的超链接。</p>
+    </div>
+  
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>如果使用DOM查询已访问链接的样式，返回的值会和未访问时一样。</p>
+    </div>
+  
+
+    <div class="note-plugin default">
+      <span class="note-plugin__icon note-plugin__icon--default">
+              <i class="fas fa-arrow-circle-right"></i>
+            </span>
+      <p>这一切都是出于信息安全考虑。</p>
+    </div>
+  
+
+        <h3 id="用户操作伪类"   >
+          <a href="#用户操作伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#用户操作伪类"></a> 用户操作伪类</h3>
+      
+<p>用户操作伪类可以根据用户的操作改变文档的外观。</p>
+<ul>
+<li>:focus指代当前获得焦点的元素</li>
+<li>:hover指代鼠标放置其上的元素</li>
+<li>:active指代由用户输入激活的元素</li>
+</ul>
+<p>可以处于:active状态的元素有链接、菜单项目、可以设定tabindex的元素，这些元素加上其他所有交互元素（例如表单控件和可编辑内容的元素）还可与获得焦点。</p>
+<p>这些伪类最常（但不仅限）用于超链接，推荐使用顺序：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color</span>: navy &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color</span>: gray &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123; <span class="attribute">color</span>: orange &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: red &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: yellow &#125;</span><br></pre></td></tr></table></div></figure>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>虽然可以使用:focus以任何方式装饰元素，但千万不要删除获得焦点的元素的全部样式，区分当前获得焦点的元素对可访问性十分重要，尤其是使用键盘在网站或应用中导航时。</p>
+    </div>
+  
+
+        <h2 id="ui动态伪类"   >
+          <a href="#ui动态伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#ui动态伪类"></a> UI动态伪类</h2>
+      
+<p>与动态伪类紧密相关的是用户界面状态伪类，会根据用户界面元素的当前状态应用样式。</p>
+<ul>
+<li>:enabled指代启用的用户界面元素，即接受输入的元素</li>
+<li>:disabled指代禁用的用户界面元素，即不接受输入的元素</li>
+<li>:checked指代由用户或文档默认选中的单选按钮或复选框</li>
+<li>:indeterminate指代既未选中也没有未选中的单选按钮或复选框
+<ul>
+<li>这个状态只能由DOM脚本设定，不能由用户设定</li>
+</ul>
+</li>
+<li>:default指代默认选中的单选按钮、复选框或选项</li>
+<li>:valid指代满足所有数据有效性语义的输入框</li>
+<li>:invalid指代不满足数据有效性语义的输入框</li>
+<li>:in-range指代输入的值在最小值和最大值之间的输入框</li>
+<li>:out-of-range指代输入的值不在最小值和最大值之间的输入框</li>
+<li>:required指代必须输入值的输入框</li>
+<li>:optional指代无需输入一定值的输入框</li>
+<li>:read-write指代可由用户编辑的输入框</li>
+<li>:read-only指代不能被用户编辑的输入框</li>
+</ul>
+<p>虽然UI元素的状态能被用户操作海边，但是UI状态伪类不是单纯动态的，因为它们还受文档结构或DOM脚本的影响。</p>
+
+        <h3 id="启用和禁用的ui元素"   >
+          <a href="#启用和禁用的ui元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#启用和禁用的ui元素"></a> 启用和禁用的UI元素</h3>
+      
+<p>HTML5可以把一个（或一组）用户界面元素标记为禁用的，禁用元素也能显示出来，但是无法选择、激活或与用户交互，这类元素可以用:disabled选中，而未禁用的元素可以用:enabled选中。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:enabled</span> &#123; <span class="attribute">font-weight</span>: bold &#125;</span><br><span class="line"><span class="selector-pseudo">:disabled</span> &#123; <span class="attribute">opacity</span>: <span class="number">0.5</span> &#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="选择状态"   >
+          <a href="#选择状态" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#选择状态"></a> 选择状态</h3>
+      
+<p>某些UI元素可以选中或者不选，例如复选框和单选框，使用:checked可以匹配它们。</p>
+<p>没有:unchecked伪类，为了实现“选中所有没被选择的元素”，可以使用:not()</p>
+<p>可选元素默认是未被选中的，但文档编写人员可以通过元素标记中的checked属性切换状态，也可以使用脚本改变元素的选择状态。</p>
+<p>除了选中和未选中外，还有一个不确定状态，这个状态只能由脚本或用户代理实现，在标记中做不到这一点。</p>
+<p>:indeterminate存在的目的是从视觉上提示用户需要选中（或不选）某个元素，但这只是视觉上的效果，对元素底层状态没有影响，元素的底层状态只能是选中或未选中。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;checkbox&#x27;</span>]</span><span class="selector-pseudo">:checked</span> + <span class="selector-tag">label</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-style</span>: italic;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;checkbox&#x27;</span> <span class="attr">id</span>=<span class="string">&#x27;chbx&#x27;</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&#x27;chbx&#x27;</span>&gt;</span>1145141919810364364<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="默认选项伪类"   >
+          <a href="#默认选项伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#默认选项伪类"></a> 默认选项伪类</h3>
+      
+<p>:default伪类匹配一组相似元素中取默认值的元素，常用于上下文菜单选项、按钮和选择列表。</p>
+<p>如果有几个同名的单选按钮，最初被选中的那个匹配:default。</p>
+<p>页面加载时选中的复选框匹配:default。</p>
+<p>select元素中最初选中的一个或多个option匹配:default。</p>
+<p>:default伪类还能匹配按钮和菜单选项。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[type=<span class="string">&#x27;checkbox&#x27;</span>]</span><span class="selector-pseudo">:default</span> + <span class="selector-tag">label</span> &#123; <span class="attribute">font-style</span>: italic; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;checkbox&#x27;</span> <span class="attr">id</span>=<span class="string">&#x27;chbx&#x27;</span> <span class="attr">checked</span> <span class="attr">name</span>=<span class="string">&#x27;foo&#x27;</span> <span class="attr">value</span>=<span class="string">&#x27;bar&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&#x27;chbx&#x27;</span>&gt;</span>1145141919810364364<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="可选性伪类"   >
+          <a href="#可选性伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#可选性伪类"></a> 可选性伪类</h3>
+      
+<p>:required匹配必填的表单控件，:optional匹配没有required属性或required属性为false的控件。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:required</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#f00</span> &#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:optional</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span> &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;number&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;please enter your phone number&#x27;</span> <span class="attr">required</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;number&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;please enter your phone number&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;number&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;please enter your phone number&#x27;</span> <span class="attr">required</span>=<span class="string">&#x27;false&#x27;</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>除了伪类，匹配必填表单控件也可以使用属性选择符。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[required]</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#f00</span> &#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:not</span>(<span class="selector-attr">[required]</span>) &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span> &#125;</span><br></pre></td></tr></table></div></figure>
+<p>除了表单输入框外，其他元素既不能是必填的，也不能是可选的</p>
+
+        <h3 id="有效性伪类"   >
+          <a href="#有效性伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#有效性伪类"></a> 有效性伪类</h3>
+      
+<p>当用户输入的值满足所有数据验证条件时可以匹配:valid，否则匹配:invalid。</p>
+<p>它们只适用于能检查数据有效性的元素</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;email&#x27;</span>]</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: <span class="number">100%</span> <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;email&#x27;</span>]</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">:invalid</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&#x27;warning.jpg&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;email&#x27;</span>]</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">:valid</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&#x27;checkmark.jpg&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>这两个伪类起不起作用取决于用户代理会不会向样式系统报告验证状态，因此某些情况下的效果可能会和预期不符。</p>
+    </div>
+  
+
+        <h3 id="范围伪类"   >
+          <a href="#范围伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#范围伪类"></a> 范围伪类</h3>
+      
+<p>在HTML5中可以用min和max属性界定用户输入的范围，拥有范围限制的元素，输入值在范围内匹配:in-range，否则匹配:out-of-range。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;number&#x27;</span>]</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: <span class="number">100%</span> <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;number&#x27;</span>]</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">:out-of-range</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&#x27;warning.jpg&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;number&#x27;</span>]</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">:in-range</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&#x27;checkmark.jpg&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&#x27;nickels&#x27;</span> <span class="attr">type</span>=<span class="string">&#x27;number&#x27;</span> <span class="attr">min</span>=<span class="string">&#x27;0&#x27;</span> <span class="attr">max</span>=<span class="string">&#x27;1000&#x27;</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>如果输入值不匹配步进值（step属性）而无效，但仍然在min和max范围内，那么所在的元素将匹配:invalid和:in-range，也就是说，在范围内的值也可能是无效的。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;number&#x27;</span>]</span><span class="selector-pseudo">:in-range</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;number&#x27;</span>]</span><span class="selector-pseudo">:invalid</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&#x27;by-tens&#x27;</span> <span class="attr">type</span>=<span class="string">&#x27;number&#x27;</span> <span class="attr">min</span>=<span class="string">&#x27;0&#x27;</span> <span class="attr">max</span>=<span class="string">&#x27;1000&#x27;</span> <span class="attr">step</span>=<span class="string">&#x27;10&#x27;</span> <span class="attr">value</span>=<span class="string">&#x27;23&#x27;</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="可变性伪类"   >
+          <a href="#可变性伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#可变性伪类"></a> 可变性伪类</h3>
+      
+<p>:read-write表示输入框可由用户编辑，:read-only表示输入框不能被用户编辑。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">textarea</span><span class="selector-pseudo">:read-only</span> &#123; <span class="attribute">opacity</span>: <span class="number">0.75</span>; &#125;</span><br><span class="line">pre<span class="selector-pseudo">:read-write</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> dashed green; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">disabled</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span> <span class="attr">contenteditable</span>&gt;</span>Type here!<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="target伪类"   >
+          <a href="#target伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#target伪类"></a> :target伪类</h2>
+      
+<p>url中有个片段标识符（#后面的内容，可以定位到拥有该id的元素），它所指向的文档片段（在css中）被称为目标，url片段标识符指向的目标元素可以使用:target伪类特别装饰。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-pseudo">:target</span> &#123;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">5px</span> solid gray;</span><br><span class="line">    <span class="attribute">background</span>: yellow <span class="built_in">url</span>(<span class="string">&#x27;target.png&#x27;</span>) top right no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>:target定义的样式在以下两种情况不会被使用：</p>
+<ul>
+<li>页面的url中没有片段标识符</li>
+<li>页面的url中有片段标识符，但是文档中没有与之匹配的元素</li>
+</ul>
+
+        <h2 id="lang伪类"   >
+          <a href="#lang伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#lang伪类"></a> :lang伪类</h2>
+      
+<p>如果想根据文本使用的语言选择元素，可以使用:lang伪类。</p>
+<p>在匹配方式上，:lang()与|=属性选择符类似。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-pseudo">:lang</span>(fr) &#123; <span class="attribute">font-style</span>: italic; &#125;</span><br><span class="line">*<span class="selector-attr">[lang|=<span class="string">&#x27;fr&#x27;</span>]</span> &#123; <span class="attribute">font-style</span>: italic; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>伪类选择符与属性选择符间的主要区别是语言信息有多个来源，对属性选择符而言，元素自身必须有lang属性才能匹配，而:lang伪类能匹配设定了语言的元素的后代。</p>
+<p>在HTML中，语言可以通过lang属性、meta元素、协议等判断，XML中使用xml:lang属性。</p>
+<p>:lang伪类可以使用各种信息，而|=属性选择符只能用于含lang属性的元素，因此前者比后者更可靠。多是装饰特定语言的理想之选。</p>
+
+        <h2 id="否定伪类"   >
+          <a href="#否定伪类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#否定伪类"></a> 否定伪类</h2>
+      
+<p>前文中所有的选择符都是肯定选择符，它们用于指定应该选择的东西，排除不匹配（即不选择）的东西。</p>
+<p>如果想反过来选择不满足条件的元素，可以使用selectors level 3引入的否定伪类:not</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:not</span>(<span class="selector-class">.info</span>) &#123; <span class="attribute">font-style</span>: italic; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>:not依附在元素上，括号内是简单的选择符，根据W3C的定义，简单的选择符指：一个类型选择符、通用选择符、类选择符、ID选择符或伪类。</p>
+<p>:not只能使用一种选择符，不能使用群组选择符，也不能使用连接符，更不能使用后代选择符。</p>
+<p>否定伪类不能嵌套，不能引用伪元素，可以串联使用。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 选中含link类，但不是li或p的元素 */</span></span><br><span class="line"><span class="selector-class">.link</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">li</span>)<span class="selector-pseudo">:not</span>(<span class="selector-tag">p</span>) &#123; <span class="attribute">font-style</span>: italic; &#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h1 id="伪元素选择符"   >
+          <a href="#伪元素选择符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#伪元素选择符"></a> 伪元素选择符</h1>
+      
+<p>伪元素类似伪类，为了实现特定的效果，它在文档中插入虚构的元素。</p>
+<p>css2定义了四个基本的伪元素，之后的规范又定义了其他伪元素。</p>
+<p>所有伪元素只能出现在选择符的最后，出现在中间是无效的。</p>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>伪元素开头使用两个冒号::，为了向后兼容，浏览器接受使用一个冒号的伪元素，但不确保什么时候就不支持兼容了，所以应该使用正确的冒号个数。</p>
+    </div>
+  
+
+        <h2 id="装饰首字母"   >
+          <a href="#装饰首字母" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#装饰首字母"></a> 装饰首字母</h2>
+      
+<p>::first-letter用于装饰任何非行内元素的首字母单元，或开头的标点符号和首字母单元（如果文本以标点符号开头）</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='firstletterp'>
+    abcdefghijklmnopqrstuvwxyz
+</p>
+<style>.firstletterp::first-letter { color: red; }</style>
+<hr />
+<p>::first-letter经常用于实现排版效果中的“首字母大写’或”首字母下沉“</p>
+<p>这个规则其实就相当于让用户代理装饰每个p元素中包围首字母的一个虚构元素。</p>
+
+        <h2 id="装饰首行"   >
+          <a href="#装饰首行" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#装饰首行"></a> 装饰首行</h2>
+      
+<p>::first-line用于装饰元素的首行文本。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-line</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">150%</span>;</span><br><span class="line">    <span class="attribute">color</span>: purple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='firstlinep'>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim aliquam ligula, at dignissim urna. Vestibulum at ultrices odio. Quisque sed egestas orci. Vivamus eget pretium nunc, et laoreet lectus. Maecenas id libero eu nulla pharetra volutpat. Morbi vitae quam eget ex maximus semper. Mauris ac bibendum ipsum, non mattis lacus. Morbi ornare, velit eu bibendum aliquam, sapien mauris volutpat justo, ac pharetra nunc lorem id massa. 
+</p>
+<style>
+    .firstlinep::first-line {
+        font-size: 150%;
+        color: purple;
+	}
+</style>
+<hr />
+<p>如果用户增大或减小字号、拉宽或缩窄浏览器窗口，导致文本的宽度有变，首行中的词数随之增多或减少，浏览器能自动调整。</p>
+
+        <h2 id="对first-letter和first-line的限制"   >
+          <a href="#对first-letter和first-line的限制" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#对first-letter和first-line的限制"></a> 对::first-letter和::first-line的限制</h2>
+      
+<p>这两个伪元素只能应用到块级元素上，可以使用的css属性也有限制</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>::first-letter</th>
+<th>::first-line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>所有字体属性</td>
+<td>所有字体属性</td>
+</tr>
+<tr>
+<td>所有背景属性</td>
+<td>所有背景属性</td>
+</tr>
+<tr>
+<td>所有文本装饰属性</td>
+<td>所有外边距属性</td>
+</tr>
+<tr>
+<td>所有行内排版属性</td>
+<td>所有内边距属性</td>
+</tr>
+<tr>
+<td>所有行内布局属性</td>
+<td>所有边框属性</td>
+</tr>
+<tr>
+<td>所有边框属性</td>
+<td>所有文本装饰属性</td>
+</tr>
+<tr>
+<td>box-shadow</td>
+<td>所有行内排版属性</td>
+</tr>
+<tr>
+<td>color</td>
+<td>color</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>opacity</td>
+</tr>
+</tbody>
+</table></div>
+
+        <h2 id="装饰或创建前置和后置内容元素"   >
+          <a href="#装饰或创建前置和后置内容元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#装饰或创建前置和后置内容元素"></a> 装饰（或创建）前置和后置内容元素</h2>
+      
+<p>使用::before和::after伪元素可以在元素的前或后生成元素</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::before</span> &#123; <span class="attribute">content</span>: <span class="string">&#x27;]]&#x27;</span>; <span class="attribute">color</span>: silver; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::after</span> &#123; <span class="attribute">content</span>: <span class="string">&#x27;[[&#x27;</span>; <span class="attribute">color</span>: silver; &#125;</span><br></pre></td></tr></table></div></figure>
+<hr />
+<p class='beforeafterp'>
+    abcdefghijklmnopqrstuvwxyz
+</p>
+<style>
+    .beforeafterp::before { content: ']]'; color: silver; }
+    .beforeafterp::after { content: '[['; color: silver; }
+</style>
+<hr />
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://cheriko.fun">CherikoM</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://cheriko.fun/2022/10/30/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(2)/">https://cheriko.fun/2022/10/30/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E9%80%89%E6%8B%A9%E7%AC%A6(2)/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css/">css</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/">css权威指南</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_alipay.md.png"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_wechat.md.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/01/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E7%89%B9%E6%8C%87%E5%BA%A6%E5%92%8C%E5%B1%82%E5%8F%A0/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">菜鸡恶补css 第三章 特指度和层叠</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/28/%E6%97%A5%E5%B8%B8/%E5%8F%91%E7%94%B5/%E5%85%B3%E4%BA%8E%E6%88%91%E5%96%9C%E6%AC%A2Barely%20Alive%E7%9A%84n%E4%B8%AA%E5%8E%9F%E5%9B%A0/"><span class="paginator-prev__text">关于我喜欢Barely Alive的n个原因</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">
+           伪类选择符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%BC%E6%8E%A5%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">
+           拼接伪类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">
+           结构伪类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%A0%B9%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+           选择根元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%A9%BA%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+           选择空元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%94%AF%E4%B8%80%E7%9A%84%E5%AD%90%E4%BB%A3"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+           选择唯一的子代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%AD%90%E4%BB%A3"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+           选择第一个和最后一个子代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%AF%8F%E7%AC%ACn%E4%B8%AA%E5%AD%90%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.5.</span> <span class="toc-text">
+           选择每第n个子元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">
+           动态伪类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+           超链接伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+           用户操作伪类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ui%E5%8A%A8%E6%80%81%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.4.</span> <span class="toc-text">
+           UI动态伪类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E5%92%8C%E7%A6%81%E7%94%A8%E7%9A%84ui%E5%85%83%E7%B4%A0"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+           启用和禁用的UI元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%8A%B6%E6%80%81"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+           选择状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E9%80%89%E9%A1%B9%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.4.3.</span> <span class="toc-text">
+           默认选项伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E6%80%A7%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.4.4.</span> <span class="toc-text">
+           可选性伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%80%A7%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.4.5.</span> <span class="toc-text">
+           有效性伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%9B%B4%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.4.6.</span> <span class="toc-text">
+           范围伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E6%80%A7%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.4.7.</span> <span class="toc-text">
+           可变性伪类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#target%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.5.</span> <span class="toc-text">
+           :target伪类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lang%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.6.</span> <span class="toc-text">
+           :lang伪类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%A6%E5%AE%9A%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.7.</span> <span class="toc-text">
+           否定伪类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">2.</span> <span class="toc-text">
+           伪元素选择符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E9%A6%96%E5%AD%97%E6%AF%8D"><span class="toc-number">2.1.</span> <span class="toc-text">
+           装饰首字母</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E9%A6%96%E8%A1%8C"><span class="toc-number">2.2.</span> <span class="toc-text">
+           装饰首行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9first-letter%E5%92%8Cfirst-line%E7%9A%84%E9%99%90%E5%88%B6"><span class="toc-number">2.3.</span> <span class="toc-text">
+           对::first-letter和::first-line的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E6%88%96%E5%88%9B%E5%BB%BA%E5%89%8D%E7%BD%AE%E5%92%8C%E5%90%8E%E7%BD%AE%E5%86%85%E5%AE%B9%E5%85%83%E7%B4%A0"><span class="toc-number">2.4.</span> <span class="toc-text">
+           装饰（或创建）前置和后置内容元素</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/static/Cheriko_pic.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">CherikoM</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/CherikoM/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=1330949085/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://music.163.com/#/user/home?id=319313489" target="_blank" rel="noopener" data-popover="网易云音乐" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-record-vinyl"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/4582324/" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">B</span></a><a class="sidebar-ov-social-item" href="https://xiangyinhexuyuan.lofter.com/" target="_blank" rel="noopener" data-popover="Lofter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">L</span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/ying-mu-guo-8/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-zhihu"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>CherikoM</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,122,120" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":0,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
+    appKey: 'cLSG7K1iInnLJuU15DMJ8EJl',
+    notify: true,
+    verify: true,
+    placeholder: '鳖载着理发店？鸠载着理发店！',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-CN' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/heart.js"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.xml"></script><div class="aplayer" data-id="7701953645" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="true" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script></body></html>

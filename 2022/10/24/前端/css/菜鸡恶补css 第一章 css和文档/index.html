@@ -1,0 +1,819 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="1t_udMygpn_u_Ykuqyp-NsdEibEtikS7hpWfddBF3ao"><meta name="msvalidate.01" content="E140022059D9AD5124B0A64BF51BF030"><meta name="baidu-site-verification" content="code-qo8UKs4MrZ"><meta name="360-site-verification" content="055476a64ed98cc0d0c9eea5b04922e0"><meta name="sogou_site_verification" content="qQwiFLOWUL"><meta name="description" content="前端这玩意，之前稀里糊涂看免费视频自学的，成不了体系，算不上不懂，但也算不上懂。 感觉缺乏系统的学习，直接买本书来啃吧，既然事先接触过，就不用太担心看不懂。 本系列所使用的书为OREILLY出品的《CSS权威指南》第四版，出版于2018年，分为上下两册。 历史很有趣，但本系列只记录最关键的概念、语法、使用等，技术历史做茶余饭后的谈资就够了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菜鸡恶补css 第一章 css和文档">
+<meta property="og:url" content="https://cheriko.fun/2022/10/24/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%80%E7%AB%A0%20css%E5%92%8C%E6%96%87%E6%A1%A3/index.html">
+<meta property="og:site_name" content="Cherry🍒Garden">
+<meta property="og:description" content="前端这玩意，之前稀里糊涂看免费视频自学的，成不了体系，算不上不懂，但也算不上懂。 感觉缺乏系统的学习，直接买本书来啃吧，既然事先接触过，就不用太担心看不懂。 本系列所使用的书为OREILLY出品的《CSS权威指南》第四版，出版于2018年，分为上下两册。 历史很有趣，但本系列只记录最关键的概念、语法、使用等，技术历史做茶余饭后的谈资就够了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2022/10/24/QQ20221024154257.png">
+<meta property="article:published_time" content="2022-10-24T02:51:09.116Z">
+<meta property="article:modified_time" content="2022-10-25T06:42:01.197Z">
+<meta property="article:author" content="CherikoM">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="css权威指南">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.imagehub.cc/images/2022/10/24/QQ20221024154257.png"><title>菜鸡恶补css 第一章 css和文档 | Cherry🍒Garden</title><link ref="canonical" href="https://cheriko.fun/2022/10/24/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%80%E7%AB%A0%20css%E5%92%8C%E6%96%87%E6%A1%A3/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":3},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"light","highlight":"light","wordWrap":false},
+  reward: true,
+  fancybox: true,
+  zoomImage: {"gapAside":"100px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-inbox"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="far fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">菜鸡恶补css 第一章 css和文档</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2022-10-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-10-25</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon" data-popover="字数统计" data-popover-pos="up"><i class="far fa-file-word"></i></span><span class="post-meta-item__value">2.9k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon" data-popover="阅读时间" data-popover-pos="up"><i class="far fa-clock"></i></span><span class="post-meta-item__value">17分</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2022/10/24/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%80%E7%AB%A0%20css%E5%92%8C%E6%96%87%E6%A1%A3/" data-flag-title="菜鸡恶补css 第一章 css和文档"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body"><p>前端这玩意，之前稀里糊涂看免费视频自学的，成不了体系，算不上不懂，但也算不上懂。</p>
+<p>感觉缺乏系统的学习，直接买本书来啃吧，既然事先接触过，就不用太担心看不懂。</p>
+<p>本系列所使用的书为OREILLY出品的《CSS权威指南》第四版，出版于2018年，分为上下两册。</p>
+<p>历史很有趣，但本系列只记录最关键的概念、语法、使用等，技术历史做茶余饭后的谈资就够了。</p>
+<span id="more"></span>
+
+        <h1 id="元素"   >
+          <a href="#元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#元素"></a> 元素</h1>
+      
+
+        <h2 id="置换元素和非置换元素"   >
+          <a href="#置换元素和非置换元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#置换元素和非置换元素"></a> 置换元素和非置换元素</h2>
+      
+
+        <h3 id="置换元素"   >
+          <a href="#置换元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#置换元素"></a> 置换元素</h3>
+      
+<p><strong>置换元素</strong>指用来置换元素内容的部分不由文档内容直接表示。例如：</p>
+<ul>
+<li>img，没有在文档中的内容，而是显示文档之外，src属性指向的图像文件。</li>
+<li>input，根据类型的不同，会被替换成单选按钮、复选框、文本输入框等。</li>
+</ul>
+
+        <h3 id="非置换元素"   >
+          <a href="#非置换元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#非置换元素"></a> 非置换元素</h3>
+      
+<p><strong>非置换元素</strong>的内容由用户代理在元素自身生成的框里显示。</p>
+<p>在文档中的元素内写了什么内容，框里就显示什么内容。大部分HTML元素都是非置换元素</p>
+
+        <h2 id="元素的显示方式"   >
+          <a href="#元素的显示方式" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#元素的显示方式"></a> 元素的显示方式</h2>
+      
+<p>在HTML中，块级元素不能出现在行内元素内，但css不限制它们的显示方式，相互之间可以嵌套。</p>
+<p>用css改变元素显示方式对XML文档的意义更大。</p>
+
+        <h3 id="块级元素"   >
+          <a href="#块级元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#块级元素"></a> 块级元素</h3>
+      
+<p><strong>块级元素</strong>的块独占一行，两旁没有其他元素。置换元素可以是块级元素，但往往不是</p>
+
+        <h3 id="行内元素"   >
+          <a href="#行内元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#行内元素"></a> 行内元素</h3>
+      
+<p><strong>行内元素</strong>在一行文本内生成元素框，不打断所在的行。</p>
+
+        <h1 id="把css应用到html上"   >
+          <a href="#把css应用到html上" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#把css应用到html上"></a> 把css应用到HTML上</h1>
+      
+
+        <h2 id="link标签"   >
+          <a href="#link标签" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#link标签"></a> link标签</h2>
+      
+<p><strong>外部样式表</strong>包含一系列css样式声明，存储在单独的文件内。</p>
+<p>使用外部样式有利于更新和维护网站。</p>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>如果外部样式表中有css以外的语法，如文档标记，可能导致部分或全部样式失效。</p>
+    </div>
+  
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>外部样式表的拓展名不是必须的，但如果拓展名不是css，即使link的属性type=‘text/css’，有些旧浏览器也不会将其识别为样式表。</p>
+    </div>
+  
+<p>使用link标签的href属性引入外部样式表供文档使用。</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&#x27;stylesheet&#x27;</span> <span class="attr">type</span>=<span class="string">&#x27;text/css&#x27;</span> <span class="attr">href</span>=<span class="string">&#x27;xxx.css&#x27;</span> <span class="attr">media</span>=<span class="string">&#x27;screen, projection&#x27;</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>为了正确加载外部样式表，必须将link标签放在head元素内。</p>
+<p>一个文档可以关联多个样式表，合并样式规则后将一并应用到文档上。</p>
+
+        <h3 id="属性"   >
+          <a href="#属性" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#属性"></a> 属性</h3>
+      
+<ul>
+<li>rel：relationship，当前文档与加载文件之间的关系，引入外部样式表时设为stylesheet。</li>
+<li>type：加载的数据类型，引入css外部样式表时设为text/css。</li>
+<li>href：加载文件的URL。</li>
+<li>media：指定应用加载文件的媒体类型，多个媒体描述符以逗号分开。</li>
+</ul>
+
+        <h3 id="候选样式表"   >
+          <a href="#候选样式表" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#候选样式表"></a> 候选样式表</h3>
+      
+<p>将属性rel='alternate stylesheet’后，仅当用户自己选择，文档才会使用候选样式表渲染，这样的样式表被称为<strong>候选样式表</strong>，而属性rel='stylesheet’将会成为<strong>首选样式表</strong>。</p>
+<p>使用title属性可以将外部样式表命名，可供用户选择样式，不指定title属性则为<strong>永久样式表</strong>，始终用于显示文档（css早期的使用方式）。</p>
+
+        <h2 id="style元素"   >
+          <a href="#style元素" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#style元素"></a> style元素</h2>
+      
+<p>style元素使得编写人员可以直接将样式表直接写在文档内，这样的样式表被称为<strong>文档样式表</strong>或<strong>嵌入式样式表</strong>。</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&#x27;text/css&#x27;</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>style元素始终需要设定type属性，且值必须为’text/css’。</p>
+<p>style元素的media属性功能与link元素一致。</p>
+<p>也可以使用@import在style元素内引入外部样式表。</p>
+
+        <h2 id="import指令"   >
+          <a href="#import指令" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#import指令"></a> @import指令</h2>
+      
+<p>与link元素相似，可以使用@import在样式表（不仅限于嵌入式样式表）内加载外部样式表。</p>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>@import指令必须位于样式表的顶部，否则不会起作用。</p>
+    </div>
+  
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&#x27;text/css&#x27;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="keyword">@import</span>(xxx.css);</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>一个文档中可以有多个@import，它们所导入的每个样式表都会被使用。@import也可指定应用媒体。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span>(aaa.css) all;</span><br><span class="line"><span class="keyword">@import</span>(bbb.css) screen;</span><br><span class="line"><span class="keyword">@import</span>(ccc.css) projection, print;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="http链接"   >
+          <a href="#http链接" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#http链接"></a> HTTP链接</h2>
+      
+<p>使用HTTP首部也可以为文档关联css，例如：</p>
+<figure class="highlight http"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Header add Link &quot;&lt;/ui/xxx.css&gt;;rel=stylesheet;type=text/css&quot;</span><br></pre></td></tr></table></div></figure>
+<p>这样一来，支持这种方式的浏览器在加载受此.htaccess文件管理的文档时就会使用指定样式表。</p>
+<hr />
+<p>也可以在服务器的httpd.conf文件中添加等效的规则，这样做可能更高效：</p>
+<figure class="highlight http"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory /path/to/ /public/html/directory&gt;</span><br><span class="line">	Header add Link &quot;&lt;/ui/xxx.css&gt;;rel=stylesheet;type=text/css&quot;</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></div></figure>
+<hr />
+<p>广泛支持HTTP链接样式表的浏览器有Firefox和Opera，所以这种方式最常见于开发。</p>
+<p>在测试服务器中使用HTTP链接可以把开发中网站和已上线网站区分开。</p>
+<p>也可以用于隐藏一些样式，使其不被WebKit和IE使用。</p>
+
+    <div class="note-plugin default">
+      <span class="note-plugin__icon note-plugin__icon--default">
+              <i class="fas fa-arrow-circle-right"></i>
+            </span>
+      <p>PHP这类常用脚本语言和IIS也有等效的方式，还可以使用脚本语言向服务器伺服的文档插入link元素。考虑到浏览器的支持，这种开发方案更牢靠。</p>
+    </div>
+  
+
+        <h2 id="行内样式"   >
+          <a href="#行内样式" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#行内样式"></a> 行内样式</h2>
+      
+<p>如果只想为单个元素提供少量样式，可以使用HTML元素的style属性：</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&#x27;color: #114514;&#x27;</span>&gt;</span>Pariatur nisi voluptate sit, dolore sunt esse officia ut adipiscing. Ex sunt labore exercitation anim veniam, veniam officia sunt laborum.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>除了body元素之外的标签，所有HTML标签都能设定style属性。</p>
+<p>style的值只能是一系列样式声明，而不能包含整个样式表，因此不能在行内样式中使用@import，也不能有完整的规则。</p>
+<p>通常不建议也没必要使用行内样式，它抹去了css的优点，增加了样式与结构间的耦合度。</p>
+
+        <h1 id="样式表中的内容"   >
+          <a href="#样式表中的内容" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样式表中的内容"></a> 样式表中的内容</h1>
+      
+
+        <h2 id="标记"   >
+          <a href="#标记" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#标记"></a> 标记</h2>
+      
+<p>样式表中不能有标记，但出于历史原因，style元素中可以有HTML注释：</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">	<span class="comment">&lt;!--</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">    h1&#123; color: #114514; &#125;</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">    body &#123; background-color: #364364 &#125;</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">    --&gt;</span></span></span><br><span class="line"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="规则的结构"   >
+          <a href="#规则的结构" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#规则的结构"></a> 规则的结构</h2>
+      
+<ul>
+<li>一个样式表由一系列<strong>规则</strong>组成。</li>
+<li>一个规则由<strong>选择符</strong>和<strong>声明块</strong>两部分组成。</li>
+<li>一个声明块由一个或多个<strong>声明</strong>组成。</li>
+<li>一个声明由一个<strong>属性</strong>和对应的<strong>值</strong>组成。</li>
+</ul>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://s1.imagehub.cc/images/2022/10/24/QQ20221024154257.png"  alt="" />
+      </p>
+<p>选择符定义文档中受该样式影响的元素，声明块定义样式呈现什么效果。</p>
+
+        <h2 id="厂商前缀"   >
+          <a href="#厂商前缀" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#厂商前缀"></a> 厂商前缀</h2>
+      
+<p>有些属性名前面会有个标注，被称为<strong>厂商前缀</strong>。</p>
+<p>浏览器厂商通过它标注实验性或专属（或二者兼具）的属性、值或其他内容。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>厂商</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-epub-</td>
+<td>国际数字出版论坛指定的ePub格式</td>
+</tr>
+<tr>
+<td>-moz-</td>
+<td>基于Mozilla的浏览器，如Firefox</td>
+</tr>
+<tr>
+<td>-ms-</td>
+<td>微软IE</td>
+</tr>
+<tr>
+<td>-o-</td>
+<td>基于Opera的浏览器</td>
+</tr>
+<tr>
+<td>-webkit-</td>
+<td>基于WebKit的浏览器，如Safari和Chrome</td>
+</tr>
+</tbody>
+</table></div>
+
+        <h2 id="处理空格"   >
+          <a href="#处理空格" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#处理空格"></a> 处理空格</h2>
+      
+<p>css对规则之间，规则之内的空格基本都没什么严格要求，有部分情况会要求至少留一个空格。</p>
+<p>一般来说，css处理空格的方式和HTML差不多，解析时，连续的空格会合并成一个空格。</p>
+
+        <h2 id="css注释"   >
+          <a href="#css注释" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#css注释"></a> css注释</h2>
+      
+<p>css没有单行注释，只有多行注释，且不能嵌套。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 我是css注释 */</span></span><br></pre></td></tr></table></div></figure>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>在css解析器眼里，css注释相当于根本没出现过，所以不会被解析器算作空格。因此，注释可以放在规则，甚至声明内部。</p>
+    </div>
+  
+
+        <h1 id="媒体查询"   >
+          <a href="#媒体查询" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#媒体查询"></a> 媒体查询</h1>
+      
+<p>通过媒体查询，浏览器在不同媒体环境可以使用不同的指定样式表。</p>
+
+        <h2 id="用处"   >
+          <a href="#用处" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#用处"></a> 用处</h2>
+      
+<ul>
+<li>link元素的media属性</li>
+<li>style元素的media属性</li>
+<li>@import声明的媒体描述符部分</li>
+<li>@media声明的媒体描述符部分</li>
+</ul>
+
+        <h2 id="简单的媒体查询"   >
+          <a href="#简单的媒体查询" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#简单的媒体查询"></a> 简单的媒体查询</h2>
+      
+<p>一个样式表中可以有任意多个@media块，而且每一个都有自己的一套媒体描述符。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: green; &#125;</span><br><span class="line"><span class="keyword">@media</span> projection &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123; <span class="attribute">background-color</span>: yellow; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>该例在投影媒体中，body会有一个黄色背景。</p>
+
+        <h2 id="媒体类型"   >
+          <a href="#媒体类型" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#媒体类型"></a> 媒体类型</h2>
+      
+<p><strong>媒体类型</strong>是媒体查询最基本的形式，由css2引入，能指明不同媒体的标注：</p>
+<ul>
+<li>all：所有媒体设备</li>
+<li>aural：语音和音频合成去等听觉设备</li>
+<li>braille：盲人用点字法触觉回馈设备</li>
+<li>embossed：盲人用点字法打印机</li>
+<li>handheld：小型手持设备，如手机、平板电脑</li>
+<li>print：打印机</li>
+<li>projection：投影设备</li>
+<li>screen：电脑显示器等屏幕媒体</li>
+<li>tty：使用固定密度字母栅格的媒体，如打字机</li>
+<li>tv：电视</li>
+</ul>
+<p>使用多个媒体类型时要用逗号罗列。</p>
+
+        <h2 id="媒体描述符"   >
+          <a href="#媒体描述符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#媒体描述符"></a> 媒体描述符</h2>
+      
+<p><strong>媒体特性描述符</strong>放在圆括号中，格式类似css的键值对，但可以不指定值。</p>
+<p>一个<strong>媒体描述符</strong>包含一个媒体类型和一或多个由媒体特性描述符组成的媒体特性列表。</p>
+<p>当媒体描述符不含媒体类型时，默认应用到所有媒体上。</p>
+
+        <h3 id="媒体查询关键字"   >
+          <a href="#媒体查询关键字" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#媒体查询关键字"></a> 媒体查询关键字</h3>
+      
+<ul>
+<li>and：连接的两个或多个媒体特性必须同时满足条件，整个查询结果才会是真值。</li>
+<li>not：对整个查询结果取反，只能用于媒体查询的开头。</li>
+<li>媒体设备不支持or关键字，但分隔描述符用的逗号,相当于or。</li>
+<li>only：在不支持媒体查询的旧浏览器中隐藏样式表，在支持媒体查询的浏览器中会被忽略，只能用于媒体查询的开头。</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* and关键字的使用 */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">color</span>) <span class="keyword">and</span> (<span class="attribute">orientation</span>:landscape) <span class="keyword">and</span> (<span class="attribute">min-device-width</span>: <span class="number">800px</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* not关键字的使用 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">not</span> (<span class="attribute">color</span>) <span class="keyword">and</span> (<span class="attribute">orientation</span>:landscape) <span class="keyword">and</span> (<span class="attribute">min-device-width</span>: <span class="number">800px</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 逗号的使用 */</span></span><br><span class="line"><span class="keyword">@media</span> print <span class="keyword">and</span> (<span class="attribute">color</span>), screen <span class="keyword">and</span> (<span class="attribute">color-depth</span>: <span class="number">8</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="媒体特性描述符的类型"   >
+          <a href="#媒体特性描述符的类型" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#媒体特性描述符的类型"></a> 媒体特性描述符的类型</h3>
+      
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>xxx</th>
+<th>min-xxx</th>
+<th>max-xxx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>min-width</td>
+<td>max-width</td>
+</tr>
+<tr>
+<td>device-width</td>
+<td>min-device-width</td>
+<td>max-device-width</td>
+</tr>
+<tr>
+<td>height</td>
+<td>min-height</td>
+<td>max-height</td>
+</tr>
+<tr>
+<td>device-height</td>
+<td>min-device-height</td>
+<td>max-device-height</td>
+</tr>
+<tr>
+<td>aspect-ratio</td>
+<td>min-aspect-ratio</td>
+<td>max-aspect-ratio</td>
+</tr>
+<tr>
+<td>device-aspect-ratio</td>
+<td>min-device-aspect-ratio</td>
+<td>max-device-aspect-ratio</td>
+</tr>
+<tr>
+<td>color</td>
+<td>min-color</td>
+<td>max-color</td>
+</tr>
+<tr>
+<td>color-index</td>
+<td>min-color-index</td>
+<td>max-color-index</td>
+</tr>
+<tr>
+<td>monochrome</td>
+<td>min-monochrome</td>
+<td>max-monochrome</td>
+</tr>
+<tr>
+<td>resolution</td>
+<td>min-resolution</td>
+<td>max-resolution</td>
+</tr>
+<tr>
+<td>orientation</td>
+<td>scan</td>
+<td>grid</td>
+</tr>
+</tbody>
+</table></div>
+<p>还有为媒体查询新增的两类css属性值：&lt;ratio&gt;和&lt;resolution&gt;。</p>
+
+        <h1 id="特性查询"   >
+          <a href="#特性查询" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#特性查询"></a> 特性查询</h1>
+      
+<p><strong>特性查询</strong>能根据用户代理是否支持特定的css属性及值，决定对一段样式的应用与否。</p>
+<p>特性查询的结构与媒体查询类似：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@supports</span> (<span class="attribute">color</span>: black) &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123; <span class="attribute">color</span>: black; &#125;</span><br><span class="line">    <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br><span class="line">    <span class="selector-tag">h2</span> &#123; <span class="attribute">color</span>: navy; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>如果浏览器能识别并处理color: black;，就会应用这些样式，否则跳过。</p>
+<p>特性查询是渐进增强样式的完美方式，例如：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这段代码在旧的浮动布局之上增加覆盖的栅格布局，前提是浏览器支持栅格布局，否则无事发生 */</span></span><br><span class="line"><span class="keyword">@supports</span> (<span class="attribute">display</span>: <span class="attribute">grid</span>) &#123;</span><br><span class="line">    <span class="selector-tag">section</span><span class="selector-id">#main</span> &#123; <span class="attribute">display</span>: grid; &#125;</span><br><span class="line">    <span class="comment">/* 去掉旧布局的样式 */</span></span><br><span class="line">    <span class="comment">/* 栅格布局的样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>特性查询和媒体查询还可以互相嵌套。</p>
+<p>与媒体查询一样，特性查询也可以使用逻辑运算符，不同点在于特性查询可以使用or，还可以使用嵌套括号保证条理清晰。</p>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>特性查询不是正确性查询，只能确保浏览器有没有某一特性，不能确保浏览器对该特性的支持是否符合预期。</p>
+    </div>
+  
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>可能出现浏览器支持某一属性，但不支持该属性可选的全部值的情况，所以要尽量将查询精确到值。</p>
+    </div>
+  <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://cheriko.fun">CherikoM</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://cheriko.fun/2022/10/24/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%80%E7%AB%A0%20css%E5%92%8C%E6%96%87%E6%A1%A3/">https://cheriko.fun/2022/10/24/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%B8%80%E7%AB%A0%20css%E5%92%8C%E6%96%87%E6%A1%A3/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css/">css</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/">css权威指南</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_alipay.md.png"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_wechat.md.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/24/%E5%89%8D%E7%AB%AF/%E4%BC%98%E8%AF%BE%E8%BE%BE/10%E6%9C%8824%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">10月24日做优课达</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/24/%E6%97%A5%E5%B8%B8/%E7%BD%AE%E9%A1%B6/%E6%A8%B1%E6%9E%9C%E5%9B%AD%E9%A3%9F%E7%94%A8%E8%AF%B4%E6%98%8E/"><span class="paginator-prev__text">樱果园食用说明</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.</span> <span class="toc-text">
+           元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0%E5%92%8C%E9%9D%9E%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.</span> <span class="toc-text">
+           置换元素和非置换元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+           置换元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+           非置换元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">
+           元素的显示方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+           块级元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+           行内元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%8Acss%E5%BA%94%E7%94%A8%E5%88%B0html%E4%B8%8A"><span class="toc-number">2.</span> <span class="toc-text">
+           把css应用到HTML上</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#link%E6%A0%87%E7%AD%BE"><span class="toc-number">2.1.</span> <span class="toc-text">
+           link标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">2.1.1.</span> <span class="toc-text">
+           属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%99%E9%80%89%E6%A0%B7%E5%BC%8F%E8%A1%A8"><span class="toc-number">2.1.2.</span> <span class="toc-text">
+           候选样式表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#style%E5%85%83%E7%B4%A0"><span class="toc-number">2.2.</span> <span class="toc-text">
+           style元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import%E6%8C%87%E4%BB%A4"><span class="toc-number">2.3.</span> <span class="toc-text">
+           @import指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E9%93%BE%E6%8E%A5"><span class="toc-number">2.4.</span> <span class="toc-text">
+           HTTP链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.5.</span> <span class="toc-text">
+           行内样式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">3.</span> <span class="toc-text">
+           样式表中的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E8%AE%B0"><span class="toc-number">3.1.</span> <span class="toc-text">
+           标记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">3.2.</span> <span class="toc-text">
+           规则的结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%82%E5%95%86%E5%89%8D%E7%BC%80"><span class="toc-number">3.3.</span> <span class="toc-text">
+           厂商前缀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E7%A9%BA%E6%A0%BC"><span class="toc-number">3.4.</span> <span class="toc-text">
+           处理空格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E6%B3%A8%E9%87%8A"><span class="toc-number">3.5.</span> <span class="toc-text">
+           css注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">
+           媒体查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E5%A4%84"><span class="toc-number">4.1.</span> <span class="toc-text">
+           用处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.2.</span> <span class="toc-text">
+           简单的媒体查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.3.</span> <span class="toc-text">
+           媒体类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-number">4.4.</span> <span class="toc-text">
+           媒体描述符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">4.4.1.</span> <span class="toc-text">
+           媒体查询关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E7%89%B9%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.4.2.</span> <span class="toc-text">
+           媒体特性描述符的类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%B9%E6%80%A7%E6%9F%A5%E8%AF%A2"><span class="toc-number">5.</span> <span class="toc-text">
+           特性查询</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/static/Cheriko_pic.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">CherikoM</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/CherikoM/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=1330949085/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://music.163.com/#/user/home?id=319313489" target="_blank" rel="noopener" data-popover="网易云音乐" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-record-vinyl"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/4582324/" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">B</span></a><a class="sidebar-ov-social-item" href="https://xiangyinhexuyuan.lofter.com/" target="_blank" rel="noopener" data-popover="Lofter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">L</span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/ying-mu-guo-8/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-zhihu"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>CherikoM</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,122,120" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":0,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
+    appKey: 'cLSG7K1iInnLJuU15DMJ8EJl',
+    notify: true,
+    verify: true,
+    placeholder: '鳖载着理发店？鸠载着理发店！',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-CN' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/heart.js"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.xml"></script><div class="aplayer" data-id="7701953645" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="true" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script></body></html>

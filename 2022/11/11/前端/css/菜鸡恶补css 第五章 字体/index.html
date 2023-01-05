@@ -1,0 +1,1144 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="1t_udMygpn_u_Ykuqyp-NsdEibEtikS7hpWfddBF3ao"><meta name="msvalidate.01" content="E140022059D9AD5124B0A64BF51BF030"><meta name="baidu-site-verification" content="code-qo8UKs4MrZ"><meta name="360-site-verification" content="055476a64ed98cc0d0c9eea5b04922e0"><meta name="sogou_site_verification" content="qQwiFLOWUL"><meta name="description" content="字体……平时还真没注意过这玩意。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菜鸡恶补css 第五章 字体">
+<meta property="og:url" content="https://cheriko.fun/2022/11/11/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%AD%97%E4%BD%93/index.html">
+<meta property="og:site_name" content="Cherry🍒Garden">
+<meta property="og:description" content="字体……平时还真没注意过这玩意。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-11T14:43:57.081Z">
+<meta property="article:modified_time" content="2022-11-11T14:44:36.933Z">
+<meta property="article:author" content="CherikoM">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="css权威指南">
+<meta name="twitter:card" content="summary"><title>菜鸡恶补css 第五章 字体 | Cherry🍒Garden</title><link ref="canonical" href="https://cheriko.fun/2022/11/11/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%AD%97%E4%BD%93/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":3},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"light","highlight":"light","wordWrap":false},
+  reward: true,
+  fancybox: true,
+  zoomImage: {"gapAside":"100px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-inbox"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="far fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">菜鸡恶补css 第五章 字体</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2022-11-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-11-11</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon" data-popover="字数统计" data-popover-pos="up"><i class="far fa-file-word"></i></span><span class="post-meta-item__value">9k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon" data-popover="阅读时间" data-popover-pos="up"><i class="far fa-clock"></i></span><span class="post-meta-item__value">61分</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2022/11/11/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%AD%97%E4%BD%93/" data-flag-title="菜鸡恶补css 第五章 字体"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body"><p>字体……平时还真没注意过这玩意。</p>
+<span id="more"></span>
+
+        <h1 id="字体族"   >
+          <a href="#字体族" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字体族"></a> 字体族</h1>
+      
+<p>字体通常包含多个变体，分别针对粗体、斜体等。例如Times字体，它有TimesReqular、TimesBold、TimesItalic、TimesBoldItalic等多个变体。</p>
+<p>Times的这些变体各自都是一个字型，Times其实就是这些不同字型的统称，即，Times是一个字体族(font-family)而不是一个字体。</p>
+<hr />
+<p>为了覆盖所有情况，css定义了五种通用字体族：</p>
+<ul>
+<li>衬线字体
+<ul>
+<li>这种字体中的字形宽度各异，而且有衬线</li>
+<li>因为字体中不同字符的尺寸不同，所以宽度有差异</li>
+<li>衬线是字符笔划末尾的装饰</li>
+</ul>
+</li>
+<li>无衬线字体
+<ul>
+<li>这种字体中的字形宽度各异，而且无衬线</li>
+</ul>
+</li>
+<li>等宽字体
+<ul>
+<li>这种字体的字形宽度一样</li>
+<li>一般用于显示编程代码和表格数据</li>
+<li>这种字体可以有衬线，也可以无衬线</li>
+</ul>
+</li>
+<li>草书字体
+<ul>
+<li>这种字体会尝试模仿人类笔记或手写体</li>
+</ul>
+</li>
+<li>奇幻字体
+<ul>
+<li>这种字体又称装饰字体或展示字体，没有统一的特征，不符合上述四种定义的字体即奇幻字体。</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="使用通用字体族"   >
+          <a href="#使用通用字体族" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#使用通用字体族"></a> 使用通用字体族</h2>
+      
+<p>字体族使用font-family属性声明。</p>
+<ul>
+<li><strong>font-family</strong>
+<ul>
+<li>取值：[&lt;family-name&gt;|&lt;generic-family&gt;]#</li>
+<li>初始值：用户代理指定</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+</li>
+</ul>
+<p>如果想让一个文档使用无衬线字体，但不介意使用哪一款，可以这样声明：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">font-family</span>: sans-serif; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>此时，由浏览器选择一款无衬线字体，然后应用到body元素上。</p>
+
+        <h2 id="指定字体族"   >
+          <a href="#指定字体族" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#指定字体族"></a> 指定字体族</h2>
+      
+<p>font-family也可以指定一款具体的字体，例如让h1指定为Georgia字体：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-family</span>: Georgia; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>这个规则假设用户代理中安装了Georgia字体，如果没有这款字体，用户代理不会使用这个规则。</p>
+<p>但其也不会被用户代理忽略，如果找不到Georgia字体，将使用用户代理的默认字体显示h1。</p>
+<hr />
+<p>对这条规则而言，如果用户代理中有Georgia字体，则使用，否则使用其他无衬线字体：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-family</span>: Georgia, serif; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>在font-family规则最后指定通用字体族相当于一种后备机制，在用户代理找不到匹配的字体时，选一个字体替代。</p>
+<p>font-family将按顺序一个接一个的检测字体，如果查找到则应用，查找不到检测下一个。</p>
+<hr />
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-family</span>: Times, <span class="string">&#x27;Times New Roman&#x27;</span>, <span class="string">&#x27;New Century Schoolbook&#x27;</span>, Georgia, <span class="string">&#x27;New York&#x27;</span>, serif&#125;</span><br></pre></td></tr></table></div></figure>
+<p>如果字体名称中含一个或多个空格或符号，就建议使用引号，否则用户代理可能会忽略这个字体名称而检查下一个，但这么做不是必须的。</p>
+<p>如果有字体的名称和font-family可用关键字重名，则必须将其用引号包裹，这样才能与关键字区分开。</p>
+<p>通用字体族不能带引号，否则会被认为是一款具体字体的名称。</p>
+<p>使用的引号可以是单引号，也可以是双引号。</p>
+
+        <h1 id="使用font-face"   >
+          <a href="#使用font-face" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#使用font-face"></a> 使用@font-face</h1>
+      
+<p>@font-face用于在设计中使用自定义的字体。</p>
+<p>假如使用的字体没有广泛安装，使用@font-face可以定义一个专门的字体族名称，对应服务器上的一个字体文件。</p>
+<p>用户代理将下载那个文件，使用它渲染页面中的文本，就好像用户的设备安装了那个字体一样。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">	<span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.otf&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>@font-face是懒加载的，仅当需要使用指定的字形渲染文本时才会加载，否则不加载，但浏览器不一定这么实现。</p>
+
+        <h2 id="必须的描述符"   >
+          <a href="#必须的描述符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#必须的描述符"></a> 必须的描述符</h2>
+      
+
+        <h3 id="font-family"   >
+          <a href="#font-family" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#font-family"></a> font-family</h3>
+      
+<p>定义字体的全部参数在@font-face{}中编写，这些参数被称为描述符，与属性类似，格式为<code>descriptor: value;</code>。多数描述符都会直接使用现有的属性名。</p>
+<p>描述符中的font-family和src是必须的</p>
+<ul>
+<li>font-family
+<ul>
+<li>取值：&lt;family-name&gt;</li>
+<li>初始值：未定义</li>
+</ul>
+</li>
+<li>src
+<ul>
+<li>取值：[ [ &lt;url&gt;[ format(&lt;string&gt;#) ]? ] | &lt;font-face-name&gt; ]</li>
+<li>初始值：未定义</li>
+</ul>
+</li>
+</ul>
+<p>这里的font-family是字体族描述符而非字体族属性。</p>
+<hr />
+<p>src能为定义的字型提供一个或多个源。如果有多个源，之间要以逗号分隔，作用是提供后备文件，如果用户代理无法从当前源下载字体，就转向下载下一个源：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">	<span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.otf&quot;</span>),</span><br><span class="line">         <span class="built_in">url</span>(<span class="string">&quot;/fonts/SwitzeraADF-Regular.otf&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>如果想告诉用户代理所用的字体是什么格式，可以使用可选的format()：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">	<span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>),</span><br><span class="line">         <span class="built_in">url</span>(<span class="string">&quot;/fonts/SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;truetype&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>这样做的好处是，让用户代理跳过不支持的字体格式，从而减少带宽用量，提升加载速度。format()还能为不带常规扩展名的字体文件指定格式，以防用户代理不识别。</p>
+<p>字型的源可以指向任何URL，但前提是与样式表同源，所以要在自己的服务器中存储一份字体，或使用同时提供样式表和字体文件的字体托管服务。</p>
+
+    <div class="note-plugin success">
+      <span class="note-plugin__icon note-plugin__icon--success">
+              <i class="fas fa-check-circle"></i>
+            </span>
+      <p>使用HTTP首部Access-Control-Allow-Origin设置服务器，可以允许跨站加载。</p>
+    </div>
+  
+<hr />
+<p>@font-face做的是低层定义，是为字体相关的属性（如font-family）服务的，通过描述符<code>font-family: &quot;SwitzeraADF&quot;;</code>定义一个字体族名称后，用户代理的字体族名称表中就会出现&quot;SwitzeraADF&quot;条目，与其他字体具有同等地位，可以在font-family属性的值中引用：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;		<span class="comment">/* 描述符 */</span></span><br><span class="line">	<span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.otf&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-family</span>: SwitzeraADF, Helvetica, sans-serif&#125;		<span class="comment">/* 属性 */</span></span><br></pre></td></tr></table></div></figure>
+<p>只要成功下载了字体文件，而且文件格式是用户代理支持的，那个字体就会像其他字体一样渲染文本。</p>
+<hr />
+<p>支持的字体格式值：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>值</th>
+<th>格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>embedded-opentype</td>
+<td>EOT(Embedded OpenType)</td>
+</tr>
+<tr>
+<td>opentype</td>
+<td>OTF(OpenType)</td>
+</tr>
+<tr>
+<td>svg</td>
+<td>SVG(Scalable Vector Graphics)</td>
+</tr>
+<tr>
+<td>truetype</td>
+<td>TTF(TrueType)</td>
+</tr>
+<tr>
+<td>woff</td>
+<td>WOFF(Web Open Font Format)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p>除了使用url()和format()组合外，还可以使用local()指定已经安装在用户设备中的字体族名称：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">	<span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">&quot;Switzera-Regular&quot;</span>),</span><br><span class="line">		 <span class="built_in">local</span>(<span class="string">&quot;SwitzeraADF-Regular&quot;</span>),</span><br><span class="line">		 <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>),</span><br><span class="line">         <span class="built_in">url</span>(<span class="string">&quot;/fonts/SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;truetype&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>用户代理会先检查设备中是否含有这些字体族，如果有，使用SwitzeraADF指代本地安装的字体，没有则下载。</p>
+<p>借助这个功能可以为本地安装的字体自定义名称：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">&quot;H&quot;</span>;</span><br><span class="line">	<span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">&quot;Helvetica&quot;</span>), <span class="built_in">local</span>(<span class="string">&quot;Helvetica Neue&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span> &#123; <span class="attribute">font-family</span>: H, sans-serif; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>这样做有点多此一举，但在某些情况下确实可以减少样式表文件的大小。</p>
+
+        <h3 id="万全之策"   >
+          <a href="#万全之策" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#万全之策"></a> 万全之策</h3>
+      
+<p>为了尽量涵盖较广的场景，应该使用能确保完全的@font-face句法：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="comment">/* 为支持EOT格式的浏览器(IE6~9)提供EOT文件，这一行针对兼容模式的IE9 */</span></span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.eot&quot;</span>);</span><br><span class="line">    <span class="comment">/* 为支持EOT格式的浏览器(IE6~9)提供EOT文件，这一行针对IE6~8 */</span></span><br><span class="line">    <span class="comment">/* ?#iefix导致这些浏览器出现一个解析缺陷，从而绕过另一个解析缺陷，即列出多个字体格式时返回404 */</span></span><br><span class="line">    <span class="comment">/* IE9修正了这个问题，但没有扩充支持的字体格式，因此还是需要上一行 */</span></span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.eot?#iefix&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;embedded-opentype&quot;</span>),</span><br><span class="line">         <span class="comment">/* 为支持Web Open Font Format的浏览器（大多数现代浏览器）提供.woff文件 */</span></span><br><span class="line">         <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.woff&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;woff&quot;</span>),</span><br><span class="line">         <span class="comment">/* 为多数移动设备提供支持的字体格式 */</span></span><br><span class="line">         <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.ttf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;truetype&quot;</span>),</span><br><span class="line">         <span class="comment">/* 只有旧IOS设备支持的字体格式 */</span></span><br><span class="line">         <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.svg#switzera_adf_regular&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;svg&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>一些服务能根据提供的字型生成所需的@font-face，并把字型转换成不同的格式，然后提供一个文件包供用户下载。</p>
+
+        <h2 id="其他字体描述符"   >
+          <a href="#其他字体描述符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#其他字体描述符"></a> 其他字体描述符</h2>
+      
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>描述符</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>font-style</td>
+<td>normal</td>
+<td>区分常规、斜体和倾斜字型</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>normal</td>
+<td>区分不同的字重</td>
+</tr>
+<tr>
+<td>font-stretch</td>
+<td>normal</td>
+<td>区分不同的字符宽度</td>
+</tr>
+<tr>
+<td>font-variant</td>
+<td>normal</td>
+<td>区分众多字形变体</td>
+</tr>
+<tr>
+<td>font-feature-settings</td>
+<td>normal</td>
+<td>直接访问OpenType的低层特性</td>
+</tr>
+<tr>
+<td>unicode-range</td>
+<td>U+0-10FFFF</td>
+<td>定义指定字体中可用的字符范围</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些字体描述符是可选的。</p>
+<p>css规定，描述符不能像属性那样可以没有默认值，如果没有某个可选的描述符，它的值将被设为默认值。</p>
+
+        <h3 id="限制字符范围"   >
+          <a href="#限制字符范围" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#限制字符范围"></a> 限制字符范围</h3>
+      
+<p>有一个字体描述符没有对应的css属性，即unicode-range，它用于指定自定义字体可以应用到哪些字符上。使用符号字体，或想确保只有特定语言使用指定字型时用得到这个描述符。</p>
+<ul>
+<li>unicode-range
+<ul>
+<li>取值：&lt;urange&gt;#</li>
+<li>初始值：U+0-10FFFF</li>
+</ul>
+</li>
+</ul>
+<p>这个描述符的值默认涵盖全部Unicode字符，有时只想用特定的字型渲染特定的内容：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unicode-range: U+<span class="number">590</span>-<span class="number">5</span>FF;		<span class="comment">/* 希伯来语字符 */</span></span><br><span class="line"><span class="comment">/* U+30??等效于U+3000-30FF */</span></span><br><span class="line">unicode-range: U+<span class="number">4</span>E00-<span class="number">9</span>FFF, U+FF00-FF9F, U+<span class="number">30</span>??;		<span class="comment">/* 日语汉字、平假名、片假名 */</span></span><br></pre></td></tr></table></div></figure>
+<p>范围必须从小到大，否则会导致解析错误而被忽略。除了范围外也可以声明单个码位。</p>
+
+        <h3 id="自定义字体的注意事项"   >
+          <a href="#自定义字体的注意事项" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#自定义字体的注意事项"></a> 自定义字体的注意事项</h3>
+      
+<p>第一，要有权在网页中使用指定的字体；第二，权衡值不值得使用自定义字体。</p>
+<p>字体库也有许可证，规定使用范围，不是所有字体都准许在Web中使用。可以使用FOSS字体，或使用Fontdeck、Typekit这样的商业服务，让它们处理许可和字体格式转换，否则，一定要确保自己有权按想要的方式使用字型。</p>
+<p>使用的字型越多，Web服务器要处理的资源就越多，而且页面越大。多数字型的体积并不大，但为了华丽的效果，字型会越用越多，而且比较复杂的字型体积更大，在外观和性能上要做适当的权衡。</p>
+<p>字体和图像一样有其优化工具，它们通常做子集处理，即只在字体中留下确实要用到的符号。</p>
+
+        <h2 id="组合描述符"   >
+          <a href="#组合描述符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#组合描述符"></a> 组合描述符</h2>
+      
+<p>将多个描述符组合在一起为字型设定不同的属性：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 指定一个基础字型，一个粗体字型，一个斜体字型，一个粗斜体字型，值为normal的可选描述符可省略 */</span></span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">font-style</span>: normal;</span><br><span class="line">    <span class="attribute">font-stretch</span>: normal;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">font-style</span>: normal;</span><br><span class="line">    <span class="attribute">font-stretch</span>: normal;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Bold.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">font-style</span>: italic;</span><br><span class="line">    <span class="attribute">font-stretch</span>: normal;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Italic.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">font-style</span>: italic;</span><br><span class="line">    <span class="attribute">font-stretch</span>: normal;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Bold-Italic.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>这么做以防某些情况下需要使用特殊的字体渲染，避免用户代理自行计算。</p>
+
+        <h1 id="字重"   >
+          <a href="#字重" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字重"></a> 字重</h1>
+      
+<p>css的font-weight属性可以精准控制字重</p>
+<ul>
+<li>font-weight
+<ul>
+<li>取值：normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素</li>
+<li>计算值：其中一个数值，或一个数值加一个相对值</li>
+<li>备注：有对应的@font-face描述符</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+</li>
+</ul>
+<p>一般来说字重越大，字体越黑、越粗。</p>
+<p>标识字型粗细的方式有很多种，比如Switzera字体族有很多变体：SwitzeraADF Bold、SwitzeraADF Extra Bold、SwitzeraADF Light和SwitzeraADF Regular，这些变体的字形基本一样，但字重各不相同。</p>
+<p>假如想在文档中使用SwitzeraADF不同粗细的变体，可以直接通过font-family属性指定，但是没必要且冗杂：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-family</span>: <span class="string">&#x27;SwitzeraADF Extra Bold&#x27;</span>, sans-serif; &#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123; <span class="attribute">font-family</span>: <span class="string">&#x27;SwitzeraADF Bold&#x27;</span>, sans-serif; &#125;</span><br><span class="line"><span class="selector-tag">h3</span> &#123; <span class="attribute">font-family</span>: <span class="string">&#x27;SwitzeraADF Extra Bold&#x27;</span>, sans-serif; &#125;</span><br><span class="line"><span class="selector-tag">h4</span>, <span class="selector-tag">p</span> &#123; <span class="attribute">font-family</span>: <span class="string">&#x27;SwitzeraADF Regular&#x27;</span>, sans-serif; &#125;</span><br><span class="line">small &#123; <span class="attribute">font-family</span>: <span class="string">&#x27;SwitzeraADF Light&#x27;</span>, sans-serif; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>更合理的做法是为整个文档指定一个字体族，然后为不同的元素设定不同的字重。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">b</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>显示b元素时会使用一个较粗的字型，因此如果一个段落使用Times显示，其中有部分加粗文本，那这个段落其实是使用同一个字体的两个字型显示的：Times和Times Bold。</p>
+
+        <h2 id="字重的工作方式"   >
+          <a href="#字重的工作方式" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字重的工作方式"></a> 字重的工作方式</h2>
+      
+<p>数字关键字100到900对应字体设计中的九级字重，如果一个字体族中有全部九级字重，那么这些数字就直接对应于预定义的级别，100是最细的，900是最粗的。</p>
+<p>其实这些数字并不表示字重本身，css规范只是说每个数字对应的权重至少和前面的数字具有相同的字重，因此可能出现100、200、300、400一样细；500、600一样粗；700、800、900一样更粗的情况，只要后面的数字关键字对应的粗细不比前面的数字关键字细就行。</p>
+<p>一般这些数字对应于常见的变体名称，400对应normal、700对应bold，其他数字不与font-weight的其他关键字对应，但可以对应于常见的变体名称：在字体的变体中，以Normal、Regular、Roman、Book等表示的可以分配给400；以Medium表示的可以分配给500，然而如果只有一个变体，而且以Medium表示，那么应该分配给400而非500。</p>
+<p>如果给定的字体族中字重的等级少于九个，用户代理要做更多工作，填补既定方式的空缺：</p>
+<ul>
+<li>如果500未分配，与400的字重一样。</li>
+<li>如果300未分配，将其对应于比400细的那个变体；如果没有这样的变体，字重与400一样。200和100也这么处理。</li>
+<li>如果600未分配，将其对应于比500粗的下一个变体，如果没有这样的变体，字重与500一样。700、800和900也这么处理。</li>
+</ul>
+<p>font-weight可以继承。</p>
+
+        <h4 id="增大字重"   >
+          <a href="#增大字重" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#增大字重"></a> 增大字重</h4>
+      
+<p>如果把一个元素的字重设为bolder：</p>
+<ul>
+<li>用户代理首先确定从父元素继承的font-weight值是什么，然后选择比继承的字重高一级的最小数字。</li>
+<li>如果找不到高一级的变体，用户代理就会把字重设为下一个数字值，直到900，最大只能设为900。</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.p1</span> &#123; <span class="attribute">font-weight</span>: normal; &#125;</span><br><span class="line"><span class="selector-class">.p1</span> <span class="selector-tag">em</span> &#123; <span class="attribute">font-weight</span>: bolder; &#125;		<span class="comment">/* 文本为粗体，求值结果为700 */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.p2</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</span><br><span class="line"><span class="selector-class">.p2</span> <span class="selector-tag">em</span> &#123; <span class="attribute">font-weight</span>: bolder; &#125;		<span class="comment">/* 如果没有更粗的字型，求值结果为800 */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.p3</span> &#123; <span class="attribute">font-weight</span>: <span class="number">100</span>; &#125;</span><br><span class="line"><span class="selector-class">.p3</span> <span class="selector-tag">em</span> &#123; <span class="attribute">font-weight</span>: bolder; &#125;		<span class="comment">/* 假设有light字型，求值结果为400 */</span></span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="减小字重"   >
+          <a href="#减小字重" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#减小字重"></a> 减小字重</h4>
+      
+<p>lighter的工作方式与bolder类似，只不过是让用户代理向下减小字重。</p>
+
+        <h3 id="font-weight描述符"   >
+          <a href="#font-weight描述符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#font-weight描述符"></a> font-weight描述符</h3>
+      
+<p>使用font-weight描述符可以为字型指定font-weight属性支持的字重等级：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Bold.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">300</span>;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Light.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">500</span>;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-DemiBold.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Bold.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">900</span>;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-ExtraBold.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h1 id="字号"   >
+          <a href="#字号" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字号"></a> 字号</h1>
+      
+<ul>
+<li>font-size
+<ul>
+<li>取值：xx-small | x-small | small | medium | large | x-large | xx-large | smaller | larger | &lt;length&gt; | &lt;percentage&gt;</li>
+<li>初始值：medium</li>
+<li>适用于：所有元素</li>
+<li>百分数 ：根据父元素的字号计算</li>
+<li>计算值：一个绝对长度</li>
+<li>继承性：是</li>
+<li>动画性：是（仅限数字关键字）</li>
+</ul>
+</li>
+</ul>
+<p>font-size属性与渲染结果之间的关系由字体设计者决定，这个关系在字体中通过em方框（em盒子）决定。</p>
+<p>em方框（以及字号）与字体中字符的边界没有关系，它指的是在没有行高（line-height）的情况下两条基线的距离。</p>
+<p>字体中完全有可能存在高度超过基线之间举例的字符，鉴于此，设计字体时要确保所有字符比em方框小，事实上多数字体就是这么做的。</p>
+<p>font-size的作用就是为字体的em方框提供一个尺寸，所以显示出来的字符不可能是完全指定的大小。</p>
+
+        <h2 id="绝对大小"   >
+          <a href="#绝对大小" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#绝对大小"></a> 绝对大小</h2>
+      
+<p>font-size支持的绝对大小值有七个：xx-small、x-small、small、medium、large、x-large、xx-large。它们没有固定的大小，而是相对而言的。</p>
+<p>根据css1规范，这些绝对大小之间相差的倍数（或称换算系数）是向上1.5，向下0.66。因此，如果medium相当于10px，那么large相当于15px。后来人们觉得换算系数太大，因此css2建议取1.0~1.2，而css3提供了更复杂的计算方式（例如small是medium的8/9、xx-small是medium的3/5）。但这些换算用户代理随时可以调整。</p>
+
+        <h2 id="相对大小"   >
+          <a href="#相对大小" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#相对大小"></a> 相对大小</h2>
+      
+<p>相对大小关键字larger和smaller类似font-weight的相对字重关键字。</p>
+<p>相对大小关键字根据父元素的字号增大或减小一定比例，使用的换算系数与计算绝对大小时也一样，例如，浏览器计算绝对大小时使用的换算系数是1.2，计算相对大小关键字时用的也是1.2。</p>
+<p>与相对字重关键字不同，字号的相对值没有上下限，因此字号可以小于xx-small或大于xx-large。</p>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>用户代理在增大或减小字号时不一定会超过绝对大小关键字的上下限。</p>
+    </div>
+  
+
+        <h2 id="百分数和em"   >
+          <a href="#百分数和em" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#百分数和em"></a> 百分数和em</h2>
+      
+<p>百分数始终根据继承父元素的字号计算，能更细致的控制字号。</p>
+<p>对字号而言，1em与100%的效果相同，所以长度单位em也是百分数性质的，同样适用百分数的规则。</p>
+
+        <h2 id="字号的继承"   >
+          <a href="#字号的继承" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字号的继承"></a> 字号的继承</h2>
+      
+<p>虽然css中的字号会继承，但继承的是计算得到的px值，而不是百分数本身。</p>
+<p>与相对大小关键字一样，百分数也会累计：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</span><br><span class="line"><span class="selector-tag">em</span> &#123; <span class="attribute">font-size</span>: <span class="number">120%</span>; &#125;			<span class="comment">/* 12px * 120% = 14.4px */</span></span><br><span class="line"><span class="selector-tag">strong</span> &#123; <span class="attribute">font-size</span>: <span class="number">135%</span>; &#125;		<span class="comment">/* 14.4px * 135% = 19.44px */</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="tag">&lt;<span class="name">em</span>&gt;</span>Suspendisse risus libero, <span class="tag">&lt;<span class="name">strong</span>&gt;</span>venenatis vitae maximus vitae<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>, pretium at lacus<span class="tag">&lt;/<span class="name">em</span>&gt;</span>. Pellentesque egestas, nisl nec consequat convallis, ipsum diam gravida dui, eget ultricies leo ipsum ut ipsum.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<div class="fontsize1">
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em>Suspendisse risus libero, <strong>venenatis vitae maximus vitae</strong>, pretium at lacus</em>. Pellentesque egestas, nisl nec consequat convallis, ipsum diam gravida dui, eget ultricies leo ipsum ut ipsum.
+</p>
+</div>
+<style>
+.fontsize1 p { font-size: 12px; }
+.fontsize1 em { font-size: 120%; }
+.fontsize1 strong { font-size: 135%; }
+</style>
+<p>按比例缩放可能会向一个极端发展，假设有一系列无序列表，且嵌套足够深，而ul的样式为：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123; <span class="attribute">font-size</span>: <span class="number">80%</span>; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>嵌套每深一层，字号就变成父列表的80%，因此嵌套的列表呈指数级缩小。</p>
+
+        <h3 id="显示时舍入"   >
+          <a href="#显示时舍入" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#显示时舍入"></a> 显示时舍入</h3>
+      
+<p>多数现代浏览器在内部维持着小数字号，但渲染引擎不一定会使用。</p>
+<p>不同浏览器和操作系统组合对小数字号的结果有所不同，有可能四舍五入小数，也可能做其他处理。</p>
+<p>但如果使用审查工具，可以发现每个浏览器都会保留字号中的小数像素。</p>
+
+        <h3 id="关键字和等宽文本"   >
+          <a href="#关键字和等宽文本" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#关键字和等宽文本"></a> 关键字和等宽文本</h3>
+      
+<p>字号关键字和继承会导致实际大小缩水，在某些浏览器渲染等宽文本时尤为明显，在使用等宽字体的继承子元素的font-family中加入serif即可。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: medium; &#125;</span><br><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: monospace, serif;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="使用长度单位"   >
+          <a href="#使用长度单位" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#使用长度单位"></a> 使用长度单位</h2>
+      
+<p>font-size可以设为任何长度值。</p>
+<p>不是所有浏览器都能轻易缩放像素值设定的文本，而且有时使用像素值设定的文本在模仿全屏幕设备的移动设备中的实际字号特别小，单就这一点，不适合直接使用像素值设定字号。</p>
+
+        <h2 id="自动调整字号"   >
+          <a href="#自动调整字号" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#自动调整字号"></a> 自动调整字号</h2>
+      
+<p>有两个因素影响字体是否清晰易辨：字号和x高度。</p>
+<p>x高度除以字号得到的结果被称为高宽比值。</p>
+<p>随着字号的减小，高宽比值越高，字体越清晰易辨；相反，高宽比值较低的字体，很容易变得模糊难辨。</p>
+<p>css提供的font-size-adjust属性用于改变字体族之间的高宽比值。</p>
+<ul>
+<li>font-size-adjust
+<ul>
+<li>取值：&lt;number&gt; | none | auto</li>
+<li>初始值：none</li>
+<li>适用于：所有元素</li>
+<li>继承性：是</li>
+<li>动画性：是</li>
+</ul>
+</li>
+</ul>
+<p>这个属性的作用是在所用的字体非创作人员的首选时维持清晰性。</p>
+<hr />
+<p>若想让用户代理自动调整字号，它首先需要知道指定字体的宽高比值。</p>
+<p>支持@font-face的用户代理能直接从字体文件中获取这一信息，前提是字体文件中包含该信息。</p>
+<p>如果字体文件中没有宽高比值，用户代理可能会尝试自己计算，但无法保证其一定会计算。</p>
+<p>假设用户代理能找到或算出高宽比值，把font-size-adjust设为auto就可以达到所需的效果，即使不知道首选字体的宽高比值也行。</p>
+
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p>但支持font-size-adjust属性的用户代理只有Gecko(Firefox)系列。</p>
+    </div>
+  
+
+        <h1 id="字形"   >
+          <a href="#字形" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字形"></a> 字形</h1>
+      
+<ul>
+<li>font-style
+<ul>
+<li>取值：italic | oblique | normal</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>备注：有对应的@font-face描述符</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>斜体(italic)是一种单独的字形，各字母的构造会有些改动，体现外观上的不同，衬线字体在这一点上的体现尤为明显。除了字符倾斜外，字符本身可能还会做调整。</p>
+<p>倾斜体(oblique)不做多余调整，它只是竖直体的倾斜版本。</p>
+<p>不是每款字体都同时提供斜体和倾斜体。如果没有斜体而有倾斜体，可以用后者代替前者；如果有斜体而没有倾斜体，根据规范，用户代理可能不会用后者代替前者。</p>
+<p>用户代理可以直接倾斜竖直体(normal)得到倾斜体，只需要做简单的计算。</p>
+<hr />
+<p>用作描述符时，font-style把指定的字型对应到指定的字形上：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-style</span>: normal;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-style</span>: italic;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Italic.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-style</span>: oblique;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Italic.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>该描述符允许取对应属性中除了inherit外的任何其他取值。</p>
+
+        <h1 id="字体拉伸"   >
+          <a href="#字体拉伸" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字体拉伸"></a> 字体拉伸</h1>
+      
+<p>有些字体族中可能含有较宽（瘦体）或较窄（胖体）的字母形式。css提供了font-stretch属性用于选择这样的变体。</p>
+<ul>
+<li>font-stretch
+<ul>
+<li>取值：normal | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded | expanded | extra-expanded | ultra-expanded |</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+<li>备注：有对应的@font-face描述符</li>
+</ul>
+</li>
+</ul>
+<p>这个属性的作用类似于font-size的绝对大小关键字，让创作人员在一系列绝对值中选择一个。</p>
+<p>仅当使用的字体含有宽体和窄体时，这个属性才起作用。</p>
+<hr />
+<p>用作描述符时，font-stretch把指定的字宽对应到指定的字形上：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-stretch</span>: normal;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-stretch</span>: condensed;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Cond.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-stretch</span>: expanded;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;f/SwitzeraADF-Ext.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>该描述符允许取对应属性中除了inherit外的任何其他取值。</p>
+
+        <h1 id="字距调整"   >
+          <a href="#字距调整" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字距调整"></a> 字距调整</h1>
+      
+<p>有些字体定义了字符之间相对位置的数据，即字距。字距可以使用font-kerning呼出或禁止。</p>
+<ul>
+<li>font-kerning
+<ul>
+<li>取值：auto | normal | none
+<ul>
+<li>none：让用户代理忽略字体中的字距信息</li>
+<li>normal：让用户代理正常处理字距，即使用字体中的字距数据</li>
+<li>auto：把决定权交给用户代理，让用户代理选择最合适的处理方式</li>
+</ul>
+</li>
+<li>初始值：auto</li>
+<li>适用于：所有元素</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+</li>
+</ul>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p>如果既调整字距，又应用letter-spacing属性，正确的顺序是先调整字距，再根据letter-spacing属性的值调整字符间距。</p>
+    </div>
+  
+
+        <h1 id="字体变形"   >
+          <a href="#字体变形" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字体变形"></a> 字体变形</h1>
+      
+<p>除了字重、字形等之外，字体还有变形。变形信息内嵌在字型中，包括旧时的各种连写、小写大写字母、小数的表示方式、数字间距、0的贯穿线等。如果字型中有这些变形信息，可以使用font-variant属性调用。</p>
+<ul>
+<li>font-variant
+<ul>
+<li>取值(css2.1)：normal | small-caps</li>
+<li>取值(Level3)：normal | none | [ &lt;common-lig-values&gt; ‖ &lt;discretionary-lig-values&gt; ‖ &lt;historical-lig-values&gt; ‖ &lt;contextual-alt-values&gt; ‖ stylistic(&lt;feature-value-name&gt;) ‖ historical-forms ‖ styleset(&lt;feature-value-name&gt;#) ‖ character-variant(&lt;feature-value-name&gt;#) ‖ swash(&lt;feature-value-name&gt;) ‖ ornaments(&lt;feature-value-name&gt;) ‖ annotation(&lt;feature-value-name&gt;) ‖ [ small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps ] ‖ &lt;numeric-figure-values&gt; ‖ &lt;numeric-spacing-values&gt; ‖ &lt;numeric-fraction-values&gt; ‖ ordinal ‖ slashed-zero ‖ &lt;east-asian-variant-values&gt; ‖ &lt;east-asian-width-values&gt; ‖ ruby ]</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+<li>备注：有对应的@font-face描述符</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>css1和css2中的font-variant只有两个取值：normal表示普通形式；small-caps指定使用小号大写字母。</p>
+<p>小号大写字母既不是大写字母也不是小写字母，而是大小稍有区别的大写字母。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-variant</span>: small-caps; &#125;</span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">span</span> &#123; <span class="attribute">font-variant</span>: normal; &#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis commodo libero. Sed faucibus, dolor vel faucibus posuere, lorem ex finibus quam, id euismod mi arcu et orci. Ut eget arcu cursus, volutpat enim et, molestie velit. <span class="tag">&lt;<span class="name">span</span>&gt;</span>Donec condimentum vestibulum neque in volutpat. Nullam et massa venenatis, accumsan nunc at, interdum libero. Donec rhoncus nunc sit amet nisi feugiat, ultricies hendrerit libero condimentum. Maecenas tellus mauris, condimentum non lobortis eget, interdum nec est. <span class="tag">&lt;/<span class="name">span</span>&gt;</span>Praesent vel scelerisque enim, ut eleifend nisi. Curabitur elementum interdum tempus.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<hr />
+<div class="smallcaps">
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis commodo libero. Sed faucibus, dolor vel faucibus posuere, lorem ex finibus quam, id euismod mi arcu et orci. Ut eget arcu cursus, volutpat enim et, molestie velit. <span>Donec condimentum vestibulum neque in volutpat. Nullam et massa venenatis, accumsan nunc at, interdum libero. Donec rhoncus nunc sit amet nisi feugiat, ultricies hendrerit libero condimentum. Maecenas tellus mauris, condimentum non lobortis eget, interdum nec est. </span>Praesent vel scelerisque enim, ut eleifend nisi. Curabitur elementum interdum tempus.
+</p>
+</div>
+<style>
+.smallcaps p { font-variant: small-caps; }
+.smallcaps p span { font-variant: normal; }
+</style>
+<hr />
+<p>与<code>text-transform: uppercase;</code>的效果非常相似，但有些字体有着专门的小号大写字母字型，从而可以通过字体属性选择。</p>
+<p>如果字体不存在这样的字型，规范提供了两个选项：</p>
+<ul>
+<li>其一：用户代理自行缩放大写字母，创建小号大写字母。</li>
+<li>其二：将所有字母变成大写，而且大小相同，如同使用<code>text-transform: uppercase;</code>。</li>
+</ul>
+
+        <h2 id="level3新增的值"   >
+          <a href="#level3新增的值" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#level3新增的值"></a> Level3新增的值</h2>
+      
+<p>css3取值实际上是下述属性允许的取值总和：</p>
+<ul>
+<li>font-variant-ligatures</li>
+<li>font-variant-caps</li>
+<li>font-variant-numeric</li>
+<li>font-variant-alternates</li>
+<li>font-variant-east-asian</li>
+</ul>
+<p>例如&lt;common-lig-values&gt;出自font-variant-ligatures属性，取common-ligatures或no-common-ligatures；&lt;numeric-fraction-values&gt;出自font-variant-numeric属性，取diagonal-fractions或stacked-fractions。</p>
+<p>字体变形很多，但能不能用取决于两个因素：浏览器支持和字体支持。</p>
+<p>浏览器支持方面很差，level3新增值基本只被Gecko和WebKit支持。</p>
+<p>字体支持方面，不是每个字体都支持每一种变形，需要阅读字体文档了解字体的支持情况，没有文档就只能大量做测试。</p>
+<p>即使字体的一个变形可以在特定的浏览器种使用，这并不代表其他变形也能使用；字体中有某个变形，也不表示它在所有浏览器种都能调用。情况很复杂，而且没有多少详细的参考指南。</p>
+
+        <h2 id="font-variant描述符"   >
+          <a href="#font-variant描述符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#font-variant描述符"></a> font-variant描述符</h2>
+      
+<p>font-variant描述符通过一个空格分隔的列表指定字型的哪些变体可以使用，哪些不能使用。例如：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 连字、小写大号字母、带贯穿线的0 */</span></span><br><span class="line"><span class="attribute">font-variant</span>: common-ligatures small-caps slashed-zero;</span><br></pre></td></tr></table></div></figure>
+<p>该描述符允许取对应属性中除了inherit外的任何其他取值。</p>
+<p>这个描述符与其他描述符有一个明显的区别：font-variant描述符在@font-face规则种指明允许使用的变形能轻易覆盖属性中指定的字体变形。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;SwitzeraADF&quot;</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;SwitzeraADF-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;opentype&quot;</span>);</span><br><span class="line">    <span class="attribute">font-variant</span>: stacked-fractions titling-caps slashed-zero;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 即使SwitzeraADF有diagonal-fractions或small-caps变形，段落也不会使用它们显示。 */</span></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: small-caps <span class="number">1em</span> SwitzeraADF, sans-serif;</span><br><span class="line">    <span class="attribute">font-variant-numeric</span>: diagonal-fractions;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h1 id="字体特性"   >
+          <a href="#字体特性" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字体特性"></a> 字体特性</h1>
+      
+<p>与font-variant类似，font-feature-settings属性从低层控制OpenType字体的哪些特性可以使用（因此不能用在.woff文件上）</p>
+<ul>
+<li>font-feature-settings
+<ul>
+<li>取值：normal | &lt;feature-tag-value&gt;#</li>
+<li>初始值：normal</li>
+<li>备注：有对应的@font-face描述符</li>
+</ul>
+</li>
+</ul>
+<p>这个属性的值可以是OpenType规范定义的一个或多个属性，以逗号分隔：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font-feature-settings</span>: <span class="string">&quot;liga&quot;</span> on, <span class="string">&quot;smcp&quot;</span> on, <span class="string">&quot;zero&quot;</span> on;</span><br></pre></td></tr></table></div></figure>
+<p>&lt;feature-tag-value&gt;取值的具体格式：&lt;string&gt; [ &lt;integer&gt; | on | off ]?</p>
+<p>所有&lt;string&gt;值都必须被放在引号里。</p>
+<p>多数特性的值是整数0和1，相当于off和on。</p>
+<p>有些特性可以使用其他数字，大于1时既表示启用特性，也用于定义选择的索引。</p>
+<p>如果列出了某个特性，但是没有提供数字，假定为1（启用）</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这三个声明是等效的 */</span></span><br><span class="line"><span class="attribute">font-feature-settings</span>: <span class="string">&quot;liga&quot;</span>;</span><br><span class="line"><span class="attribute">font-feature-settings</span>: <span class="string">&quot;liga&quot;</span> <span class="number">1</span>;</span><br><span class="line"><span class="attribute">font-feature-settings</span>: <span class="string">&quot;liga&quot;</span> on;</span><br></pre></td></tr></table></div></figure>
+<hr />
+<p>有一个限制是，OpenType要求所有特性标签都是四个ASCII字符长，比这长或短、或使用非ASCII字符的特性是无效的，将被忽略。</p>
+<p>默认情况下，OpenType都启用了下列特性，除非创作人员通过font-feature-settings或font-variant禁用：</p>
+<ul>
+<li>calt：根据上下文替换</li>
+<li>ccmp：组合字符</li>
+<li>clig：根据上下文连字</li>
+<li>liga：标准连字</li>
+<li>locl：本地化形式</li>
+<li>mark：基本定位标记</li>
+<li>mkmk：标记定位标记</li>
+<li>rlig：必要的连字</li>
+</ul>
+<p>此外，特定的字体可能还会默认启用其他特性，比如启用竖排文本的vert。</p>
+<p>全部OpenType特性：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/typography/opentype/spec/featurelist" >Registered features (OpenType 1.9) - Typography | Microsoft Learn</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>。</p>
+<hr />
+<p>font-variant描述符几乎覆盖font-feature-settings的一切功能，外加一些其他作用，且更符合css的风格，使用的值也不是晦涩难懂的OpenType标识符和布尔值。</p>
+<p>鉴于此，css规范明确建议创作人员使用font-variant，只有想要的字体特性不在font-variant的取值范围内时，才使用font-feature-settings。</p>
+<p>与font-variant描述符类似，font-feature-settings描述符的作用是定义@font-face规则中所声明的字型允许使用哪些字体特性。同理，该描述符允许取对应属性中除了inherit外的任何其他取值。</p>
+
+        <h1 id="字体合成"   >
+          <a href="#字体合成" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字体合成"></a> 字体合成</h1>
+      
+<p>有时，指定的字体族中可能缺少某种字型，例如粗体或斜体，此时用户代理可能会尝试使用可用的字型合成所需的字型。</p>
+<p>但这样的效果不是特别好，所以css提供了font-synthesis属性，让创作人员控制合成哪种字型，或在渲染页面时禁止合成。</p>
+<ul>
+<li>font-synthesis
+<ul>
+<li>取值：none | weight ‖ style</li>
+<li>初始值：weight style</li>
+<li>适用于：所有元素</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+</li>
+</ul>
+<p>在很多用户代理中，如果字体族中没有粗体，用户代理会自行计算生成粗体。生成的方法可能是在各字形的两侧增加像素，最终实现的效果可能不尽人意，因此很多字体族都自带了粗体。</p>
+<p>类似地，如果字体族中缺少斜体，用户代理会直接倾斜常规字体合成斜体，这比合成粗体的效果还差，尤其是对衬线字体而言。</p>
+<p>在支持的用户代理中，<code>font-synthesis: none;</code>声明将阻止用户代理在对应的元素上做这种合成。</p>
+
+        <h1 id="font属性"   >
+          <a href="#font属性" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#font属性"></a> font属性</h1>
+      
+<p>font属性可以把所有字体相关的属性（外加一些其他属性）合写在一起。</p>
+<ul>
+<li>font
+<ul>
+<li>取值：[[ &lt;font-style&gt; ‖ [ normal | small-caps ] ‖ &lt;font-weight&gt; ]? &lt;font-size&gt; [ / &lt;line-height&gt; ]? &lt;font-family&gt; ] | caption | icon | menu | message-box | small-caption | status-bar</li>
+<li>初始值：参见各单独属性</li>
+<li>适用于：所有元素</li>
+<li>百分数：&lt;font-size&gt;基于父元素计算，&lt;line-height&gt;基于当前元素的&lt;font-size&gt;计算</li>
+<li>计算值：参见各单独属性</li>
+<li>继承性：是</li>
+<li>动画性：参见各单独属性</li>
+</ul>
+</li>
+</ul>
+<p>一般来说，font声明可以使用所列属性允许的任意一个值，或者是系统字体值：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font</span>: italic <span class="number">900</span> small-caps <span class="number">30px</span> Verdana,Helvetica,Arial,sans-serif; &#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123; <span class="attribute">font</span>: bold normal italic <span class="number">24px</span> Verdana,Helvetica,Arial,sans-serif; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>font属性的前三个值写法较为宽松，顺序随意，normal值可以省略。</p>
+<p>后两个值的顺序严格得多，必须是font-size和font-family顺序，而且必须出现在font声明中，少了其中一个都会导致整条规则无效。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font</span>: normal normal italic <span class="number">30px</span> sans-serif; &#125;	<span class="comment">/* 可以 */</span></span><br><span class="line"><span class="selector-tag">h2</span> &#123; <span class="attribute">font</span>: <span class="number">1.5em</span> sans-serif; &#125;						<span class="comment">/* 可以 */</span></span><br><span class="line"><span class="selector-tag">h3</span> &#123; <span class="attribute">font</span>: sans-serif; &#125;							<span class="comment">/* 无效 */</span></span><br><span class="line"><span class="selector-tag">h4</span> &#123; <span class="attribute">font</span>: lighter <span class="number">14px</span>; &#125;							<span class="comment">/* 无效 */</span></span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="加入行高"   >
+          <a href="#加入行高" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#加入行高"></a> 加入行高</h2>
+      
+<p>一般只认为font属性能设置五个值，但其实font可以设置行高line-height，尽管它是文本属性。</p>
+<p>设定的方法是在font-size中增加一个值，以斜线<code>/</code>分隔：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 将所有h2元素设为粗斜体，把font-size设为24px，并把line-height设为28.8px */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123; <span class="attribute">font</span>: bold italic <span class="number">200%</span>/<span class="number">1.2</span> Verdana,Helvetica,Arial,sans-serif; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>line-height是可选的，如果加入line-height，font-size必须始终在line-height前面，不能反过来。</p>
+
+        <h2 id="正确使用简写"   >
+          <a href="#正确使用简写" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#正确使用简写"></a> 正确使用简写</h2>
+      
+<p>font是一个简写属性，如果使用不当，可能导致意想不到的后果。</p>
+<p>使用font属性时，省略的值都会被重设成默认值，而非从上继承或合成样式。</p>
+
+        <h2 id="使用系统字体"   >
+          <a href="#使用系统字体" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#使用系统字体"></a> 使用系统字体</h2>
+      
+<p>如果想让网页与用户的操作系统融为一体，可以在font声明中使用系统字体值。</p>
+<p>这样设定后，元素上应用的是操作系统中控件的字号、字体族、字重、字形和变形。可用的系统字体值：</p>
+<ul>
+<li>caption：用于说明文字的控件，如按钮</li>
+<li>icon：标注图标</li>
+<li>menu：在菜单中使用，即下拉菜单和菜单列表</li>
+<li>message-box：在对话框中使用</li>
+<li>small-caption：用于标注小型控件</li>
+<li>status-bar：用在窗口的状态栏中</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这样可以使按钮中的字体与用户操作系统中的按钮一样 */</span></span><br><span class="line"><span class="selector-tag">button</span> &#123; <span class="attribute">font</span>: caption; &#125;</span><br></pre></td></tr></table></div></figure>
+<p>系统字体只能作为一个整体设置，即字体族、字号、字重、字形等必须一起设置。</p>
+<p>设定系统字体后可以调整单个属性的值：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">button</span> &#123; <span class="attribute">font</span>: caption; <span class="attribute">font-size</span>: <span class="number">1em</span> &#125;</span><br></pre></td></tr></table></div></figure>
+<hr />
+<p>如果调用的系统字体在用户的设备中，用户代理可能会尝试模拟。</p>
+<p>如果做不到这一点，用户代理应该使用默认字体。</p>
+<p>如果能找到指定的系统字体，但是无法读取全部值，用户代理应该使用默认值。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://cheriko.fun">CherikoM</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://cheriko.fun/2022/11/11/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%AD%97%E4%BD%93/">https://cheriko.fun/2022/11/11/%E5%89%8D%E7%AB%AF/css/%E8%8F%9C%E9%B8%A1%E6%81%B6%E8%A1%A5css%20%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%AD%97%E4%BD%93/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css/">css</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/css%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/">css权威指南</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_alipay.md.png"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_wechat.md.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/29/%E6%97%A5%E5%B8%B8/%E7%A2%8E%E7%A2%8E%E5%BF%B5/%E5%85%B3%E4%BA%8E%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E4%B9%85%E6%B2%A1%E6%9C%89%E5%86%99%E4%B8%9C%E8%A5%BF/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">关于我为什么这么久没有写东西</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/11/10/Java/11%E6%9C%8810%E6%97%A5%E5%81%9A%E4%BC%98%E8%AF%BE%E8%BE%BE/"><span class="paginator-prev__text">11月10日做优课达</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E6%97%8F"><span class="toc-number">1.</span> <span class="toc-text">
+           字体族</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%80%9A%E7%94%A8%E5%AD%97%E4%BD%93%E6%97%8F"><span class="toc-number">1.1.</span> <span class="toc-text">
+           使用通用字体族</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%AD%97%E4%BD%93%E6%97%8F"><span class="toc-number">1.2.</span> <span class="toc-text">
+           指定字体族</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8font-face"><span class="toc-number">2.</span> <span class="toc-text">
+           使用@font-face</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%85%E9%A1%BB%E7%9A%84%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-number">2.1.</span> <span class="toc-text">
+           必须的描述符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#font-family"><span class="toc-number">2.1.1.</span> <span class="toc-text">
+           font-family</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%87%E5%85%A8%E4%B9%8B%E7%AD%96"><span class="toc-number">2.1.2.</span> <span class="toc-text">
+           万全之策</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%AD%97%E4%BD%93%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-number">2.2.</span> <span class="toc-text">
+           其他字体描述符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E5%AD%97%E7%AC%A6%E8%8C%83%E5%9B%B4"><span class="toc-number">2.2.1.</span> <span class="toc-text">
+           限制字符范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.2.2.</span> <span class="toc-text">
+           自定义字体的注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-number">2.3.</span> <span class="toc-text">
+           组合描述符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E9%87%8D"><span class="toc-number">3.</span> <span class="toc-text">
+           字重</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E9%87%8D%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">
+           字重的工作方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#font-weight%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-number">3.1.1.</span> <span class="toc-text">
+           font-weight描述符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E5%8F%B7"><span class="toc-number">4.</span> <span class="toc-text">
+           字号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">4.1.</span> <span class="toc-text">
+           绝对大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">4.2.</span> <span class="toc-text">
+           相对大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BE%E5%88%86%E6%95%B0%E5%92%8Cem"><span class="toc-number">4.3.</span> <span class="toc-text">
+           百分数和em</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%8F%B7%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="toc-number">4.4.</span> <span class="toc-text">
+           字号的继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%97%B6%E8%88%8D%E5%85%A5"><span class="toc-number">4.4.1.</span> <span class="toc-text">
+           显示时舍入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%92%8C%E7%AD%89%E5%AE%BD%E6%96%87%E6%9C%AC"><span class="toc-number">4.4.2.</span> <span class="toc-text">
+           关键字和等宽文本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D"><span class="toc-number">4.5.</span> <span class="toc-text">
+           使用长度单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%B0%83%E6%95%B4%E5%AD%97%E5%8F%B7"><span class="toc-number">4.6.</span> <span class="toc-text">
+           自动调整字号</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E5%BD%A2"><span class="toc-number">5.</span> <span class="toc-text">
+           字形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E6%8B%89%E4%BC%B8"><span class="toc-number">6.</span> <span class="toc-text">
+           字体拉伸</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E8%B7%9D%E8%B0%83%E6%95%B4"><span class="toc-number">7.</span> <span class="toc-text">
+           字距调整</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E5%8F%98%E5%BD%A2"><span class="toc-number">8.</span> <span class="toc-text">
+           字体变形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#level3%E6%96%B0%E5%A2%9E%E7%9A%84%E5%80%BC"><span class="toc-number">8.1.</span> <span class="toc-text">
+           Level3新增的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-variant%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-number">8.2.</span> <span class="toc-text">
+           font-variant描述符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E7%89%B9%E6%80%A7"><span class="toc-number">9.</span> <span class="toc-text">
+           字体特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E5%90%88%E6%88%90"><span class="toc-number">10.</span> <span class="toc-text">
+           字体合成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#font%E5%B1%9E%E6%80%A7"><span class="toc-number">11.</span> <span class="toc-text">
+           font属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%85%A5%E8%A1%8C%E9%AB%98"><span class="toc-number">11.1.</span> <span class="toc-text">
+           加入行高</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E7%AE%80%E5%86%99"><span class="toc-number">11.2.</span> <span class="toc-text">
+           正确使用简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%AD%97%E4%BD%93"><span class="toc-number">11.3.</span> <span class="toc-text">
+           使用系统字体</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/static/Cheriko_pic.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">CherikoM</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/CherikoM/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=1330949085/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://music.163.com/#/user/home?id=319313489" target="_blank" rel="noopener" data-popover="网易云音乐" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-record-vinyl"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/4582324/" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">B</span></a><a class="sidebar-ov-social-item" href="https://xiangyinhexuyuan.lofter.com/" target="_blank" rel="noopener" data-popover="Lofter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">L</span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/ying-mu-guo-8/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-zhihu"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>CherikoM</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,122,120" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":0,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
+    appKey: 'cLSG7K1iInnLJuU15DMJ8EJl',
+    notify: true,
+    verify: true,
+    placeholder: '鳖载着理发店？鸠载着理发店！',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-CN' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/heart.js"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.xml"></script><div class="aplayer" data-id="7701953645" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="true" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script></body></html>

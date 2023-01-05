@@ -1,0 +1,1232 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="1t_udMygpn_u_Ykuqyp-NsdEibEtikS7hpWfddBF3ao"><meta name="msvalidate.01" content="E140022059D9AD5124B0A64BF51BF030"><meta name="baidu-site-verification" content="code-qo8UKs4MrZ"><meta name="360-site-verification" content="055476a64ed98cc0d0c9eea5b04922e0"><meta name="sogou_site_verification" content="qQwiFLOWUL"><meta name="description" content="心生一寄">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/index.html">
+<meta property="og:site_name" content="Cherry🍒Garden">
+<meta property="og:description" content="心生一寄">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/..%5Cimages%5Csqlhenosql.png">
+<meta property="og:image" content="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/..%5Cv2-e492481e964541f2764fa5b529790bae_1440w.jpg">
+<meta property="og:image" content="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/..%5Cimages%5Cv2-2cf69c14d4fc47509b59ff158d9957f4_1440w.jpg">
+<meta property="og:image" content="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/..%5Cimages%5CA&amp;B.jpg">
+<meta property="og:image" content="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/..%5Cimages%5Cv2-dd0093c24ed334d24de6498247d22e6a_1440w.jpg">
+<meta property="og:image" content="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/..%5Cimages%5Cv2-b8160a25515c266b28c22f19a61f93d8_1440w.jpg">
+<meta property="article:published_time" content="2022-12-20T11:54:29.379Z">
+<meta property="article:modified_time" content="2022-12-21T12:31:40.828Z">
+<meta property="article:author" content="CherikoM">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="Nginx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/..%5Cimages%5Csqlhenosql.png"><title>Nginx | Cherry🍒Garden</title><link ref="canonical" href="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":3},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"light","highlight":"light","wordWrap":false},
+  reward: true,
+  fancybox: true,
+  zoomImage: {"gapAside":"100px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-inbox"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="far fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Nginx</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2022-12-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-12-21</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon" data-popover="字数统计" data-popover-pos="up"><i class="far fa-file-word"></i></span><span class="post-meta-item__value">6.6k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon" data-popover="阅读时间" data-popover-pos="up"><i class="far fa-clock"></i></span><span class="post-meta-item__value">39分</span></span><span class="post-meta-item post-meta-item--visitors leancloud_visitors" id="/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/" data-flag-title="Nginx"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value leancloud-visitors-count"></span></span></div></header><div class="post-body"><p>心生一寄</p>
+<span id="more"></span>
+
+        <h1 id="数据库概述"   >
+          <a href="#数据库概述" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#数据库概述"></a> 数据库概述</h1>
+      
+
+        <h2 id="数据库"   >
+          <a href="#数据库" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#数据库"></a> 数据库</h2>
+      
+<ul>
+<li>将大量数据保存起来，通过计算机加工而成的可以进行高效访问的数据集合称为数据库(DataBase，简称DB)</li>
+<li>用来管理数据库的计算机系统称为数据库管理系统(DataBaseManagement System，简称DBMS)</li>
+<li>从事管理和维护数据库管理系统(DBMS)的相关工作人员称为数据库管理员(Database Administrator，简称DBA)</li>
+</ul>
+
+        <h2 id="数据库的分类"   >
+          <a href="#数据库的分类" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#数据库的分类"></a> 数据库的分类</h2>
+      
+<p>按照早期的数据库理论，数据库模型有三种：</p>
+<ul>
+<li>
+<p>层次式数据库</p>
+</li>
+<li>
+<p>网络式数据库</p>
+</li>
+<li>
+<p>关系型数据库</p>
+</li>
+</ul>
+<p>随着技术的变迁，前两者已经基本消失，在当下的互联网，最常用的数据库模型主要是两种，即关系型数据库和非关系型数据库。</p>
+
+        <h3 id="关系型数据库"   >
+          <a href="#关系型数据库" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#关系型数据库"></a> 关系型数据库</h3>
+      
+<p>关系型数据库模型把复杂的数据结构归结为简单的二元关系（即二维表格形式）。</p>
+<p>在关系数据库中，对数据的操作几乎全部建立在一个或多个关系表格上，通过对这些关联表的表格分类、合并、连接或选取等运算来实现数据的管理。</p>
+<p>总结为关系型数据库=多张表+各表之间的关系。</p>
+
+        <h4 id="表的结构"   >
+          <a href="#表的结构" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#表的结构"></a> 表的结构</h4>
+      
+<ul>
+<li>表由表名、行、列、列名构成</li>
+<li>表名是表的名称</li>
+<li>列表示纵轴</li>
+<li>行表示横轴</li>
+<li>列名是表格的第一行，表示列的名字，列名不可以重复</li>
+<li>表格实质上是一个二维数组，行和列都是从0开始数的（数组的特性）</li>
+<li>列名不是第一行</li>
+</ul>
+
+        <h4 id="表的关系"   >
+          <a href="#表的关系" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#表的关系"></a> 表的关系</h4>
+      
+<p>关系就是数据能够对应的匹配，在关系型数据库中叫联结，对应的英文名称叫做join。</p>
+
+        <h3 id="sql"   >
+          <a href="#sql" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#sql"></a> SQL</h3>
+      
+<p>SQL就是Structured Query Language （结构化查询语言），用来对数据库进行操作。</p>
+
+        <h3 id="acid特性"   >
+          <a href="#acid特性" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#acid特性"></a> ACID特性</h3>
+      
+<p>ACID，是指数据库管理系统（DBMS）在写入或更新资料的过程中，为保证事务（transaction）是正确可靠的，所必须具备的四个特性：</p>
+<ul>
+<li>原子性（atomicity，或称不可分割性）：一个事务（transaction）中的所有操作，或者全部完成，或者全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。即，事务不可分割、不可约简。</li>
+<li>一致性（consistency）：在事务开始之前和事务结束以后，数据库的完整性没有被破坏。这表示写入的资料必须完全符合所有的预设约束、触发器、级联回滚等。</li>
+<li>隔离性（isolation，又称独立性）：数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括未提交读（Read uncommitted）、提交读（read committed）、可重复读（repeatable read）和串行化（Serializable）。</li>
+<li>持久性（durability）：事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。</li>
+</ul>
+<p>在数据库系统中，一个事务是指由一系列数据库操作组成的一个完整的逻辑过程。这个过程被称为一个事务，具有ACID特性。</p>
+
+        <h3 id="nosql"   >
+          <a href="#nosql" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#nosql"></a> NoSQL</h3>
+      
+<p>NoSQL，泛指非关系型的数据库，最常见的解释是&quot;non-relational&quot;，&quot;Not Only SQL&quot;也被很多人接受。</p>
+<p>NoSQL仅仅是一个概念，泛指非关系型的数据库，区别于关系数据库，它们不保证关系数据的ACID特性。</p>
+<p>NoSQL是一项全新的数据库革命性运动，其拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
+<p>随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。</p>
+<p>NoSQL 数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用的难题。</p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="..%5Cimages%5Csqlhenosql.png"  alt="" />
+      </p>
+
+        <h2 id="为什么选择mysql"   >
+          <a href="#为什么选择mysql" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#为什么选择mysql"></a> 为什么选择MySQL</h2>
+      
+<p>关系型数据库发展了很长一段时间，拥有非常成熟的体系，在市场上所占用的份额也是最大的。而且支持事务的操作，保证数据的一致性，可以通过SQL语句完成复杂的操作。</p>
+
+        <h1 id="mysql-crud"   >
+          <a href="#mysql-crud" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#mysql-crud"></a> MySQL CRUD</h1>
+      
+
+        <h2 id="表格的结构"   >
+          <a href="#表格的结构" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#表格的结构"></a> 表格的结构</h2>
+      
+
+        <h3 id="表名"   >
+          <a href="#表名" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#表名"></a> 表名</h3>
+      
+<p>表名就是表格名，在MySQL中一般使用英文小写字母来约定表名，比如用户表命名为user。</p>
+<p>如果遇到多个单词，则用<code>_</code>分隔，比如支付记录表格可以命名为pay_record 。</p>
+<p>这种命名方式称为驼峰命名，一般在数据库中，将表名、字段名都小写，将数据库操作语句都大写。</p>
+
+        <h3 id="字段"   >
+          <a href="#字段" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#字段"></a> 字段</h3>
+      
+<p>在数据库表中，每一列都是一个字段，第一行是字段名，下面都是字段的值。</p>
+<p>读取数据时，从第二行开始读取，对应的数组下标是0。</p>
+<p>字段必须是唯一的，即不能出现同名的字段。</p>
+<p>字段用来约定行的值，或者和其他的表格产生联系。</p>
+<p>字段的值可以为NULL，但一般需要避免。</p>
+
+        <h3 id="主键"   >
+          <a href="#主键" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#主键"></a> 主键</h3>
+      
+<p>每一张数据库表都可以有一个主键( primary key），最大的作用就是用来标识唯一数据。</p>
+<p>理论上表格可以没有主键，但是现在的规范表结构设计中，必须要有主键。</p>
+<p>主键的特点:</p>
+<ul>
+<li>
+<p>主键是一个特殊字段</p>
+</li>
+<li>
+<p>表格可以没有主键，但是最多只能拥有一个主键</p>
+</li>
+<li>
+<p>主键的值不能为NULL，必须有对应的值</p>
+</li>
+<li>
+<p>主键的值必须是绝对唯一的，即不能出现两个相同的主键值，比如名字就不能作为主键，因为会出现重名的情况。</p>
+</li>
+<li>
+<p>一般使用主键和其他表进行关联</p>
+</li>
+</ul>
+<p>主键也可以用多个字段联合组成一个主键，但用的很少。</p>
+
+        <h3 id="sql常用数据类型"   >
+          <a href="#sql常用数据类型" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#sql常用数据类型"></a> SQL常用数据类型</h3>
+      
+<p>字段的值拥有数据类型，在MySQL中常用的数据类型有：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VARCHAR</td>
+<td>可变的长字符串，类比Java中的String类型</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>整型，和Java中的int类型一致</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>浮点型，和Java中的double类型一致，一般不加长度限制</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>时间类型，长度为0，格式为YYYY-MM-DD HH:MM:SS</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>长整形，和Java中的long类型一致</td>
+</tr>
+</tbody>
+</table></div>
+
+        <h3 id="数据"   >
+          <a href="#数据" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#数据"></a> 数据</h3>
+      
+<p>通常把表格中的一行称为一条数据。</p>
+<p>数据库的一条数据就像是Map数据结构中的value，而主键就像是它的key。</p>
+<p>通过主键可以快速查找数据，也可以通过其他字段来操作数据。</p>
+
+        <h3 id="crud"   >
+          <a href="#crud" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#crud"></a> CRUD</h3>
+      
+<p>在计算机程序语言中，创建(Create)、读取(Read)、更新(Update)、删除(Delete)，就是CRUD。</p>
+<p>这是一连串常见的动作行为，而其行为通常是为了针对某个特定资源所作出的举动（例如:创建数据、读取数据等）。</p>
+<p>这四个行为最常见的用途能够在使用SQL数据库与网站的API端口时发现。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>英文</th>
+<th>中文</th>
+<th>SQL</th>
+<th>HTTP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CREATE</td>
+<td>创建</td>
+<td>INSERT(插入)</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>READ</td>
+<td>读取</td>
+<td>SELECT(查询)</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>UPDATE</td>
+<td>更新</td>
+<td>UPDATE</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>删除</td>
+<td>DELETE</td>
+<td>DELETE</td>
+</tr>
+</tbody>
+</table></div>
+
+        <h2 id="创建表格"   >
+          <a href="#创建表格" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#创建表格"></a> 创建表格</h2>
+      
+<p>在创建表格时需要提供以下的属性：</p>
+<ul>
+<li>表名</li>
+<li>字段名</li>
+<li>字段的数据类型</li>
+</ul>
+<p>例如，小王公司需要记录用户的信息，要创建一张用户表，用户包含用户id，昵称、手机号这三个字段，同时需要记录创建时间和修改时间：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `user`(</span><br><span class="line">`id` INT(10)NOT NULL,</span><br><span class="line">`mobile` VARCHAR(11) NOT NULL,</span><br><span class="line">`nickname` VARCHAR(40) NOT NULL,</span><br><span class="line">`gmt_created` datetime ,</span><br><span class="line">`gmt_modified` datetime NOT NULL,</span><br><span class="line">PRIMARY KEY ( `id` )</span><br><span class="line">)ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="创建表格-2"   >
+          <a href="#创建表格-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#创建表格-2"></a> 创建表格</h3>
+      
+<p>创建一张叫做user的表格，并查看：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `user`();</span><br><span class="line">desc `user`;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="创建字段"   >
+          <a href="#创建字段" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#创建字段"></a> 创建字段</h3>
+      
+<p>定义字段的语句：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">`id` INT(10)NOT NULL,</span><br><span class="line">`mobile` VARCHAR(11) NOT NULL,</span><br><span class="line">`nickname` VARCHAR(40) NOT NULL,</span><br><span class="line">`gmt_created` datetime ,</span><br><span class="line">`gmt_modified` datetime NOT NULL,</span><br></pre></td></tr></table></div></figure>
+<p>每行的语法结构都是一样的，都符合【字段名＋数据类型＋长度＋是否为NULL】。以第一句为例：</p>
+<ul>
+<li>id是字段名，用``包含</li>
+<li>INT是数据类型，表示id这个字段是INT值</li>
+<li>(10)表示id最长为10位</li>
+<li>datetime类型没有长度，所以不用定义长度</li>
+<li>NOT NULL表示这个字段不能为空，也就是必须要输入值，否则就会报错</li>
+</ul>
+<p>一般来说字段的长度足够用就可以，同时要注意值域，比如INT的最大值为2147483647，长度为10位，所以上面的语句中，id最大只能这么大，如果超过这个数，可以使用BIGINT。</p>
+
+        <h3 id="约定主键"   >
+          <a href="#约定主键" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#约定主键"></a> 约定主键</h3>
+      
+<p>指定这张表的主键(primary key)为id字段：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PRIMARY KEY ( `id` )</span><br></pre></td></tr></table></div></figure>
+<p>主键拥有以下特点：</p>
+<ul>
+<li>主键必须是已经约定的字段</li>
+<li>主键不能为空</li>
+<li>主键的值不能重复</li>
+<li>主键最大的作用是标识，所以它最好是由计算机生成，人工不干预主键生成后的值</li>
+</ul>
+<p>有时候会把INT类型的主键语句改为：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`id` INT UNSIGNED AUTO_INCREMENT</span><br></pre></td></tr></table></div></figure>
+<p>这句话的意思是，id 会从1开始自增，第二个为2，第三个为3，依此类推。</p>
+<blockquote>
+<p>UNSIGNED是指无符号的，也就是说排除了负数，但是数据库默认是从1开始累计，所以这个关键词可以省略。</p>
+</blockquote>
+<blockquote>
+<p>在企业级开发中，往往会使用BIGINT作为主键，因为INT的值域只有2147483647这么大，也就是20亿多，有些公司用户数达到百万甚至千万，那么记录用户行为的数据，比如说支付宝账单，就很轻松会突破INT的值域，因此使用BIGINT能避免数据溢出的问题。</p>
+</blockquote>
+
+        <h3 id="设置存储引擎和编码方式"   >
+          <a href="#设置存储引擎和编码方式" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#设置存储引擎和编码方式"></a> 设置存储引擎和编码方式</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENGINE=InnoDB DEFAULT CHARSET=utf8</span><br></pre></td></tr></table></div></figure>
+<p>这句话的意思是储存引擎为lnnoDB，默认编码方式为utf-8。</p>
+<blockquote>
+<p>lnnoDB是MySQL的默认储存引擎，utf-8是一种编码方式。</p>
+</blockquote>
+
+        <h3 id="删除表格"   >
+          <a href="#删除表格" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#删除表格"></a> 删除表格</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop table table_name;</span><br><span class="line">DROP TABLE IF EXISTS table_name;</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>table_name：要删除的表格名</li>
+<li>IF EXISTS：如果存在因为</li>
+</ul>
+<p>删除表格是不可逆的，所以删除表格时务必慎重。</p>
+
+        <h2 id="插入语句insert"   >
+          <a href="#插入语句insert" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#插入语句insert"></a> 插入语句(INSERT)</h2>
+      
+<p>使用INSERT INTO SQL语句插入数据</p>
+
+        <h3 id="语法"   >
+          <a href="#语法" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#语法"></a> 语法</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name(field1,field2,...fieldN)</span><br><span class="line">VALUES</span><br><span class="line">(value1,value2,...valueN);</span><br></pre></td></tr></table></div></figure>
+<p>这段sql语句的意思是，向指定表插入若干个字段，和它们对应的值，示例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO</span><br><span class="line">  `user` (`id`, `mobile`, `nickname`, `gmt_created`)</span><br><span class="line">VALUES</span><br><span class="line">  (1, &#x27;11451419198&#x27;, &#x27;野兽&#x27;, now());</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>user是表名</li>
+<li>id、mobile等是字段名</li>
+<li>id的值是数字，可以直接写，比如1</li>
+<li>mobile的值是VARCHAR类型，所以要用<code>''</code>包含</li>
+<li>gmt_created是datetime类型，一般使用now()这个函数来获取服务器当前时间，并将它作为值插入</li>
+</ul>
+
+        <h3 id="插入语句的简化"   >
+          <a href="#插入语句的简化" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#插入语句的简化"></a> 插入语句的简化</h3>
+      
+<ol>
+<li>
+<p>如果主键设置为自增，则可以不插入主键和对应的数据</p>
+</li>
+<li>
+<p>如果插入的是所有的字段，可以省略字段名，直接插入值，但是类型必须全部一致，例如：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name</span><br><span class="line">VALUES</span><br><span class="line">(value1,value2,...valueN);</span><br></pre></td></tr></table></div></figure>
+</li>
+</ol>
+<blockquote>
+<p>这两种情况不可以同时简化</p>
+</blockquote>
+
+        <h3 id="批量插入数据"   >
+          <a href="#批量插入数据" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#批量插入数据"></a> 批量插入数据</h3>
+      
+<p>如果要一次性对一张表格插入大量数据，可以使用下面的语法：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name</span><br><span class="line">VALUES</span><br><span class="line">(value1,value2,...valueN),</span><br><span class="line">(value1,value2,...valueN);</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>插入―条数据对应表格中的一行，当规定为NOT NULL的字段没有给到值时，插入语句会报错。</p>
+</blockquote>
+
+        <h2 id="查询select"   >
+          <a href="#查询select" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#查询select"></a> 查询(SELECT)</h2>
+      
+<p>使用SELECT SQL语句查询数据</p>
+
+        <h3 id="语法-2"   >
+          <a href="#语法-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#语法-2"></a> 语法</h3>
+      
+<p>这句话的意思是，从指定表中查询指定列的信息：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT field1,field2,.... FROM table_name;</span><br></pre></td></tr></table></div></figure>
+<p>以user表为例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  id,</span><br><span class="line">  name</span><br><span class="line">FROM</span><br><span class="line">  user;</span><br></pre></td></tr></table></div></figure>
+<p>如果需要查询所有的字段：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM timi_adc;</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>*表示所有的字段</p>
+</blockquote>
+
+        <h3 id="where子句"   >
+          <a href="#where子句" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#where子句"></a> WHERE子句</h3>
+      
+<p>实际上更多希望查询符合某一种条件的数据，这时候就需要使用到限定语句。</p>
+<p>在MySQL中使用WHERE语句来限定条件，它的作用类似程序语言中的if语句。</p>
+<p>可以将WHERE子句加入到查询语句，来加强应用场景。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name WHERE condition;</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>condition是指条件，它和if语句一样，可以做简单的逻辑判断，查询到的数据是true。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">where</span><br><span class="line">  age &gt; 18;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="limit子句"   >
+          <a href="#limit子句" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#limit子句"></a> Limit子句</h2>
+      
+<p>在实际工作的数据查询中，有时候需要返回指定行，比如查询符合某个条件的前十个数据，这时候就需要使用LIMIT子句来加强查询功能。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name LIMIT parameter;</span><br></pre></td></tr></table></div></figure>
+<p>parameter是LIMIT语句的参数，有以下几种情况：</p>
+
+        <h3 id="查询x-y行"   >
+          <a href="#查询x-y行" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#查询x-y行"></a> 查询x-y行</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">LIMIT</span><br><span class="line">  5, 6;</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>这句SQL的意思是查询user表的第6-11行，第一个参数5表示从第6行开始查，第二个参数6，表示一共查询6条记录。</li>
+<li>数据库的表格类似数组，是从第0行开始数的，所以5表示第6行。</li>
+<li>LIMIT语句一般配合分页使用。</li>
+</ul>
+
+        <h3 id="查询0-x行"   >
+          <a href="#查询0-x行" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#查询0-x行"></a> 查询0-x行</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">LIMIT</span><br><span class="line">  5;</span><br></pre></td></tr></table></div></figure>
+<p>这句SQL的意思是查询user表的第0-5行，等价于：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM user LIMIT 0, 5;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="查询第x行"   >
+          <a href="#查询第x行" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#查询第x行"></a> 查询第x行</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">LIMIT</span><br><span class="line">  4, 1;</span><br></pre></td></tr></table></div></figure>
+<p>这句SQL的意思是查询user表第5行的数据。</p>
+
+        <h3 id="和where子句联合使用"   >
+          <a href="#和where子句联合使用" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#和where子句联合使用"></a> 和WHERE子句联合使用</h3>
+      
+<p>在实际的应用场景中，LIMIT子句往往和WHERE等其他子句联合使用，LIMIT语句会放在WHERE语句后面。</p>
+<p>比如说我要查下user表中年龄大于18的前五条数据，那么SQL应该这么写：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  age &gt; 18</span><br><span class="line">LIMIT</span><br><span class="line">  5;</span><br></pre></td></tr></table></div></figure>
+<p>LIMIT子句和WHERE子句的顺序会影响查询结果。</p>
+
+        <h2 id="排序order-by-子句"   >
+          <a href="#排序order-by-子句" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#排序order-by-子句"></a> 排序（ORDER BY 子句）</h2>
+      
+<p>在实际的应用场景中会需要对查询结果进行排序，这时候就使用ORDER BY子句。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name ORDER BY field_name;</span><br></pre></td></tr></table></div></figure>
+<p>例如按年龄排序：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">ORDER BY</span><br><span class="line">  age;</span><br></pre></td></tr></table></div></figure>
+<p>排序默认按照升序排序。</p>
+<ul>
+<li>int、double：从小到大</li>
+<li>varchar：从字母A到Z</li>
+<li>datetime：从过去到现在</li>
+</ul>
+
+        <h3 id="desc关键词"   >
+          <a href="#desc关键词" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#desc关键词"></a> DESC关键词</h3>
+      
+<p>ORDER BY语句的排序默认是正序排序，关键词为ASC（一般不写），可以通过加上关键词DESC，使得排序变为逆序。</p>
+<p>例如按年龄降序排序：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">ORDER BY</span><br><span class="line">  age DESC;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="和其他子句连用"   >
+          <a href="#和其他子句连用" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#和其他子句连用"></a> 和其他子句连用</h3>
+      
+<p>如果查询年龄最高的三个人：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">ORDER BY</span><br><span class="line">  age DESC</span><br><span class="line">LIMIT</span><br><span class="line">  3;</span><br></pre></td></tr></table></div></figure>
+<p>一般都是先排序，再加LIMIT条件</p>
+
+        <h2 id="更新删除"   >
+          <a href="#更新删除" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#更新删除"></a> 更新/删除</h2>
+      
+
+        <h3 id="更新update"   >
+          <a href="#更新update" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#更新update"></a> 更新(UPDATE)</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值</span><br></pre></td></tr></table></div></figure>
+<p>UPDATE语句必须加入WHERE限定条件，否则的话UPDATE语句就会对整列起作用。</p>
+<p>比如，将user表格中的野兽的年龄改为24：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">UPDATE</span><br><span class="line">  user</span><br><span class="line">SET</span><br><span class="line">  age = 24</span><br><span class="line">WHERE</span><br><span class="line">  name = &#x27;野兽&#x27;;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="删除delete"   >
+          <a href="#删除delete" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#删除delete"></a> 删除(DELETE)</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM table_name [WHERE Clause]</span><br></pre></td></tr></table></div></figure>
+<p>由于删除语句是不可恢复的，所以务必要增加WHERE语句，否则将会删除整张表格的数据。</p>
+<p>删除user表中id为4的行：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from user where id=4;</span><br></pre></td></tr></table></div></figure>
+<p>删除user表中所有id小于20的数据：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from `user` where id&lt;20;</span><br></pre></td></tr></table></div></figure>
+<p>删除user表中的所有数据：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from user;</span><br></pre></td></tr></table></div></figure>
+<p>DELETE语句只删除表中的数据，不删除表格。</p>
+
+        <h1 id="查询优化"   >
+          <a href="#查询优化" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#查询优化"></a> 查询优化</h1>
+      
+
+        <h2 id="like查询"   >
+          <a href="#like查询" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#like查询"></a> LIKE查询</h2>
+      
+<p>前面的查询语句都是精确查询，但实际应用中更多使用模糊查询，SQL语句中的LIKE子句可以达到模糊查询的效果。</p>
+
+        <h3 id="语法-3"   >
+          <a href="#语法-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#语法-3"></a> 语法</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name WHERE condition LIKE condition;</span><br></pre></td></tr></table></div></figure>
+<h3 id=""><a class="markdownIt-Anchor" href="#"></a> %</h3>
+<p>SQL LIKE子句中使用百分号<code>%</code>来表示任意字符，如果没有使用任何的%，那此时LIKE就相当于<code>=</code>。</p>
+<p>例如查询user中名字含有“明”的人：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  name LIKE &#x27;%明%&#x27;;</span><br></pre></td></tr></table></div></figure>
+<p>%的位置会决定搜索结果的不同：'%明%'表示这个字符串含“明”；'明%‘表示这个字符串以“明”开头；’%明’表示这个字符串以“明”结尾。</p>
+
+        <h3 id="_"   >
+          <a href="#_" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#_"></a> _</h3>
+      
+<p><code>_</code>可以匹配单个任意字符，例如查询名字中含有“冬梅”的人：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  name LIKE &#x27;_冬梅&#x27;;</span><br></pre></td></tr></table></div></figure>
+<p>‘_冬梅’和’‘%冬梅’'的区别在于，假如有一个人叫马云冬梅，前者查询不到，而后者可以。</p>
+
+        <h2 id="and-or"   >
+          <a href="#and-or" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#and-or"></a> AND &amp; OR</h2>
+      
+<p>实际查询时往往会使用多个条件，需要用到AND和OR关键词。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name WHERE conditionA AND/OR condtionB;</span><br></pre></td></tr></table></div></figure>
+<p>比如要查询user中年龄为18~24岁或小于10岁的人：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  age &gt; 18</span><br><span class="line">  AND age &lt; 24</span><br><span class="line">  OR age &lt; 10;</span><br></pre></td></tr></table></div></figure>
+<p>AND/OR就是数学里的且和或，所以有时候需要加上()来分隔条件：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  (</span><br><span class="line">  	age &gt; 18</span><br><span class="line">  	OR age &lt; 10</span><br><span class="line">  )</span><br><span class="line">  AND age &lt; 24;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="in-not-in"   >
+          <a href="#in-not-in" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#in-not-in"></a> IN &amp; NOT IN</h2>
+      
+<p>IN/NOT IN子句也需要配合WHERE子句使用，它是一种精准查询。</p>
+
+        <h3 id="in"   >
+          <a href="#in" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#in"></a> IN</h3>
+      
+<p>例如查询user表中住址为下北泽和朽木镇的人：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  addr IN (&#x27;下北泽&#x27;, &#x27;朽木镇&#x27;);</span><br></pre></td></tr></table></div></figure>
+<p>这段SQL等价于：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line"><span class="type">WHERE</span></span><br><span class="line">  <span class="variable">addr</span> <span class="operator">=</span> <span class="string">&#x27;下北泽&#x27;</span></span><br><span class="line">  <span class="type">OR</span> <span class="variable">addr</span> <span class="operator">=</span> <span class="string">&#x27;朽木镇&#x27;</span>;</span><br></pre></td></tr></table></div></figure>
+<p>由此可见，in可以简化语法</p>
+
+        <h3 id="not-innot-like"   >
+          <a href="#not-innot-like" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#not-innot-like"></a> NOT IN/NOT LIKE</h3>
+      
+<p>NOT IN子句就是在lN前面加一个NOT，相当于否定这个条件。</p>
+<p>比如查询user表中不住在下北泽的人：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  addr NOT IN (&#x27;下北泽&#x27;);</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>即使只有一个下北泽，外面的括号也不能省略</p>
+</blockquote>
+<p>NOT LIKE子句就是在LIKE子句前面加一个NOT，和NOT IN的用法很相似。</p>
+<p>比如查询user表中不住在村里的人：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  addr NOT LIKE &#x27;%%村&#x27;;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="null值的处理"   >
+          <a href="#null值的处理" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#null值的处理"></a> NULL值的处理</h2>
+      
+<p>当提供的查询条件字段为NULL时，该命令可能就无法正常工作。</p>
+
+        <h3 id="null值的概念"   >
+          <a href="#null值的概念" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#null值的概念"></a> NULL值的概念</h3>
+      
+<p>NULL对应的是NOT NULL，它们是 MySQL字段的数据类型的属性，本身不属于任何数据类型。</p>
+<p>NULL值也不等于空值，空值是不占用存储空间的，NULL占用存储空间。</p>
+
+        <h3 id="如何处理null值"   >
+          <a href="#如何处理null值" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#如何处理null值"></a> 如何处理NULL值</h3>
+      
+<p>MySQL为处理NULL值提供了三种运算符：</p>
+<ul>
+<li><code>IS NULL</code>：当列的值是 NULL时，这个运算符返回true</li>
+<li><code>IS NOT NULL</code>：当列的值不为NULL时，这个运算符返回true</li>
+<li><code>&lt;=&gt;</code>:比较操作符，当比较的两个值都为NULL或者相等时，返回true</li>
+</ul>
+<blockquote>
+<p>不能使用<code>=NULL</code>或者<code>!=NULL</code>来查找NULL值，<code>NULL=NULL</code>会返回NULL</p>
+</blockquote>
+
+        <h3 id="语法-4"   >
+          <a href="#语法-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#语法-4"></a> 语法</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT field_name1,field_name2</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE field_name2 IS NOT NULL/IS NULL;</span><br></pre></td></tr></table></div></figure>
+<p>可以根据这个语法在表格中查询不为NULL或为NULL的数据</p>
+<p>查询name，addr，其中addr不为NULL的数据：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  name,</span><br><span class="line">  addr</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  addr IS NOT NULL;</span><br></pre></td></tr></table></div></figure>
+
+        <h1 id="mysql字符串处理"   >
+          <a href="#mysql字符串处理" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#mysql字符串处理"></a> MySQL字符串处理</h1>
+      
+
+        <h2 id="concat函数"   >
+          <a href="#concat函数" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#concat函数"></a> CONCAT函数</h2>
+      
+
+        <h3 id="语法-5"   >
+          <a href="#语法-5" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#语法-5"></a> 语法</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name1,CONCAT(column_name2,str,column_name3),column_name4 FROM table_name;</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>首先这是一个查询语句，最基本的结构是SELECT 列名 FROM 表名</li>
+<li>CONCAT函数可以拼接列名，也可以拼接字符串</li>
+<li>在使用CONCAT函数的时候可以同时查询其他的列</li>
+<li>CONCAT函数的参数之间用英文<code>,</code>分隔</li>
+</ul>
+<p>比如查询user表中人员的id，以及名字+住址，可以使用CONCAT函数，把结果的可阅读性变得更好：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  id,</span><br><span class="line">  concat(name, &#x27;的住址是&#x27;, addr)</span><br><span class="line">FROM</span><br><span class="line">  user;</span><br></pre></td></tr></table></div></figure>
+<p>类似平台每周总结这类数据分析，输出结果就可以使用CONCAT函数完成。</p>
+<p>需要注意的是，如果拼接的值中有NULL，则结果一律为NULL，这是NULL本身特性决定的。</p>
+
+        <h3 id="配合where语句查询"   >
+          <a href="#配合where语句查询" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#配合where语句查询"></a> 配合WHERE语句查询</h3>
+      
+<p>同样可以配合WHERE语句查询，比如在上例中，想查询id=3的数据：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  concat(name, &#x27;的住址是&#x27;, addr)</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  id = 3;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="别名"   >
+          <a href="#别名" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#别名"></a> 别名</h3>
+      
+<p>给优化拼接的结果起一个别名，比如希望查询结果的列名叫result：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  concat(name, &#x27;的住址是&#x27;, addr) as result</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  id = 3;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="trim函数"   >
+          <a href="#trim函数" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#trim函数"></a> TRIM函数</h2>
+      
+<p>数据库记录的是用户输入的数据，用户输入时的数据通常不是我们所预期的，有时候它会包含空格等并不需要的字符，从而产生脏数据。</p>
+<p>为了保持数据的格式正确，经常会使用TRIM函数来清理数据。</p>
+
+        <h3 id="语法-6"   >
+          <a href="#语法-6" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#语法-6"></a> 语法</h3>
+      
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRIM (str)</span><br></pre></td></tr></table></div></figure>
+<p>比如向user中插入两条新的数据：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO</span><br><span class="line">  user</span><br><span class="line">VALUES</span><br><span class="line">  (</span><br><span class="line">    5,</span><br><span class="line">    &#x27;      KMR&#x27;,</span><br><span class="line">    &#x27;下北泽      &#x27;,</span><br><span class="line">    23,</span><br><span class="line">    now(),</span><br><span class="line">    now()</span><br><span class="line">  ),</span><br><span class="line">  (</span><br><span class="line">    6,</span><br><span class="line">    &#x27;     MUR      &#x27;,</span><br><span class="line">    &#x27;Q下北泽Q&#x27;,</span><br><span class="line">    27,</span><br><span class="line">    now(),</span><br><span class="line">    now()</span><br><span class="line">  );</span><br></pre></td></tr></table></div></figure>
+<p>查询id为5的人员，期望去掉数据中的空格：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  trim(name),</span><br><span class="line">  trim(addr)</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  id = 5;</span><br></pre></td></tr></table></div></figure>
+<p>trim()函数可以去掉查询结果中的空格，但是不会修改原数据，修改原数据需要配合UPDATE/DELETE语句使用。</p>
+
+        <h3 id="语法拓展"   >
+          <a href="#语法拓展" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#语法拓展"></a> 语法拓展</h3>
+      
+<p>trim()函数也可以精准的去掉前面或者后面的空格，或者其他的字符：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRIM( BOTH|LEADING|TRAILING removed_str FROM str);</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>TRIM函数可以加上LEADING来只除去前面的空格，或者加上TRAILING来只除去后面的空格，如果都不加，则默认是BOTH。</li>
+<li>TRIM函数可以删除指定的字符串内容，如果不加，则默认删除空格。</li>
+</ul>
+<p>比如要去掉id为6这条数据中addr尾部的Q：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  TRIM(</span><br><span class="line">    TRAILING &#x27;Q&#x27;</span><br><span class="line">    FROM</span><br><span class="line">      addr</span><br><span class="line">  )</span><br><span class="line">FROM</span><br><span class="line">  user</span><br><span class="line">WHERE</span><br><span class="line">  id = 6;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="replace函数"   >
+          <a href="#replace函数" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#replace函数"></a> REPLACE()函数</h3>
+      
+<p>TRIM()函数不能去掉字符串中间的值，如果要修改中间的值，可以使用REPLACE()函数：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UPDATE table_name </span><br><span class="line">SET colunm_name = </span><br><span class="line">REPLACE(column_name,string_find,string_to_replace) </span><br><span class="line">WHERE conditions;</span><br></pre></td></tr></table></div></figure>
+<p>它可以把找到的某个字符串替换成另一个字符串，但因为语法复杂，而且可以直接用UPDATE语句修改，所以REPLACE()函数的实用性并不高。</p>
+<p>MySQL字符串有很多函数，但是在实际的应用中，通常会采用MyBatis等框架去操作SQL，所以并不需要学会所有的字符串函数。</p>
+
+        <h1 id="mysql关联查询"   >
+          <a href="#mysql关联查询" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#mysql关联查询"></a> MySQL关联查询</h1>
+      
+
+        <h2 id="左连接"   >
+          <a href="#左连接" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#左连接"></a> 左连接</h2>
+      
+
+        <h3 id="关联查询"   >
+          <a href="#关联查询" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#关联查询"></a> 关联查询</h3>
+      
+<p>一般来说，表格功能是单一的，比如学生表就是学生表，老师表就是老师表，不会去设计包含多个冗余字段的复杂表格。</p>
+<p>如果课程表中出现了老师的名字，老师的名字就是冗余字段，因为老师的名字肯定会出现在老师表中。</p>
+<p>适当的冗余字段可以加快查询效率，具体的应用要看实际的业务需求，但一般会尽量减少冗余字段。</p>
+<p>冗余的坏处是难以保证数据的一致性，维护困难，比如老师的名字发生了修改，需要同时修改老师表和课程表。</p>
+<p>将表划分为数个单一功能实体后，有时需要从不同的表格中一起查询结果，这砖多表数据记录关联查询，简称关联查询。</p>
+<p>在实际的应用中，往往使用有关联关系的字段进行关联查询，这样能查询得到有意义的数据。</p>
+<p>关联查询有很多种，常见的有左连接、右连接、内连接等。</p>
+
+        <h3 id="语法-7"   >
+          <a href="#语法-7" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#语法-7"></a> 语法</h3>
+      
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="..%5Cv2-e492481e964541f2764fa5b529790bae_1440w.jpg"  alt="" />
+      </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  TableA LEFT  JOIN</span><br><span class="line">  TableB</span><br><span class="line">  ON condition;</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>JOIN是关联查询的关键词，基础的结构是TableA JOIN TableB，即表A和表B关联查询，LEFT表示是左连接</li>
+<li>ON是关联查询的条件</li>
+<li>左连接就是返回左表的所有数据，即使右表没有匹配的数据（此时右表会以NULL的形式匹配数据）</li>
+</ul>
+<p>如果要在老师表和班级表中查询老师们分别担任哪个班的班主任，且无论是不是班主任都要显示老师的信息：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  teacher</span><br><span class="line">  LEFT JOIN classs ON teacher.id = classs.teacher_id;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="表结构设计规范"   >
+          <a href="#表结构设计规范" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#表结构设计规范"></a> 表结构设计规范</h3>
+      
+<p>互联网公司在使用MySQL在设计表结构时，需要遵从以下的规范：</p>
+<ul>
+<li>表必须要有主键</li>
+<li>一个字段只表示一个含义</li>
+<li>总是包含两个日期字段：gmt_created（创建日期）、gmt_modified（修改日期），且这两个字段不应该包含有额外的业务逻辑</li>
+<li>MySQL中，gmt_created、gmt_modified使用DATETIME类型</li>
+<li>禁止使用复杂数据类型（数组，自定义类型等)</li>
+<li>禁止使用物理外键，使用逻辑外键</li>
+<li>禁止物理删除，使用逻辑删除is_deleted
+<ul>
+<li>逻辑删除，又被称软删除、假删除，是一种数据库操作，使用标记将数据标为不可用，而不从数据库删除数据本身。使用适当的方法可恢复被删除的数据。</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="右连接"   >
+          <a href="#右连接" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#右连接"></a> 右连接</h2>
+      
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="..%5Cimages%5Cv2-2cf69c14d4fc47509b59ff158d9957f4_1440w.jpg"  alt="" />
+      </p>
+<p>右连接就是返回右表的所有数据，即使左表没有匹配的数据。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  TableA RIGHT JOIN </span><br><span class="line">  TableB </span><br><span class="line">  ON condition;</span><br></pre></td></tr></table></div></figure>
+<p>在实际应用中，有时候会对三张表以上进行关联查询，在这种情况下，往往会选中一张表作为主表，以它为基准，进行LEFT JOIN 或RIGHT JOIN查询。</p>
+<blockquote>
+<p>只会使用<code>A LEFT JOIN B</code>、<code>A LEFT JOIN C</code>，不要出现<code>A RIGHT JOIN B</code>、<code>B RIGHT JOIN C</code>这种情况。</p>
+</blockquote>
+
+        <h2 id="内连接"   >
+          <a href="#内连接" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#内连接"></a> 内连接</h2>
+      
+<p>在实际应用中，左右连接不能满足所有的查询需要，这个时候就需要使用内连接。</p>
+
+        <h3 id="inner连接"   >
+          <a href="#inner连接" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#inner连接"></a> INNER连接</h3>
+      
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="..%5Cimages%5CA&amp;B.jpg"  alt="" />
+      </p>
+<p>两表同时符合某一个条件的数据，得到的数据是内部共有的数据，所以连接方式成为内连接</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  Table_A</span><br><span class="line">  INNER JOIN Table_B</span><br><span class="line">ON</span><br><span class="line">  Table_A.id = Table_B.student_id;</span><br></pre></td></tr></table></div></figure>
+<p>INNER可以省略（只写JOIN），LEFT JOIN和RIGHT JOIN都属于外连接，与内连接对应</p>
+
+        <h3 id="外连接的拓展"   >
+          <a href="#外连接的拓展" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#外连接的拓展"></a> 外连接的拓展</h3>
+      
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="..%5Cimages%5Cv2-dd0093c24ed334d24de6498247d22e6a_1440w.jpg"  alt="" />
+      </p>
+<p>查询仅A有，B没有的部分：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  *</span><br><span class="line">FROM</span><br><span class="line">  Table_A</span><br><span class="line">  LEFT JOIN Table_B ON Table_A.id = Table_B.student_id</span><br><span class="line">WHERE</span><br><span class="line">  Table_B.student_id IS NULL;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="union关键字"   >
+          <a href="#union关键字" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#union关键字"></a> UNION关键字</h3>
+      
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="..%5Cimages%5Cv2-b8160a25515c266b28c22f19a61f93d8_1440w.jpg"  alt="" />
+      </p>
+<p>有时候需要联合查询所有的内容：</p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  Table_A</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Table_B</span><br><span class="line"><span class="keyword">ON</span></span><br><span class="line">  Table_A.id <span class="operator">=</span> Table_B.student_id</span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">DISTINCT</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  Table_A</span><br><span class="line">  <span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> Table_B <span class="keyword">ON</span> Table_A.id<span class="operator">=</span>Table_B.student_id;</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>相当于同时执行AB表的左右连接</p>
+</blockquote>
+<p>UNION关键字可以将两个查询语句的结果合并，并去除重复数据，UNION DISTINCT和UNION的效果一样，所以一般直接使用UNION。</p>
+<blockquote>
+<p>一般来说要求查询得到的数据是去重的，在极少数情况下需要展示不去重的数据，可以把DISTINCT关键词换为ALL关键词。</p>
+</blockquote>
+
+        <h3 id="笛卡尔积"   >
+          <a href="#笛卡尔积" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#笛卡尔积"></a> 笛卡尔积</h3>
+      
+<p>在实际的应用场景中，有时候还会需要查询所有可能会出现的结果，这个也就是数学上的笛卡尔积。</p>
+<p>假设有表A，包含2条数据，以AB代指，集合B，包含3条数据以abc代指，使用cross join关键词查询，得到的结果会是单纯的乘积，一共2*3=6条数据。</p>
+<p>笛卡尔积在MySQL的实际应用中应该是避免的。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://cheriko.fun">CherikoM</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/">https://cheriko.fun/2022/12/20/%E6%8A%80%E6%9C%AF/MySQL/MySQL/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://cheriko.fun/tags/Nginx/">Nginx</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_alipay.md.png"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="https://s1.imagehub.cc/images/2022/10/23/pay_wechat.md.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/12/19/%E6%8A%80%E6%9C%AF/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%BC%80%E5%8F%91/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%BC%80%E5%8F%91/"><span class="paginator-prev__text">Redis</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">
+           数据库概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">
+           数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">
+           数据库的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+           关系型数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+           SQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#acid%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+           ACID特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nosql"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+           NoSQL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9mysql"><span class="toc-number">1.3.</span> <span class="toc-text">
+           为什么选择MySQL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-crud"><span class="toc-number">2.</span> <span class="toc-text">
+           MySQL CRUD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">
+           表格的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%90%8D"><span class="toc-number">2.1.1.</span> <span class="toc-text">
+           表名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5"><span class="toc-number">2.1.2.</span> <span class="toc-text">
+           字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE"><span class="toc-number">2.1.3.</span> <span class="toc-text">
+           主键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.1.4.</span> <span class="toc-text">
+           SQL常用数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.5.</span> <span class="toc-text">
+           数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#crud"><span class="toc-number">2.1.6.</span> <span class="toc-text">
+           CRUD</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%A0%BC"><span class="toc-number">2.2.</span> <span class="toc-text">
+           创建表格</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%A0%BC-2"><span class="toc-number">2.2.1.</span> <span class="toc-text">
+           创建表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E6%AE%B5"><span class="toc-number">2.2.2.</span> <span class="toc-text">
+           创建字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E5%AE%9A%E4%B8%BB%E9%94%AE"><span class="toc-number">2.2.3.</span> <span class="toc-text">
+           约定主键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E5%92%8C%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.4.</span> <span class="toc-text">
+           设置存储引擎和编码方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8%E6%A0%BC"><span class="toc-number">2.2.5.</span> <span class="toc-text">
+           删除表格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E8%AF%AD%E5%8F%A5insert"><span class="toc-number">2.3.</span> <span class="toc-text">
+           插入语句(INSERT)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">2.3.1.</span> <span class="toc-text">
+           语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E8%AF%AD%E5%8F%A5%E7%9A%84%E7%AE%80%E5%8C%96"><span class="toc-number">2.3.2.</span> <span class="toc-text">
+           插入语句的简化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">2.3.3.</span> <span class="toc-text">
+           批量插入数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2select"><span class="toc-number">2.4.</span> <span class="toc-text">
+           查询(SELECT)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-2"><span class="toc-number">2.4.1.</span> <span class="toc-text">
+           语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#where%E5%AD%90%E5%8F%A5"><span class="toc-number">2.4.2.</span> <span class="toc-text">
+           WHERE子句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#limit%E5%AD%90%E5%8F%A5"><span class="toc-number">2.5.</span> <span class="toc-text">
+           Limit子句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2x-y%E8%A1%8C"><span class="toc-number">2.5.1.</span> <span class="toc-text">
+           查询x-y行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A20-x%E8%A1%8C"><span class="toc-number">2.5.2.</span> <span class="toc-text">
+           查询0-x行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E7%AC%ACx%E8%A1%8C"><span class="toc-number">2.5.3.</span> <span class="toc-text">
+           查询第x行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8Cwhere%E5%AD%90%E5%8F%A5%E8%81%94%E5%90%88%E4%BD%BF%E7%94%A8"><span class="toc-number">2.5.4.</span> <span class="toc-text">
+           和WHERE子句联合使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8Forder-by-%E5%AD%90%E5%8F%A5"><span class="toc-number">2.6.</span> <span class="toc-text">
+           排序（ORDER BY 子句）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#desc%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="toc-number">2.6.1.</span> <span class="toc-text">
+           DESC关键词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8C%E5%85%B6%E4%BB%96%E5%AD%90%E5%8F%A5%E8%BF%9E%E7%94%A8"><span class="toc-number">2.6.2.</span> <span class="toc-text">
+           和其他子句连用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%88%A0%E9%99%A4"><span class="toc-number">2.7.</span> <span class="toc-text">
+           更新&#x2F;删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0update"><span class="toc-number">2.7.1.</span> <span class="toc-text">
+           更新(UPDATE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4delete"><span class="toc-number">2.7.2.</span> <span class="toc-text">
+           删除(DELETE)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">
+           查询优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#like%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.1.</span> <span class="toc-text">
+           LIKE查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-3"><span class="toc-number">3.1.1.</span> <span class="toc-text">
+           语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.2.</span> <span class="toc-text"> %</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#_"><span class="toc-number">3.1.3.</span> <span class="toc-text">
+           _</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#and-or"><span class="toc-number">3.2.</span> <span class="toc-text">
+           AND &amp; OR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#in-not-in"><span class="toc-number">3.3.</span> <span class="toc-text">
+           IN &amp; NOT IN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#in"><span class="toc-number">3.3.1.</span> <span class="toc-text">
+           IN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#not-innot-like"><span class="toc-number">3.3.2.</span> <span class="toc-text">
+           NOT IN&#x2F;NOT LIKE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">
+           NULL值的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null%E5%80%BC%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">3.4.1.</span> <span class="toc-text">
+           NULL值的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86null%E5%80%BC"><span class="toc-number">3.4.2.</span> <span class="toc-text">
+           如何处理NULL值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-4"><span class="toc-number">3.4.3.</span> <span class="toc-text">
+           语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">
+           MySQL字符串处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#concat%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text">
+           CONCAT函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-5"><span class="toc-number">4.1.1.</span> <span class="toc-text">
+           语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E5%90%88where%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.1.2.</span> <span class="toc-text">
+           配合WHERE语句查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%AB%E5%90%8D"><span class="toc-number">4.1.3.</span> <span class="toc-text">
+           别名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trim%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">
+           TRIM函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-6"><span class="toc-number">4.2.1.</span> <span class="toc-text">
+           语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E6%8B%93%E5%B1%95"><span class="toc-number">4.2.2.</span> <span class="toc-text">
+           语法拓展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#replace%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.3.</span> <span class="toc-text">
+           REPLACE()函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2"><span class="toc-number">5.</span> <span class="toc-text">
+           MySQL关联查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A6%E8%BF%9E%E6%8E%A5"><span class="toc-number">5.1.</span> <span class="toc-text">
+           左连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2"><span class="toc-number">5.1.1.</span> <span class="toc-text">
+           关联查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-7"><span class="toc-number">5.1.2.</span> <span class="toc-text">
+           语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83"><span class="toc-number">5.1.3.</span> <span class="toc-text">
+           表结构设计规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B3%E8%BF%9E%E6%8E%A5"><span class="toc-number">5.2.</span> <span class="toc-text">
+           右连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5"><span class="toc-number">5.3.</span> <span class="toc-text">
+           内连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#inner%E8%BF%9E%E6%8E%A5"><span class="toc-number">5.3.1.</span> <span class="toc-text">
+           INNER连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%8B%93%E5%B1%95"><span class="toc-number">5.3.2.</span> <span class="toc-text">
+           外连接的拓展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#union%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">5.3.3.</span> <span class="toc-text">
+           UNION关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="toc-number">5.3.4.</span> <span class="toc-text">
+           笛卡尔积</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/static/Cheriko_pic.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">CherikoM</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/CherikoM/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=1330949085/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://music.163.com/#/user/home?id=319313489" target="_blank" rel="noopener" data-popover="网易云音乐" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-record-vinyl"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/4582324/" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">B</span></a><a class="sidebar-ov-social-item" href="https://xiangyinhexuyuan.lofter.com/" target="_blank" rel="noopener" data-popover="Lofter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">L</span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/ying-mu-guo-8/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-zhihu"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>CherikoM</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,122,120" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":0,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
+    appKey: 'cLSG7K1iInnLJuU15DMJ8EJl',
+    notify: true,
+    verify: true,
+    placeholder: '鳖载着理发店？鸠载着理发店！',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: true,
+    recordIP: false,
+    lang: 'zh-CN' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/heart.js"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.xml"></script><div class="aplayer" data-id="7701953645" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="true" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script></body></html>
